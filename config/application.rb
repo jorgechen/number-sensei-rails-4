@@ -31,5 +31,10 @@ module NumberSenseiRails4
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+
+    ######################
+    # CONFIG CONSTANTS
+    config.app_title = '#Sensei'
+    config.app_description = 'Number Sensei makes learning mathematics simple and addicting, by motivating kids and teachers, providing materials, and making everything into a game'
   end
 end
