@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(version: 20130722183641) do
     t.datetime "updated_at"
   end
 
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+
   create_table "users_roles", id: false, force: true do |t|
     t.integer "user_id"
     t.integer "role_id"
