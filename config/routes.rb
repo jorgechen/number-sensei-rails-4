@@ -1,4 +1,6 @@
 NumberSenseiRails4::Application.routes.draw do
+  resources :official_challenges
+
   root :to => "home#index"
   resources :users, :only => [:index, :show, :edit, :update ]
   get '/auth/:provider/callback' => 'sessions#create'

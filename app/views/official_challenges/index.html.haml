@@ -1,0 +1,33 @@
+%h1 Listing official_challenges
+
+%table
+  %tr
+    %th Upload
+    %th Name
+    %th Release date
+    %th Grade level
+    %th Difficulty
+    %th Event
+    %th Category
+    %th Location
+    %th
+    %th
+    %th
+
+  - @official_challenges.each do |official_challenge|
+    %tr
+      %td= official_challenge.upload
+      %td= official_challenge.name
+      %td= official_challenge.release_date
+      %td= official_challenge.grade_level
+      %td= official_challenge.difficulty
+      %td= official_challenge.event
+      %td= official_challenge.category
+      %td= official_challenge.location
+      %td= link_to 'Show', official_challenge
+      %td= link_to 'Edit', edit_official_challenge_path(official_challenge)
+      %td= link_to 'Destroy', official_challenge, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Official challenge', new_official_challenge_path

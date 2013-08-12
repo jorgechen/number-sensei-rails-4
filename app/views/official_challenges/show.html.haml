@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b Upload:
+  = @official_challenge.upload
+%p
+  %b Name:
+  = @official_challenge.name
+%p
+  %b Release date:
+  = @official_challenge.release_date
+%p
+  %b Grade level:
+  = @official_challenge.grade_level
+%p
+  %b Difficulty:
+  = @official_challenge.difficulty
+%p
+  %b Event:
+  = @official_challenge.event
+%p
+  %b Category:
+  = @official_challenge.category
+%p
+  %b Location:
+  = @official_challenge.location
+
+= link_to 'Edit', edit_official_challenge_path(@official_challenge)
+\|
+= link_to 'Back', official_challenges_path
