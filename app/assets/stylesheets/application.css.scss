@@ -12,10 +12,6 @@
  *= require_tree .
 */
 
-.brand {
-  font-family: 'Rum Raisin', sans-serif;
-}
-
 .content {
   background-color: #eee;
   padding: 20px;
@@ -43,21 +39,5 @@
 
   margin-bottom: 8px;
   padding: 4px;
-}
-
-//////////////////////////////////////////////////////////////////
-/////////// Bootstrap overrides
-//////////////////////////////////////////////////////////////////
-
-p {
-  font-family: 'Roboto Slab', serif;
-}
-
-h1, h2, h3 {
-  font-family: 'Rum Raisin', sans-serif;
-}
-
-.nav ul, li {
-  font-family: 'Open Sans', sans-serif;
 }
 

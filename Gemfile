@@ -9,7 +9,6 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
-gem 'bootstrap-sass'
 gem 'figaro'
 gem 'haml-rails'
 
@@ -77,8 +76,7 @@ gem 'rmagick'
 gem 'fog'
 
 # data structures
-gem 'classy_enum'
-gem 'simple_enum'
+gem 'enumerize'
 gem 'closure_tree'
 gem 'ranked-model'
 

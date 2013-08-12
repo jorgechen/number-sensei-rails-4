@@ -1,3 +1,41 @@
-@import "bootstrap";
-body { padding-top: 60px; }
-@import "bootstrap-responsive";
+@import "bootstrap.min";
+
+//////////////////////////////////////////////////////////////////
+/////////// Bootstrap overrides
+//////////////////////////////////////////////////////////////////
+body {
+  padding-top: 60px;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+p {
+  font-family: 'Roboto Slab', serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Rum Raisin', sans-serif;
+}
+
+
+//////////////////////////////////////////////////////////////////
+// Navigation bar
+//////////////////////////////////////////////////////////////////
+.navbar, navbar-nav {
+  background-color: #2b487c;
+}
+
+.nav ul, li {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.nav li a:hover {
+  color: #f8f8ff;
+}
+.nav li a {
+  color: #bcbcc3;
+}
+
+.navbar-brand {
+  font-family: 'Rum Raisin', sans-serif;
+  color: #f8f8ff;
+}

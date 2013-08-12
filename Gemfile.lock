@@ -33,8 +33,6 @@ GEM
       erubis (>= 2.6.6)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bootstrap-sass (2.3.2.1)
-      sass (~> 3.2)
     builder (3.1.4)
     cancan (1.6.10)
     capybara (2.1.0)
@@ -48,8 +46,6 @@ GEM
       activesupport (>= 3.2.0)
       json (>= 1.7)
     choice (0.1.6)
-    classy_enum (3.3.1)
-      rails (>= 3.0)
     closure_tree (4.2.7)
       activerecord (>= 3.0.0)
       with_advisory_lock (>= 0.0.9)
@@ -78,6 +74,8 @@ GEM
     email_spec (1.5.0)
       launchy (~> 2.1)
       mail (~> 2.2)
+    enumerize (0.6.1)
+      activesupport (>= 3.2)
     erubis (2.7.0)
     eventmachine (1.0.3)
     excon (0.25.3)
@@ -266,8 +264,6 @@ GEM
       sprockets-rails (~> 2.0.0)
     seedbank (0.3.0.pre2)
     sexp_processor (4.2.1)
-    simple_enum (1.6.5)
-      activesupport (>= 3.0.0)
     simple_form (3.0.0.rc)
       actionpack (>= 4.0.0.rc1, < 4.1)
       activemodel (>= 4.0.0.rc1, < 4.1)
@@ -310,16 +306,15 @@ PLATFORMS
 DEPENDENCIES
   better_errors
   binding_of_caller
-  bootstrap-sass
   cancan
   capybara
   carrierwave
-  classy_enum
   closure_tree
   coffee-rails (~> 4.0.0)
   cucumber-rails
   database_cleaner
   email_spec
+  enumerize
   factory_girl_rails
   figaro
   fog
@@ -352,7 +347,6 @@ DEPENDENCIES
   rspec-rails
   sass-rails (~> 4.0.0)
   seedbank (= 0.3.0.pre2)
-  simple_enum
   simple_form (>= 3.0.0.rc)
   sqlite3
   thin
