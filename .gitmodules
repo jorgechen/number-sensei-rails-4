@@ -1,0 +1,3 @@
+[submodule "lib/sylvan_util"]
+	path = lib/sylvan_util
+	url = https://github.com/sylvanknave/sylvan_rails.git
