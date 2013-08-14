@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130812000708) do
+ActiveRecord::Schema.define(version: 20130814045019) do
+
+  create_table "challenge_categories", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "challenge_categories", ["name"], name: "index_challenge_categories_on_name", unique: true
 
   create_table "official_challenges", force: true do |t|
     t.string   "upload"

@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @challenge_category.name
+%p
+  %b Description:
+  = @challenge_category.description
+
+= link_to 'Edit', edit_challenge_category_path(@challenge_category)
+\|
+= link_to 'Back', challenge_categories_path
