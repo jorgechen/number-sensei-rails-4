@@ -2,13 +2,13 @@
 
 FactoryGirl.define do
   factory :official_challenge do
-    upload "MyString"
-    name "MyString"
-    release_date "2013-08-11"
-    grade_level 1
-    difficulty 1
-    event "MyString"
-    category "MyString"
-    location "MyString"
+    upload ''
+    name 'Typical High School Number Sense Test Fall 2013'
+    release_date '2013-08-15'.to_date
+    grade_level 5
+    difficulty :normal
+    event 'UIL State'
+    category 'Number Sense'
+    location 'Some Place, TX'
   end
 end

@@ -2,9 +2,9 @@
 
 FactoryGirl.define do
   factory :user do
-    name 'George Chen'
-    email 'sylvan@knave.com'
+    name 'Sylvan Knave'
+    email 'info@habituallyamazed.com'
     provider 'twitter'
-    uid ''
+    uid 'abcdefg'
   end
 end

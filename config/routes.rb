@@ -1,4 +1,6 @@
 NumberSenseiRails4::Application.routes.draw do
+
+  get '/downloads', to: 'official_challenges#index'
   resources :official_challenges
 
   root :to => "home#index"

@@ -12,8 +12,8 @@ module NumberSenseiRails4
     # don't generate RSpec tests for views and helpers
     config.generators do |g|
       
-      g.test_framework :rspec, fixture: true
-      g.fixture_replacement :factory_girl, dir: 'spec/factories'
+      g.test_framework :rspec, :fixture => true
+      g.fixture_replacement :factory_girl, :dir => 'spec/factories'
       
       
       g.view_specs false
@@ -35,6 +35,6 @@ module NumberSenseiRails4
     ######################
     # CONFIG CONSTANTS
     config.app_title = '#Sensei'
-    config.app_description = 'Number Sensei makes learning mathematics simple and addicting, by motivating kids and teachers, providing materials, and making everything into a game'
+    config.app_description = 'Number Sensei makes learning mathematics simple and addicting, by motivating kids and teachers, providing resources, and improving everything important with fun and games'
   end
 end

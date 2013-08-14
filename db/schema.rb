@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130722183641) do
+ActiveRecord::Schema.define(version: 20130812000708) do
+
+  create_table "official_challenges", force: true do |t|
+    t.string   "upload"
+    t.string   "name"
+    t.date     "release_date"
+    t.integer  "grade_level"
+    t.integer  "difficulty"
+    t.string   "event"
+    t.string   "category"
+    t.string   "location"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "roles", force: true do |t|
     t.string   "name"

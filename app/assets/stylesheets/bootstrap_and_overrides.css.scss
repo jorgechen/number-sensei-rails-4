@@ -13,7 +13,7 @@ p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Rum Raisin', sans-serif;
+  font-family: 'Roboto Slab', sans-serif;
 }
 
 
@@ -28,7 +28,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-.nav li a:hover {
+.nav li a:hover, .navbar-brand {
   color: #f8f8ff;
 }
 .nav li a {
@@ -37,5 +37,5 @@ h1, h2, h3, h4, h5, h6 {
 
 .navbar-brand {
   font-family: 'Rum Raisin', sans-serif;
-  color: #f8f8ff;
+  font-size: 2.0em;
 }
