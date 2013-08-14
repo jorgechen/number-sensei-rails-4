@@ -1,3 +1,3 @@
-[submodule "lib/sylvan_util"]
-	path = lib/sylvan_util
+[submodule "lib/sylvan_rails"]
+	path = lib/sylvan_rails
 	url = https://github.com/sylvanknave/sylvan_rails.git
