@@ -8,7 +8,7 @@ FactoryGirl.define do
     grade_level 5
     difficulty :normal
     event 'UIL State'
-    category 'Number Sense'
+    association :category, factory: :challenge_category
     location 'Some Place, TX'
   end
 end

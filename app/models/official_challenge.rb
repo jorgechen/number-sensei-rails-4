@@ -19,6 +19,8 @@ class OfficialChallenge < ActiveRecord::Base
 
   mount_uploader :upload, DocumentUploader
 
+  belongs_to :category,
+             :class_name => 'ChallengeCategory'
 
   validates :name,
             :presence => true

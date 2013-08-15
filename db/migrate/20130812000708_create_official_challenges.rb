@@ -7,7 +7,7 @@ class CreateOfficialChallenges < ActiveRecord::Migration
       t.integer :grade_level
       t.integer :difficulty
       t.string :event
-      t.string :category
+      t.references :category
       t.string :location
 
       t.timestamps

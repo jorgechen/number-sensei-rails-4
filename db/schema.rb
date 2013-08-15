@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20130814045019) do
     t.integer  "grade_level"
     t.integer  "difficulty"
     t.string   "event"
-    t.string   "category"
+    t.integer  "category_id"
     t.string   "location"
     t.datetime "created_at"
     t.datetime "updated_at"
