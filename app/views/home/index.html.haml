@@ -1,40 +1,19 @@
-%hr
-
 .row
-  .col-lg-3
-    %a.big-butt.btn.btn-primary.btn-large
-      Learn
-  .col-lg-9
-    .well
-      A random trick, just for you
-
-
-%hr
-
-
-.row
-  .col-lg-3
-    %a.big-butt.btn.btn-primary.btn-large
+  .col-lg-8.col-lg-offset-2
+    %a.btn-block.btn.btn-primary.btn-lg.big-button
       Play
-  .col-lg-9
-    .well
-      Challenge of the Day
-
 
 %hr
 
+.row
+  .col-lg-8.col-lg-offset-2
+    %a.btn-block.btn.btn-primary.btn-lg.big-button
+      Learn
+
+%hr
 
 .row
-  .col-lg-3
-    %a.big-butt.btn.btn-primary.btn-large
-      Discover
-  .col-lg-9
-    .well
-      = link_to 'Recent official challenges', '/official_challenges/'
+  .col-lg-8.col-lg-offset-2
+    %a.btn-block.btn.btn-primary.btn-lg.big-button{href: '/downloads'}
+      Downloads
 
-
-
-%h3 Home
-- @users.each do |user|
-  %p
-    User: #{link_to user.name, user}

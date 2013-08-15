@@ -16,6 +16,10 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto Slab', sans-serif;
 }
 
+hr {
+  border: solid rgba(255, 255, 255, 0);
+}
+
 
 //////////////////////////////////////////////////////////////////
 // Navigation bar
@@ -28,11 +32,11 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-.nav li a:hover, .navbar-brand {
+.nav li a:hover, .navbar-brand:focus, .navbar-brand:hover {
   color: #f8f8ff;
 }
-.nav li a {
-  color: #bcbcc3;
+.nav li a, .navbar-brand {
+  color: #e1e1e8;
 }
 
 .navbar-brand {
