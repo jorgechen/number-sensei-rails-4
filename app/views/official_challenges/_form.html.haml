@@ -1,12 +1,14 @@
+
 = simple_form_for(@official_challenge) do |f|
-  = f.error_notification
+  .container
+    = f.error_notification
 
   .form-inputs
     = f.input :upload
     = f.input :name
     = f.input :release_date
     = f.input :grade_level
-    = f.input :difficulty
+    = f.input :difficulty, :as => :radio_buttons
     = f.input :event
     = f.association :category
     = f.input :location

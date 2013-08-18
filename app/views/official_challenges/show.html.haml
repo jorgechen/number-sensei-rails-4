@@ -25,6 +25,6 @@
   %b Location:
   = @official_challenge.location
 
-= link_to 'Edit', edit_official_challenge_path(@official_challenge)
-\|
-= link_to 'Back', official_challenges_path
+- if user_signed_in?
+  = link_to 'Edit', edit_official_challenge_path(@official_challenge), class: 'btn btn-info'
+  = link_to 'Back', official_challenges_path, class: 'btn btn-primary'

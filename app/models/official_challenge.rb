@@ -1,6 +1,7 @@
 class OfficialChallenge < ActiveRecord::Base
   extend ::Enumerize
 
+  # ATtribute grade_level
   enumerize :grade_level,
             :in => {
                 elementary: 5,
@@ -9,6 +10,7 @@ class OfficialChallenge < ActiveRecord::Base
             },
             :default => :elementary
 
+  # Attribute difficulty
   enumerize :difficulty,
             :in => {
                 easy: 100,
@@ -17,12 +19,17 @@ class OfficialChallenge < ActiveRecord::Base
             },
             :default => :normal
 
+  # Attribute upload
   mount_uploader :upload, DocumentUploader
+  validates :upload,
+            :presence => true
 
+  # Attribute category
   belongs_to :category,
              :class_name => 'ChallengeCategory',
              :foreign_key => 'category_id'
 
+  # Attribute name
   validates :name,
             :presence => true
 

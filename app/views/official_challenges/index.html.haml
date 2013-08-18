@@ -2,10 +2,9 @@
 
 %table.table
   %tr
-    %th Upload
     %th Name
-    %th Release date
-    %th Grade level
+    %th Date
+    %th Grade Level
     %th Difficulty
     %th Event
     %th Category
@@ -16,17 +15,19 @@
 
   - @official_challenges.each do |official_challenge|
     %tr
-      %td= official_challenge.upload
       %td= official_challenge.name
-      %td= official_challenge.release_date
+      %td= official_challenge.release_date.year
       %td= official_challenge.grade_level
       %td= official_challenge.difficulty
       %td= official_challenge.event
       %td= official_challenge.category
       %td= official_challenge.location
-      %td= link_to 'Show', official_challenge
-      %td= link_to 'Edit', edit_official_challenge_path(official_challenge)
-      %td= link_to 'Destroy', official_challenge, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= link_to image_tag('/download_32.png'), official_challenge.upload.url
+      - if user_signed_in?
+        %td= link_to 'Show', official_challenge
+        %td= link_to 'Edit', edit_official_challenge_path(official_challenge)
+        %td= link_to 'Destroy', official_challenge, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= official_challenge.upload
 
 %br
 

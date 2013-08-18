@@ -9,3 +9,6 @@ if defined?(Rails::Console)
   puts 'Automatically enabling Hirb... (in environment.rb)'
   Hirb.enable
 end
+
+# load class extensions
+require 'sylvan_rails/string'

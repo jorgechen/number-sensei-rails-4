@@ -12,6 +12,14 @@
  *= require_tree .
 */
 
+// this is the side error messages in simple_form
+.help-inline {
+  color: #c09853;
+  background-color: #fcf8e3;
+  border: 1px solid #fbeed5;
+  border-radius: 4px;
+}
+
 .content {
   background-color: #eee;
   padding: 20px;

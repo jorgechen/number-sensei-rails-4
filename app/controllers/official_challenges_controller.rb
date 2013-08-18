@@ -69,6 +69,6 @@ class OfficialChallengesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def official_challenge_params
-      params.require(:official_challenge).permit(:upload, :name, :release_date, :grade_level, :difficulty, :event, :category, :location)
+      params.require(:official_challenge).permit(:upload, :name, :release_date, :grade_level, :difficulty, :event, :category_id, :location)
     end
 end
