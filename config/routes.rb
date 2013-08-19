@@ -1,5 +1,7 @@
 NumberSenseiRails4::Application.routes.draw do
 
+  resources :expressions
+
   resources :challenge_categories
 
   get '/downloads', to: 'official_challenges#index'

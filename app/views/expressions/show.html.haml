@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Token:
+  = @expression.token
+%p
+  %b Type:
+  = @expression.type
+%p
+  %b Parent:
+  = @expression.parent_id
+
+= link_to 'Edit', edit_expression_path(@expression)
+\|
+= link_to 'Back', expressions_path

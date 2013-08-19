@@ -1,0 +1,10 @@
+= simple_form_for(@expression) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :token
+    = f.input :type
+    = f.input :parent_id
+
+  .form-actions
+    = f.button :submit

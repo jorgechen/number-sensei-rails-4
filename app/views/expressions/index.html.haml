@@ -1,0 +1,23 @@
+%h1 Listing expressions
+
+%table
+  %tr
+    %th Token
+    %th Type
+    %th Parent
+    %th
+    %th
+    %th
+
+  - @expressions.each do |expression|
+    %tr
+      %td= expression.token
+      %td= expression.type
+      %td= expression.parent_id
+      %td= link_to 'Show', expression
+      %td= link_to 'Edit', edit_expression_path(expression)
+      %td= link_to 'Destroy', expression, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Expression', new_expression_path
