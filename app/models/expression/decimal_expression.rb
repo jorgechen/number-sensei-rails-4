@@ -1,0 +1,3 @@
+class DecimalExpression < Expression
+
+end

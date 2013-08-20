@@ -1,0 +1,3 @@
+class IntegerExpression < Expression
+
+end

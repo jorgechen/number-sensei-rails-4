@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130819004145) do
+ActiveRecord::Schema.define(version: 20130819031940) do
 
   create_table "challenge_categories", force: true do |t|
     t.string   "name"
@@ -21,6 +21,14 @@ ActiveRecord::Schema.define(version: 20130819004145) do
   end
 
   add_index "challenge_categories", ["name"], name: "index_challenge_categories_on_name", unique: true
+
+  create_table "decimal_numbers", force: true do |t|
+    t.float    "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "decimal_numbers", ["value"], name: "index_decimal_numbers_on_value", unique: true
 
   create_table "expression_hierarchies", id: false, force: true do |t|
     t.integer "ancestor_id",   null: false
@@ -39,6 +47,14 @@ ActiveRecord::Schema.define(version: 20130819004145) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "integer_numbers", force: true do |t|
+    t.integer  "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "integer_numbers", ["value"], name: "index_integer_numbers_on_value", unique: true
 
   create_table "official_challenges", force: true do |t|
     t.string   "upload"
