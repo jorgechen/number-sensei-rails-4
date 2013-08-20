@@ -32,6 +32,9 @@ module NumberSenseiRails4
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
+    # load all models
+    config.autoload_paths = Dir["#{config.root}/app/models/**/"]
+
     ######################
     # CONFIG CONSTANTS
     config.app_title = '#Sensei'
