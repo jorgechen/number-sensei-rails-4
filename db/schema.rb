@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130819031940) do
+ActiveRecord::Schema.define(version: 20130820002126) do
 
   create_table "challenge_categories", force: true do |t|
     t.string   "name"
@@ -47,6 +47,15 @@ ActiveRecord::Schema.define(version: 20130819031940) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "fractions", force: true do |t|
+    t.integer  "numerator"
+    t.integer  "denominator"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "fractions", ["numerator", "denominator"], name: "index_fractions_on_numerator_and_denominator", unique: true
 
   create_table "integer_numbers", force: true do |t|
     t.integer  "value"

@@ -1,4 +1,4 @@
-#KnavUtil.print_with_padding 'seeding ChallengeCategory'
+KnavUtil.print_with_padding 'ChallengeCategory'
 
 [
     'Number Sense',
