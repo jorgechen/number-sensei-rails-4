@@ -32,11 +32,13 @@ module NumberSenseiRails4
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
+
     # load all models
     config.autoload_paths = Dir["#{config.root}/app/models/**/"]
 
     ######################
-    # CONFIG CONSTANTS
+    # CONSTANTS
+    ######################
     config.app_title = '#Sensei'
     config.app_description = 'Number Sensei makes learning mathematics simple and addicting, by motivating kids and teachers, providing resources, and improving everything important with fun and games'
   end

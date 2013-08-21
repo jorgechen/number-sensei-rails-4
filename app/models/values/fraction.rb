@@ -1,4 +1,4 @@
-class Fraction < ActiveRecord::Base
+class Fraction < Value
   # Attribute numerator
   validates :numerator,
             :presence => true,

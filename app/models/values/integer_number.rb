@@ -1,4 +1,5 @@
-class DecimalNumber < ActiveRecord::Base
+class IntegerNumber < Value
+
   # Attribute value
   validates :value,
             :presence => true,

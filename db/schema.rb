@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130820002126) do
+ActiveRecord::Schema.define(version: 20130820221541) do
 
   create_table "challenge_categories", force: true do |t|
     t.string   "name"
@@ -38,6 +38,17 @@ ActiveRecord::Schema.define(version: 20130820002126) do
 
   add_index "expression_hierarchies", ["ancestor_id", "descendant_id", "generations"], name: "expression_anc_desc_udx", unique: true
   add_index "expression_hierarchies", ["descendant_id"], name: "expression_desc_idx"
+
+  create_table "expression_value_pairings", force: true do |t|
+    t.integer  "expression_id"
+    t.integer  "value_id"
+    t.string   "value_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "expression_value_pairings", ["expression_id"], name: "index_expression_value_pairings_on_expression_id"
+  add_index "expression_value_pairings", ["value_id", "value_type"], name: "index_expression_value_pairings_on_value_id_and_value_type"
 
   create_table "expressions", force: true do |t|
     t.string   "token"
