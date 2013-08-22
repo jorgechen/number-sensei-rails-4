@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130821210538) do
+ActiveRecord::Schema.define(version: 20130822051855) do
 
   create_table "challenge_categories", force: true do |t|
     t.string   "name"
@@ -21,6 +21,24 @@ ActiveRecord::Schema.define(version: 20130821210538) do
   end
 
   add_index "challenge_categories", ["name"], name: "index_challenge_categories_on_name", unique: true
+
+  create_table "challenge_question_pairings", force: true do |t|
+    t.integer  "challenge_id"
+    t.integer  "question_id"
+    t.integer  "numbering"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "challenge_question_pairings", ["challenge_id", "numbering"], name: "challenge_question_pair_idx", unique: true
+  add_index "challenge_question_pairings", ["question_id"], name: "index_challenge_question_pairings_on_question_id"
+
+  create_table "challenges", force: true do |t|
+    t.string   "name"
+    t.string   "checksum"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "constants", force: true do |t|
     t.float    "value"

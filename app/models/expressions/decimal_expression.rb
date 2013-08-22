@@ -4,6 +4,9 @@ class DecimalExpression < Expression
           :source => :value,
           :source_type => 'DecimalNumber'
 
+  validates :value,
+            :presence => true
+
   protected
     def renew_token
       self.token = value.value

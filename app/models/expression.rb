@@ -21,7 +21,7 @@ class Expression < ActiveRecord::Base
   before_save :renew_token
 
   protected
-    def renew_token
-      self.token = '?'
-    end
+  def renew_token
+    self.token = '?' if self.token.blank?
+  end
 end
