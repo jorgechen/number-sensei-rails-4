@@ -1,0 +1,9 @@
+= simple_form_for(@trick) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :strategy
+    = f.input :name
+
+  .form-actions
+    = f.button :submit

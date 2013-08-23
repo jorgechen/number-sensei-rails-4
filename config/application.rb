@@ -34,7 +34,9 @@ module NumberSenseiRails4
 
 
     # load all models
-    config.autoload_paths = Dir["#{config.root}/app/models/**/"]
+    config.autoload_paths = Dir[
+        "#{config.root}/app/models/**/",
+    ]
 
     ######################
     # CONSTANTS

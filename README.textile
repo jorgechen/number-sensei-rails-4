@@ -2,3 +2,7 @@ h1. Number Sensei
 
 "numbersensei.com":http://numbersensei.com
 
+
+Number Sensei is a project started by George Chen to provide a stylish and addicting learning ecosystem for those who wants to become learning ninjas.
+
+Our content is based on popular math competitions like the Number Sense, Mathematics, and Science contests held in the Texas school system.

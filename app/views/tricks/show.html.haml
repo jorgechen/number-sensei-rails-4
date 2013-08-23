@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Strategy:
+  = @trick.strategy
+%p
+  %b Name:
+  = @trick.name
+
+= link_to 'Edit', edit_trick_path(@trick)
+\|
+= link_to 'Back', tricks_path

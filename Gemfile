@@ -77,6 +77,7 @@ gem 'fog'
 
 # data structures
 gem 'enumerize'
+gem 'classy_enum'
 gem 'closure_tree'
 gem 'ranked-model'
 

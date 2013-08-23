@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130822051855) do
+ActiveRecord::Schema.define(version: 20130823031513) do
 
   create_table "challenge_categories", force: true do |t|
     t.string   "name"
@@ -135,6 +135,14 @@ ActiveRecord::Schema.define(version: 20130822051855) do
   add_index "questions", ["answer_id"], name: "index_questions_on_answer_id"
   add_index "questions", ["expression_id"], name: "index_questions_on_expression_id"
 
+  create_table "questions_tricks", force: true do |t|
+    t.integer "question_id"
+    t.integer "trick_id"
+  end
+
+  add_index "questions_tricks", ["question_id"], name: "index_questions_tricks_on_question_id"
+  add_index "questions_tricks", ["trick_id"], name: "index_questions_tricks_on_trick_id"
+
   create_table "roles", force: true do |t|
     t.string   "name"
     t.integer  "resource_id"
@@ -145,6 +153,13 @@ ActiveRecord::Schema.define(version: 20130822051855) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], name: "index_roles_on_name"
+
+  create_table "tricks", force: true do |t|
+    t.string   "strategy"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "name"

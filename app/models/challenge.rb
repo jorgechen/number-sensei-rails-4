@@ -2,7 +2,7 @@ class Challenge < ActiveRecord::Base
 
   has_many :questions,
            :through => :challenge_question_pairings
-  #:order => 'challenge_question_pairings.numbering'
+            #:order => 'challenge_question_pairings.numbering'
 
   has_many :challenge_question_pairings,
            :order => 'challenge_question_pairings.numbering'

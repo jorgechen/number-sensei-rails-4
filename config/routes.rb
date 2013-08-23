@@ -1,5 +1,7 @@
 NumberSenseiRails4::Application.routes.draw do
 
+  resources :tricks
+
   resources :challenges
 
   resources :questions
