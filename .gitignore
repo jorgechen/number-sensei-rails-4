@@ -79,3 +79,4 @@ pickle-email-*.html
 erd.*
 public/uploads/
 .lock-*
+public/assets/

@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 
-$USER_DIR=number-sensei
+USER_DIR=number-sensei-rails-4
 
+echo
 echo '#######################################################'
-echo '## load RVM ruby'
+echo '## load RVM'
 echo '#######################################################'
 source "$HOME/.rvm/scripts/rvm"
 
+echo
 echo '#######################################################'
 echo '## change directory'
 echo '#######################################################'
@@ -15,8 +17,9 @@ DIR=/home/ubuntu/$USER_DIR
 cd $DIR
 echo "Current dir is $DIR"
 
+echo
 echo '#######################################################'
-echo '## find the pid of current server'
+echo '## kill the current server'
 echo '#######################################################'
 PID=''
 PID=`cat $DIR/tmp/pids/server.pid`
@@ -25,6 +28,7 @@ if [ -n "$PID" ]; then
  sudo kill $PID
 fi
 
+echo
 echo '#######################################################'
 echo '## update repository'
 echo '#######################################################'
@@ -34,6 +38,7 @@ if [ $? -ne 0 ];then
  exit 1
 fi
 
+echo
 echo '#######################################################'
 echo '## update gems for production'
 echo '#######################################################'
@@ -43,8 +48,9 @@ if [ $? -ne 0 ];then
  exit 1
 fi
 
+echo
 echo '#######################################################'
-echo '## update databases'
+echo '## migrate database'
 echo '#######################################################'
 RAILS_ENV=production rake db:migrate
 if [ $? -ne 0 ];then
@@ -52,24 +58,25 @@ if [ $? -ne 0 ];then
  exit 1
 fi
 
-
+echo
 echo '#######################################################'
-echo '## compile assets required for production deploy'
+echo '## precompile assets '
 echo '#######################################################'
-RAILS_ENV=production rake assets:precompile
+rake assets:precompile RAILS_ENV=production #--trace
 if [ $? -ne 0 ];then
  echo 'Exiting..'
  exit 1
 fi
 
+echo
 echo '#######################################################'
-echo '## Starting Thin server'
+echo '## start Thin server'
 echo '#######################################################'
 export rvmsudo_secure_path=1 #this line prevents a warning
 rvmsudo rails server thin -p 80 -e production -d
 
+echo
 echo '#######################################################'
-echo '## Going back to $ORIG'
+echo '## cd back to $ORIG'
 echo '#######################################################'
 cd $ORIG
-
