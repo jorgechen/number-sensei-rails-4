@@ -46,7 +46,7 @@ gem 'hirb'
 
 # databases
 gem 'sqlite3'
-gem 'mysql2', '>= 0.3.11', :group => :production
+gem 'pg', :group => :production
 
 # database visualizer
 gem 'rails-erd', '~> 1.1.0', :group => :development
