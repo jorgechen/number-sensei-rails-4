@@ -3,24 +3,26 @@
   %h1
     Number Sensei
   %p
-    We are in beta testing, so nothing is permanent.
+    We are beta testing
 
+  %hr
   -#.row
   -#  .col-lg-8.col-lg-offset-2
   -#    %a.btn-block.btn.btn-primary.btn-lg.big-button
   -#      Play
   -#
-  -#%hr
-  -#
-  -#.row
-  -#  .col-lg-8.col-lg-offset-2
-  -#    %a.btn-block.btn.btn-primary.btn-lg.big-button
-  -#      Learn
+
+  .row
+    .col-lg-8.col-lg-offset-2
+      %a.btn-block.btn.btn-primary.btn-lg.big-button{href: dojo_path}
+        The Dojo
 
   %hr
 
   .row
     .col-lg-8.col-lg-offset-2
-      %a.btn-block.btn.btn-primary.btn-lg.big-button{href: '/downloads'}
+      %a.btn-block.btn.btn-primary.btn-lg.big-button{href: downloads_path}
         Downloads
-
+.hidden
+  %a{href: 'https://plus.google.com/110141026308030820854', rel: 'publisher'}
+    Google+
