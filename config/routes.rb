@@ -1,5 +1,10 @@
 NumberSenseiRails4::Application.routes.draw do
 
+  resources :lessons
+
+  resources :courses
+  get '/dojo' => 'courses#index'
+
   resources :tricks
 
   resources :challenges

@@ -16,6 +16,11 @@ class User < ActiveRecord::Base
             :format => { with: VALID_EMAIL_REGEX }
 
 
+  def to_s
+    name
+  end
+
+  ############################################################################
   def self.create_with_omniauth(auth)
     create! do |user|
       user.provider = auth['provider']

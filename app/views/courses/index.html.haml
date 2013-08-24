@@ -1,0 +1,39 @@
+.container
+  .page-header
+    %h1
+      The Dojo
+      %small where you hone your skills
+
+
+  - unless @courses.blank?
+    .row
+      .col-lg-4
+        .list-group
+          - @courses.each do |course|
+            = link_to course, class: 'list-group-item' do
+              %h3.list-group-item-heading
+                = course.name
+              %p.list-group-item-text
+                = course.teacher
+
+  -#%table.table
+  -#  %tr
+  -#    %th Name
+  -#    %th Teacher
+  -#    %th
+  -#    %th
+  -#    %th
+  -#
+  -#  - @courses.each do |course|
+  -#    %tr
+  -#      %td= course.name
+  -#      %td= course.teacher
+  -#      - if admin_signed_in?
+  -#        %td= link_to 'Show', course
+  -#        %td= link_to 'Edit', edit_course_path(course)
+  -#        %td= link_to 'Destroy', course, :method => :delete, :data => { :confirm => 'Are you sure?' }
+  -#
+  -#%br
+
+  - if admin_signed_in?
+    = link_to 'New Course', new_course_path, class: 'btn btn-primary'

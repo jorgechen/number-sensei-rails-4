@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   helper_method :user_signed_in?
   helper_method :correct_user?
+  helper_method :admin_signed_in?
 
   private
     def current_user
@@ -14,7 +15,7 @@ class ApplicationController < ActionController::Base
     end
 
     def user_signed_in?
-      return true if current_user
+      true if current_user
     end
 
     def correct_user?
@@ -28,6 +29,11 @@ class ApplicationController < ActionController::Base
       if !current_user
         redirect_to root_url, :alert => 'You need to sign in for access to this page.'
       end
+    end
+
+    def admin_signed_in?
+      #TODO check roles of user.id, after cancan+rolify is fixed
+      true if current_user and current_user.id == 1
     end
 
 

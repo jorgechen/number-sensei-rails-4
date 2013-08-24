@@ -23,7 +23,7 @@
       %td= official_challenge.category
       %td= official_challenge.location
       %td= link_to image_tag('/download_32.png'), official_challenge.upload.url
-      - if user_signed_in?
+      - if admin_signed_in?
         %td= link_to 'Show', official_challenge
         %td= link_to 'Edit', edit_official_challenge_path(official_challenge)
         %td= link_to 'Destroy', official_challenge, :method => :delete, :data => { :confirm => 'Are you sure?' }
@@ -31,4 +31,5 @@
 
 %br
 
-= link_to 'New Official challenge', new_official_challenge_path, class: 'btn btn-primary'
+- if admin_signed_in?
+  = link_to 'New Official challenge', new_official_challenge_path, class: 'btn btn-primary'
