@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130823224812) do
+ActiveRecord::Schema.define(version: 20130825051807) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "challenge_categories", force: true do |t|
     t.string   "name"
@@ -20,7 +23,7 @@ ActiveRecord::Schema.define(version: 20130823224812) do
     t.datetime "updated_at"
   end
 
-  add_index "challenge_categories", ["name"], name: "index_challenge_categories_on_name", unique: true
+  add_index "challenge_categories", ["name"], name: "index_challenge_categories_on_name", unique: true, using: :btree
 
   create_table "challenge_question_pairings", force: true do |t|
     t.integer  "challenge_id"
@@ -30,12 +33,12 @@ ActiveRecord::Schema.define(version: 20130823224812) do
     t.datetime "updated_at"
   end
 
-  add_index "challenge_question_pairings", ["challenge_id", "numbering"], name: "challenge_question_pair_idx", unique: true
-  add_index "challenge_question_pairings", ["question_id"], name: "index_challenge_question_pairings_on_question_id"
+  add_index "challenge_question_pairings", ["challenge_id", "numbering"], name: "challenge_question_pair_idx", unique: true, using: :btree
+  add_index "challenge_question_pairings", ["question_id"], name: "index_challenge_question_pairings_on_question_id", using: :btree
 
   create_table "challenges", force: true do |t|
     t.string   "name"
-    t.string   "checksum"
+    t.text     "checksum"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -49,10 +52,10 @@ ActiveRecord::Schema.define(version: 20130823224812) do
     t.datetime "updated_at"
   end
 
-  add_index "constants", ["html"], name: "index_constants_on_html", unique: true
-  add_index "constants", ["name"], name: "index_constants_on_name", unique: true
-  add_index "constants", ["plain_text"], name: "index_constants_on_plain_text", unique: true
-  add_index "constants", ["value"], name: "index_constants_on_value", unique: true
+  add_index "constants", ["html"], name: "index_constants_on_html", unique: true, using: :btree
+  add_index "constants", ["name"], name: "index_constants_on_name", unique: true, using: :btree
+  add_index "constants", ["plain_text"], name: "index_constants_on_plain_text", unique: true, using: :btree
+  add_index "constants", ["value"], name: "index_constants_on_value", unique: true, using: :btree
 
   create_table "courses", force: true do |t|
     t.string   "name"
@@ -61,7 +64,7 @@ ActiveRecord::Schema.define(version: 20130823224812) do
     t.datetime "updated_at"
   end
 
-  add_index "courses", ["teacher_id"], name: "index_courses_on_teacher_id"
+  add_index "courses", ["teacher_id"], name: "index_courses_on_teacher_id", using: :btree
 
   create_table "decimal_numbers", force: true do |t|
     t.float    "value"
@@ -69,7 +72,7 @@ ActiveRecord::Schema.define(version: 20130823224812) do
     t.datetime "updated_at"
   end
 
-  add_index "decimal_numbers", ["value"], name: "index_decimal_numbers_on_value", unique: true
+  add_index "decimal_numbers", ["value"], name: "index_decimal_numbers_on_value", unique: true, using: :btree
 
   create_table "expression_hierarchies", id: false, force: true do |t|
     t.integer "ancestor_id",   null: false
@@ -77,8 +80,8 @@ ActiveRecord::Schema.define(version: 20130823224812) do
     t.integer "generations",   null: false
   end
 
-  add_index "expression_hierarchies", ["ancestor_id", "descendant_id", "generations"], name: "expression_anc_desc_udx", unique: true
-  add_index "expression_hierarchies", ["descendant_id"], name: "expression_desc_idx"
+  add_index "expression_hierarchies", ["ancestor_id", "descendant_id", "generations"], name: "expression_anc_desc_udx", unique: true, using: :btree
+  add_index "expression_hierarchies", ["descendant_id"], name: "expression_desc_idx", using: :btree
 
   create_table "expression_value_pairings", force: true do |t|
     t.integer  "expression_id"
@@ -88,8 +91,8 @@ ActiveRecord::Schema.define(version: 20130823224812) do
     t.datetime "updated_at"
   end
 
-  add_index "expression_value_pairings", ["expression_id"], name: "index_expression_value_pairings_on_expression_id"
-  add_index "expression_value_pairings", ["value_id", "value_type"], name: "index_expression_value_pairings_on_value_id_and_value_type"
+  add_index "expression_value_pairings", ["expression_id"], name: "index_expression_value_pairings_on_expression_id", using: :btree
+  add_index "expression_value_pairings", ["value_id", "value_type"], name: "index_expression_value_pairings_on_value_id_and_value_type", using: :btree
 
   create_table "expressions", force: true do |t|
     t.string   "token"
@@ -107,7 +110,7 @@ ActiveRecord::Schema.define(version: 20130823224812) do
     t.datetime "updated_at"
   end
 
-  add_index "fractions", ["numerator", "denominator"], name: "index_fractions_on_numerator_and_denominator", unique: true
+  add_index "fractions", ["numerator", "denominator"], name: "index_fractions_on_numerator_and_denominator", unique: true, using: :btree
 
   create_table "integer_numbers", force: true do |t|
     t.integer  "value"
@@ -115,7 +118,7 @@ ActiveRecord::Schema.define(version: 20130823224812) do
     t.datetime "updated_at"
   end
 
-  add_index "integer_numbers", ["value"], name: "index_integer_numbers_on_value", unique: true
+  add_index "integer_numbers", ["value"], name: "index_integer_numbers_on_value", unique: true, using: :btree
 
   create_table "lessons", force: true do |t|
     t.string   "name"
@@ -125,7 +128,7 @@ ActiveRecord::Schema.define(version: 20130823224812) do
     t.datetime "updated_at"
   end
 
-  add_index "lessons", ["course_id"], name: "index_lessons_on_course_id"
+  add_index "lessons", ["course_id"], name: "index_lessons_on_course_id", using: :btree
 
   create_table "official_challenges", force: true do |t|
     t.string   "upload"
@@ -143,24 +146,24 @@ ActiveRecord::Schema.define(version: 20130823224812) do
   create_table "questions", force: true do |t|
     t.integer  "expression_id"
     t.integer  "answer_id"
-    t.string   "html"
-    t.string   "plain_text"
-    t.string   "answer_html"
-    t.string   "answer_plain_text"
+    t.text     "html"
+    t.text     "plain_text"
+    t.text     "answer_html"
+    t.text     "answer_plain_text"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "questions", ["answer_id"], name: "index_questions_on_answer_id"
-  add_index "questions", ["expression_id"], name: "index_questions_on_expression_id"
+  add_index "questions", ["answer_id"], name: "index_questions_on_answer_id", using: :btree
+  add_index "questions", ["expression_id"], name: "index_questions_on_expression_id", using: :btree
 
   create_table "questions_tricks", force: true do |t|
     t.integer "question_id"
     t.integer "trick_id"
   end
 
-  add_index "questions_tricks", ["question_id"], name: "index_questions_tricks_on_question_id"
-  add_index "questions_tricks", ["trick_id"], name: "index_questions_tricks_on_trick_id"
+  add_index "questions_tricks", ["question_id"], name: "index_questions_tricks_on_question_id", using: :btree
+  add_index "questions_tricks", ["trick_id"], name: "index_questions_tricks_on_trick_id", using: :btree
 
   create_table "roles", force: true do |t|
     t.string   "name"
@@ -170,8 +173,8 @@ ActiveRecord::Schema.define(version: 20130823224812) do
     t.datetime "updated_at"
   end
 
-  add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
-  add_index "roles", ["name"], name: "index_roles_on_name"
+  add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id", using: :btree
+  add_index "roles", ["name"], name: "index_roles_on_name", using: :btree
 
   create_table "tricks", force: true do |t|
     t.string   "strategy"
@@ -189,14 +192,14 @@ ActiveRecord::Schema.define(version: 20130823224812) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["name"], name: "index_users_on_name", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["name"], name: "index_users_on_name", unique: true, using: :btree
 
   create_table "users_roles", id: false, force: true do |t|
     t.integer "user_id"
     t.integer "role_id"
   end
 
-  add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id"
+  add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id", using: :btree
 
 end
