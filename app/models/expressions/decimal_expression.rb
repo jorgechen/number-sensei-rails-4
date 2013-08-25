@@ -7,8 +7,4 @@ class DecimalExpression < Expression
   validates :value,
             :presence => true
 
-  protected
-    def renew_token
-      self.token = value.value
-    end
 end

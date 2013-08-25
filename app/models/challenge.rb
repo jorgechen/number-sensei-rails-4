@@ -5,7 +5,7 @@ class Challenge < ActiveRecord::Base
             #:order => 'challenge_question_pairings.numbering'
 
   has_many :challenge_question_pairings,
-           :order => 'challenge_question_pairings.numbering'
+           -> { order('challenge_question_pairings.numbering') }
 
   validates :checksum,
             :presence => true,
@@ -16,17 +16,16 @@ class Challenge < ActiveRecord::Base
             :uniqueness => true
 
 
-  before_validation :settle_checksum, :settle_name
+  before_validation :determine_checksum, :determine_name
   protected
 
-  def settle_name
+  def determine_name
     #TODO instead, randomly generate adjective noun pairs, e.g. 'Pretty Pig', 'Soaring Kite'
     self.name = "Challenge #{id}"
   end
 
-  def settle_checksum
-    self.checksum = id.to_s
-    #TODO instead of this, generate checksum using challenges
+  def determine_checksum
+    self.checksum = questions.map {|x| x.id.b(62).to_s(Radix::BASE::B62)}.join(' ')
   end
 
 end

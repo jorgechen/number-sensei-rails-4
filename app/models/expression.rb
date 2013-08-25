@@ -18,8 +18,16 @@ class Expression < ActiveRecord::Base
     token
   end
 
-  before_save :renew_token
+  def plain_text
+    ''
+  end
 
+  def html
+    ''
+  end
+
+
+  before_save :renew_token
   protected
   def renew_token
     self.token = '?' if self.token.blank?
