@@ -1,27 +1,16 @@
 .container.jumbotron
-
-  %h1
-    Number Sensei
-  %p
-    We are beta testing
-
-  %hr
-  -#.row
-  -#  .col-lg-8.col-lg-offset-2
-  -#    %a.btn-block.btn.btn-primary.btn-lg.big-button
-  -#      Play
-  -#
+  .page-header
+    %h1
+      Number Sensei
+      %small BETA
 
   .row
-    .col-lg-8.col-lg-offset-2
-      %a.btn-block.btn.btn-primary.btn-lg.big-button{href: dojo_path}
+    .col-lg-3.col-lg-offset-2
+      %a.btn-block.btn.btn-primary.btn-lg.gargantuan{href: dojo_path}
         The Dojo
 
-  %hr
-
-  .row
-    .col-lg-8.col-lg-offset-2
-      %a.btn-block.btn.btn-primary.btn-lg.big-button{href: downloads_path}
+    .col-lg-3
+      %a.btn-block.btn.btn-primary.btn-lg.gargantuan{href: downloads_path}
         Downloads
 .hidden
   %a{href: 'https://plus.google.com/110141026308030820854', rel: 'publisher'}

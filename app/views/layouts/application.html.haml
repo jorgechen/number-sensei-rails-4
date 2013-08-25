@@ -4,20 +4,19 @@
     %meta{:content => 'width=device-width, initial-scale=1.0', :name => 'viewport'}
       %title= content_for?(:title) ? yield(:title) : NumberSenseiRails4::Application.config.app_title
       %meta{:content => content_for?(:description) ? yield(:description) : NumberSenseiRails4::Application.config.app_description, :name => 'description'}
+        = stylesheet_link_tag '//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css', :media => 'all'
         = stylesheet_link_tag '//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css', :media => 'all'
+        = stylesheet_link_tag '//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css', :media => 'all'
         = stylesheet_link_tag 'application', :media => 'all'
         = javascript_include_tag 'application'
+        = javascript_include_tag '//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js'
         = csrf_meta_tags
         = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Rum+Raisin|Roboto+Slab:400,700|Open+Sans:400,700', :media => 'all'
         = yield(:head)
   %body{:class => "#{controller_name} #{action_name}"}
-    .navbar.navbar-fixed-top
-      .container
-        = render 'layouts/navigation'
+    = render 'layouts/navigation'
     #main{:role => 'main'}
       .container
         = render 'layouts/messages'
       = yield
     %footer
-      / ! end of .container
-    / ! end of #main
