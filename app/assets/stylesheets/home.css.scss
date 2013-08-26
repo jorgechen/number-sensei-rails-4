@@ -1,9 +1,40 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+a:hover,
+a:focus {
+  color: white;
+  text-decoration: none;
+}
+a {
+  color: #a6f3ff;
+  text-decoration: none;
+}
+
+body, h1, h2 {
+  font-family: 'Rum Raisin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
 
 .gargantuan {
   text-align: center;
-  vertical-align: middle;
-  font-size: 2.2em;
+  font-size: 2.1em;
+  padding-top: 20px;
+  padding-bottom: 60px;
+}
+
+#centerfold {
+  font-size: 10.0em;
+}
+
+
+.pretty {
+  font-family: 'Rum Raisin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #ffca10;
+}
+
+.green {
+  background-color: darkgreen;
+}
+
+.purple {
+  background-color: #40115c;
 }

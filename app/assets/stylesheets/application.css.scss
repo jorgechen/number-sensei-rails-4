@@ -50,9 +50,11 @@
 }
 
 .center {
-  float: none;
   margin-left: auto;
   margin-right: auto;
+  vertical-align: middle;
+  text-align: center;
+  float: none;
 }
 
 .center-text {
