@@ -5,10 +5,10 @@
     %th Name
     %th Date
     %th Grade Level
-    %th Difficulty
-    %th Event
+    -#%th Difficulty
+    -#%th Event
     %th Category
-    %th Location
+    -#%th Location
     %th
     %th
     %th
@@ -18,10 +18,10 @@
       %td= official_challenge.name
       %td= official_challenge.release_date.year
       %td= official_challenge.grade_level
-      %td= official_challenge.difficulty
-      %td= official_challenge.event
+      -#%td= official_challenge.difficulty
+      -#%td= official_challenge.event
       %td= official_challenge.category
-      %td= official_challenge.location
+      -#%td= official_challenge.location
       %td= link_to image_tag('/download_32.png'), official_challenge.upload.url
       - if admin_signed_in?
         %td= link_to 'Show', official_challenge
@@ -29,7 +29,6 @@
         %td= link_to 'Destroy', official_challenge, :method => :delete, :data => { :confirm => 'Are you sure?' }
         %td= official_challenge.upload
 
-%br
-
 - if admin_signed_in?
+  %br
   = link_to 'New Official challenge', new_official_challenge_path, class: 'btn btn-primary'

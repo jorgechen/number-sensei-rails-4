@@ -3,7 +3,6 @@ NumberSenseiRails4::Application.routes.draw do
   resources :lessons
 
   resources :courses
-  get '/dojo' => 'courses#index'
 
   resources :tricks
 
@@ -15,7 +14,10 @@ NumberSenseiRails4::Application.routes.draw do
 
   resources :challenge_categories
 
-  get '/downloads', to: 'official_challenges#index'
+  get '/learn', to: 'tricks#index'
+  get '/dojo', to: 'courses#index'
+  get '/challenge', to: 'challenges#index'
+  get '/download', to: 'official_challenges#index'
   resources :official_challenges
 
   root :to => "home#index"

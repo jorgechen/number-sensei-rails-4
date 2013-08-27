@@ -4,8 +4,10 @@
     %a.navbar-brand{:href => root_path}= NumberSenseiRails4::Application.config.app_title
 
   %ul.nav.navbar-nav
+    %li= link_to 'Learn', '/learn'
+    %li= link_to 'Challenge', '/challenge'
+    %li= link_to 'Download', '/download'
     %li= link_to 'Dojo', '/dojo'
-    %li= link_to 'Downloads', '/downloads'
 
   %ul.nav.navbar-nav.navbar-right
     - if user_signed_in?

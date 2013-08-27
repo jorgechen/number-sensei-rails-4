@@ -5,7 +5,7 @@ a:focus {
   text-decoration: none;
 }
 a {
-  color: #a6f3ff;
+  color: #cdf7ff;
   text-decoration: none;
 }
 
@@ -28,7 +28,10 @@ body, h1, h2 {
 
 .pretty {
   font-family: 'Rum Raisin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #ffca10;
+}
+
+.gold {
+  background-color: #daab16;
 }
 
 .green {
@@ -37,4 +40,8 @@ body, h1, h2 {
 
 .purple {
   background-color: #40115c;
+}
+
+.blue {
+  background-color: #0e085c;
 }
