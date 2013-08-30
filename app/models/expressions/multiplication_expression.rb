@@ -1,16 +1,16 @@
-class MultiplicationExpression < Expression
+class MultiplicationExpression < BinaryExpression
 
-  def plain_text
-    [children.first, token, children.last].join(' ')
+  def token_plain_text
+    '*'
   end
 
-  def html
-    plain_text
+  def token_html
+    '&times;'
   end
 
-  protected
-  def renew_token
-    self.token = 'x'
+  #@override
+  def evaluate
+    super
+    self.left.evaluate * self.right.evaluate
   end
-
 end

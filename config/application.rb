@@ -37,6 +37,8 @@ module NumberSenseiRails4
     config.autoload_paths = Dir[
         "#{config.root}/app/models/**/",
         #"#{config.root}/app/enums/**/",
+        #"#{config.root}/lib/**/",
+        "#{config.root}/lib",
     ]
 
     ######################
