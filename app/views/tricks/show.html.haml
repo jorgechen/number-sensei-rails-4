@@ -2,7 +2,7 @@
   %h1= @trick.name
 
   - @trick.questions.find_each do |q|
-    %p= raw q.html
+    %p= raw q.to_h
 
 
   - if admin_signed_in?

@@ -29,8 +29,14 @@ class Question < ActiveRecord::Base
   validates :answer_html,
             :uniqueness => true
 
+  # can be overridden
   def to_s
-    plain_text
+    plain_text + ' = '
+  end
+
+  # can be overridden
+  def to_h
+    html + ' = '
   end
 
   def answer

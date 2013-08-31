@@ -13,6 +13,13 @@ class Trick < ActiveRecord::Base
     @name
   end
 
+  def hint
+    if @hint.blank?
+      @hint = strategy.hint
+    end
+    @hint
+  end
+
   def to_s
     strategy.to_s
   end

@@ -3,22 +3,28 @@
     %h1
       Training Grounds
 
+  .row
+    - @tricks.find_each do |trick|
+      .col-lg-4
+        %ul.list-group
+          = link_to trick, class: 'list-group-item' do
+            %h3.list-group-item-heading
+              = trick.name
+            %p.list-group-item-text
+              = trick.hint
 
   - if admin_signed_in?
     %table.table
       %tr
         %th Strategy
         %th Name
-        %th
-        %th
-        %th
 
       - @tricks.each do |trick|
         %tr
           %td= trick.strategy
-          %td= trick.name
-          %td= link_to 'Show', trick
-          %td= link_to 'Edit', edit_trick_path(trick)
-          %td= link_to 'Destroy', trick, :method => :delete, :data => { :confirm => 'Are you sure?' }
+          %td= link_to trick.name, trick
+          %td
+            = link_to 'Edit', edit_trick_path(trick), class: 'btn btn-warning'
+            = link_to 'Destroy', trick, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn btn-danger'
 
     = link_to 'New Trick', new_trick_path, class: 'btn btn-success'
