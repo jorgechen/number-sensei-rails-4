@@ -17,6 +17,18 @@ class Expression < ActiveRecord::Base
            :class_name => 'Question',
            :foreign_key => 'answer_id'
 
+  def has_a? value
+    if value.is_a? Integer
+      self_and_descendants.detect do |expr|
+        expr.is_a? IntegerExpression and expr.number.value == value
+      end
+    elsif value.is_a? Float
+      self_and_descendants.detect do |expr|
+        expr.is_a? DecimalExpression and expr.number.value == value
+      end
+    end
+  end
+
   # @override
   def to_s
     plain_text

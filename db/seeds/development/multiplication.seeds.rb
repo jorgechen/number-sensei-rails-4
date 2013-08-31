@@ -5,10 +5,10 @@ lower = 1
 upper = 30
 
 (lower...upper).each do |i|
-  (1...50).each do |j|
+  (1...12).each do |j|
     q = Question::Multiplication.build i, j
     q.save!
-    puts "#{i},#{j} >>>>> #{q.plain_text}"
+    print "id#{q.id}\t"
   end
 end
 

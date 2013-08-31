@@ -2,6 +2,7 @@ class Question < ActiveRecord::Base
 
   has_and_belongs_to_many :tricks
 
+  #TODO optimize through eager loading?
   belongs_to :expression,
              :autosave => true
 
@@ -28,6 +29,9 @@ class Question < ActiveRecord::Base
   validates :answer_html,
             :uniqueness => true
 
+  def to_s
+    plain_text
+  end
 
   def answer
     if @answer.blank?

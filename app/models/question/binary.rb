@@ -1,4 +1,5 @@
 class Question::Binary < Question
+  self.abstract_class = true
 
   #############
   class << self

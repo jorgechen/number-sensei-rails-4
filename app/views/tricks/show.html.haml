@@ -1,12 +1,10 @@
-%p#notice= notice
+.container
+  %h1= @trick.name
 
-%p
-  %b Strategy:
-  = @trick.strategy
-%p
-  %b Name:
-  = @trick.name
+  - @trick.questions.find_each do |q|
+    %p= raw q.html
 
-= link_to 'Edit', edit_trick_path(@trick)
-\|
-= link_to 'Back', tricks_path
+
+  - if admin_signed_in?
+    = link_to 'Edit', edit_trick_path(@trick), class: 'btn btn-success'
+    = link_to 'Back', tricks_path, class: 'btn btn-default'

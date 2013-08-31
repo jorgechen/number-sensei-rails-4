@@ -3,23 +3,22 @@
     %h1
       Training Grounds
 
-  %table
-    %tr
-      %th Strategy
-      %th Name
-      %th
-      %th
-      %th
-
-    - @tricks.each do |trick|
-      %tr
-        %td= trick.strategy
-        %td= trick.name
-        %td= link_to 'Show', trick
-        %td= link_to 'Edit', edit_trick_path(trick)
-        %td= link_to 'Destroy', trick, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-  %br
 
   - if admin_signed_in?
+    %table.table
+      %tr
+        %th Strategy
+        %th Name
+        %th
+        %th
+        %th
+
+      - @tricks.each do |trick|
+        %tr
+          %td= trick.strategy
+          %td= trick.name
+          %td= link_to 'Show', trick
+          %td= link_to 'Edit', edit_trick_path(trick)
+          %td= link_to 'Destroy', trick, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
     = link_to 'New Trick', new_trick_path, class: 'btn btn-success'
