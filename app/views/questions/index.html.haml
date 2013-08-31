@@ -1,6 +1,8 @@
+
+
 %h1 Listing questions
 
-%table
+%table.table
   %tr
     %th Expression
     %th Answer
@@ -16,7 +18,7 @@
     %tr
       %td= question.expression
       %td= question.answer
-      %td= question.html
+      %td= raw question.html
       %td= question.plain_text
       %td= question.answer_html
       %td= question.answer_plain_text
@@ -26,4 +28,5 @@
 
 %br
 
-= link_to 'New Question', new_question_path
+- if admin_signed_in?
+  = link_to 'New Question', new_question_path

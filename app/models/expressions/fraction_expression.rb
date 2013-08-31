@@ -46,6 +46,7 @@ class FractionExpression < ValueExpression
   end
 
 
+  #TODO
   def *(other)
   end
 

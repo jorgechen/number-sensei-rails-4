@@ -12,12 +12,12 @@ class IntegerExpression < ValueExpression
 
   #@override
   def plain_text
-    value
+    value.to_s
   end
 
   #@override
   def html
-    value
+    value.to_s
   end
 
 
@@ -93,8 +93,9 @@ class IntegerExpression < ValueExpression
   ## Class methods
   ###################################
   class << self
-    def build(float_value)
-      self.new(number: (DecimalNumber.new value: float_value))
+    # @return [IntegerExpression] new instance with given value
+    def build(integer_value)
+      self.new(number: IntegerNumber.build(integer_value))
     end
   end
 end

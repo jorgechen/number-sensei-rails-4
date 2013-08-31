@@ -3,11 +3,11 @@ class Question::Binary < Question
   #############
   class << self
     # override this
-    def self.new_expression(left, right)
+    def new_expression(left, right)
     end
 
     #@return new question
-    def self.build(left_leaf, right_leaf)
+    def build(left_leaf, right_leaf)
 
       # new question
       x = self.new

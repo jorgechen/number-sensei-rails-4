@@ -48,13 +48,9 @@ class Expression < ActiveRecord::Base
     def new_from_value unknown
       x = nil
       if unknown.is_a? Integer
-        n = IntegerNumber.new value: unknown
-        x = IntegerExpression.new
-        x.value = n
+        x = IntegerExpression.build unknown
       elsif unknown.is_a? Float
-        n = DecimalNumber.new value: unknown
-        x = DecimalExpression.new
-        x.value = n
+        x = DecimalExpression.build unknown
       elsif unknown.is_a? Rational
         n = Fraction.new numerator: unknown.numerator, denominator: unknown.denominator
         #todo

@@ -10,7 +10,6 @@ class MultiplicationExpression < BinaryExpression
 
   #@override
   def evaluate
-    super
-    self.left.evaluate * self.right.evaluate
+    left.evaluate * right.evaluate
   end
 end

@@ -30,17 +30,17 @@ KnavUtil.print_with_padding 'Constants'
 end
 
 ########################################################################
-KnavUtil.print_with_padding 'IntegerNumber'
+KnavUtil.print_with_padding 'Integers'
 
 (-100..100).each do |i|
   IntegerNumber.create value: i
 end
 
 ########################################################################
-KnavUtil.print_with_padding 'Fraction'
+KnavUtil.print_with_padding 'Fractions'
 
-(-10..20).each do |numerator|
-  (1...30).each do |denominator|
+(10..20).each do |numerator|
+  (2...10).each do |denominator|
     Fraction.create numerator: numerator, denominator: denominator
   end
 end

@@ -4,5 +4,4 @@ class Question::Multiplication < Question::Binary
   def self.new_expression(left, right)
     MultiplicationExpression.build left, right
   end
-
 end

@@ -1,21 +1,27 @@
 class DecimalExpression < ValueExpression
-  
+
   has_one :number,
           :through => :expression_value_pairing,
           :source => :value,
           :source_type => 'DecimalNumber'
 
+  def number
+    if @number.blank?
+
+    end
+    @number
+  end
 
   def value
     number.value
   end
 
-  #@override
+  # @override
   def plain_text
     value
   end
   
-  #@override
+  # @override
   def html
     value
   end
@@ -94,7 +100,7 @@ class DecimalExpression < ValueExpression
   ###################################
   class << self
     def build(float_value)
-      self.new(number: (DecimalNumber.new value: float_value))
+      self.new(number: (DecimalNumber.build float_value))
     end
   end
 

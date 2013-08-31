@@ -1,15 +1,17 @@
 
-a:hover,
-a:focus {
+.home a:hover,
+.home a:focus {
   color: white;
   text-decoration: none;
 }
-a {
+.home a {
   color: #cdf7ff;
   text-decoration: none;
 }
 
-body, h1, h2 {
+.home body,
+.home h1,
+.home h2 {
   font-family: 'Rum Raisin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 

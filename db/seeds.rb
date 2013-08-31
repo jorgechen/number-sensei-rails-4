@@ -10,6 +10,6 @@ require 'sylvan_rails/knav_util'
 # See http://railsapps.github.io/rails-environment-variables.html
 KnavUtil.print_with_padding 'Roles'
 YAML.load(ENV['ROLES']).each do |role|
-  Role.find_by({name: role}, :without_protection => true)
+  Role.first_or_create!(name: role)
   puts 'role: ' << role
 end
