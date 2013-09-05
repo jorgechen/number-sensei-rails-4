@@ -1,6 +1,7 @@
 class Question < ActiveRecord::Base
 
-  has_and_belongs_to_many :tricks
+  has_many :tricks, :through => :questions_tricks
+  has_many :questions_tricks
 
   #TODO optimize through eager loading?
   belongs_to :expression,

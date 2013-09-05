@@ -36,7 +36,7 @@ module NumberSenseiRails4
     # load all models
     config.autoload_paths = Dir[
         "#{config.root}/app/models/**/",
-        "#{config.root}/app/enums/strategy/multiply_by125.rb",
+        "#{config.root}/app/enums/**/",
         #"#{config.root}/lib/**/",
         "#{config.root}/lib",
     ]
