@@ -8,7 +8,7 @@ class Strategy::MultiplyBy25 < Strategy
   end
 
   def question_qualifies?(q)
-    if q.is_a? Question::Multiplication and q.expression.is_a? MultiplicationExpression and q.expression.has_a? 25
+    if q.is_a? Question::Multiplication and q.expression.has_a? 25
       true
     end
   end

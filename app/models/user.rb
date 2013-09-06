@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :challenge_attempts
+
   before_save { self.email = email.downcase }
 
   rolify

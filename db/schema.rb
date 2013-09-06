@@ -11,10 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130831071438) do
+ActiveRecord::Schema.define(version: 20130905231322) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answer_attempts", force: true do |t|
+    t.integer  "challenge_attempt_id"
+    t.integer  "question_id"
+    t.string   "result"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "answer_attempts", ["challenge_attempt_id"], name: "index_answer_attempts_on_challenge_attempt_id", using: :btree
+  add_index "answer_attempts", ["question_id"], name: "index_answer_attempts_on_question_id", using: :btree
+
+  create_table "challenge_attempts", force: true do |t|
+    t.integer  "challenge_id"
+    t.integer  "user_id"
+    t.integer  "correct"
+    t.integer  "incorrect"
+    t.integer  "skipped"
+    t.integer  "total"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "challenge_attempts", ["challenge_id"], name: "index_challenge_attempts_on_challenge_id", using: :btree
+  add_index "challenge_attempts", ["user_id"], name: "index_challenge_attempts_on_user_id", using: :btree
 
   create_table "challenge_categories", force: true do |t|
     t.string   "name"

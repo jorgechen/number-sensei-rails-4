@@ -1,15 +1,16 @@
 class Strategy < ClassyEnum::Base
+  def self.enum
+    self.name.split('::').last.underscore.to_sym
+  end
 
+  # @abstract
   def name
     self.class.to_s.demodulize.titleize
   end
 
+  # @abstract
   def hint
     'Nobody knows how to do this.'
-  end
-
-  def self.enum
-    self.name.split('::').last.underscore.to_sym
   end
 
   # @return true if current trick can be used for given question
@@ -17,6 +18,7 @@ class Strategy < ClassyEnum::Base
   def question_qualifies?(question)
     false
   end
+
 end
 
 
@@ -29,7 +31,7 @@ end
 
 # This will allow reload! in Rails console to work
 # [Reference] https://github.com/beerlington/classy_enum/issues/9
-Strategy::MultiplyBy125
+Strategy::MultiplyBy5 #includes 5, 25, 125
 Strategy::CompareFractions
 Strategy::ReadRomanNumeral
 

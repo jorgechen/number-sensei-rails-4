@@ -1,5 +1,7 @@
 class Challenge < ActiveRecord::Base
 
+  has_many :challenge_attempts
+
   has_many :questions,
            :through => :challenge_question_pairings
             #:order => 'challenge_question_pairings.numbering'

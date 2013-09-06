@@ -1,5 +1,7 @@
 class Question < ActiveRecord::Base
 
+  has_many :answer_attempts
+
   has_many :tricks, :through => :questions_tricks
   has_many :questions_tricks
 
