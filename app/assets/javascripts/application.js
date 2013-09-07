@@ -13,7 +13,8 @@
 
  = require jquery
  = require jquery_ujs
- = require respond.min
+ = require bootstrap
+ require respond.min
  = require turbolinks
  = require_tree .
  */

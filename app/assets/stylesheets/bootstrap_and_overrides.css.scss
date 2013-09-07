@@ -1,4 +1,7 @@
-@import url('//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css');
+//@import url('//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css');
+//@import url('//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css');
+@import 'bootstrap.css';
+@import 'font-awesome.css';
 
 //////////////////////////////////////////////////////////////////
 /////////// Bootstrap overrides
@@ -6,6 +9,7 @@
 body {
   padding-top: 60px;
 }
+
 body, p {
   font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
@@ -17,7 +21,6 @@ h1, h2, h3, h4, h5, h6 {
 hr {
   border: solid rgba(255, 255, 255, 0);
 }
-
 
 //////////////////////////////////////////////////////////////////
 // Navigation bar
@@ -39,7 +42,6 @@ hr {
 .navbar-default .navbar-nav>li>a:focus {
   color: #f8f8ff;
 }
-
 
 // default text
 .navbar-default .navbar-nav>li>a,
