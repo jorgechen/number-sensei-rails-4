@@ -45,3 +45,12 @@ class Strategy::GCD < Strategy
   end
 end
 
+class Strategy::Memorize < Strategy
+  def name
+    'Basic Memorization'
+  end
+
+  def hint
+    'Just memorize whenever possible, like in the shower.'
+  end
+end

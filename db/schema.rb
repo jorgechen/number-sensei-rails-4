@@ -70,16 +70,14 @@ ActiveRecord::Schema.define(version: 20130905231322) do
 
   create_table "constants", force: true do |t|
     t.float    "value"
-    t.string   "plain_text"
-    t.string   "html"
+    t.string   "symbol"
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "constants", ["html"], name: "index_constants_on_html", unique: true, using: :btree
   add_index "constants", ["name"], name: "index_constants_on_name", unique: true, using: :btree
-  add_index "constants", ["plain_text"], name: "index_constants_on_plain_text", unique: true, using: :btree
+  add_index "constants", ["symbol"], name: "index_constants_on_symbol", unique: true, using: :btree
   add_index "constants", ["value"], name: "index_constants_on_value", unique: true, using: :btree
 
   create_table "courses", force: true do |t|

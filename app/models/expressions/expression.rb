@@ -29,48 +29,83 @@ class Expression < ActiveRecord::Base
     end
   end
 
-  # @override
+
+  #############################################
+  ## Subclass expressions should override:
+  #############################################
+
+  # @abstract
   def to_s
     plain_text
   end
 
-  ###################################
-  ## Abstract
-  ###################################
+  # @abstract
+  def to_i
+  end
+
+  # @abstract
+  def to_f
+  end
+
   # @abstract
   # @return [String]
   def plain_text
-    '?'
   end
 
   # @abstract
   # @return [String]
   def html
-    '?'
   end
 
   # @abstract
   # @return [ValueExpression]
   def evaluate
+    IntegerExpression.build(0) #default
+  end
+
+
+  #####################################
+  # Override if needed
+  #####################################
+
+  def *(other)
+    self.evaluate * other.evaluate
+  end
+
+  def /(other)
+    self.evaluate / other.evaluate
+  end
+
+  def +(other)
+    self.evaluate + other.evaluate
+  end
+
+  def -(other)
+    self.evaluate - other.evaluate
+  end
+
+  def **(other)
+    (self.evaluate) ** other.evaluate
   end
 
 
   #############
-  class << self
-    def new_from_value unknown
-      x = nil
-      if unknown.is_a? Integer
-        x = IntegerExpression.build unknown
-      elsif unknown.is_a? Float
-        x = DecimalExpression.build unknown
-      elsif unknown.is_a? Rational
-        n = Fraction.new numerator: unknown.numerator, denominator: unknown.denominator
-        #todo
-      end
-      x
+  def self.new_from_value unknown
+    x = nil
+    if unknown.is_a? Integer
+      x = IntegerExpression.build unknown
+    elsif unknown.is_a? Float
+      x = DecimalExpression.build unknown
+    elsif unknown.is_a? Rational
+      n = Fraction.new numerator: unknown.numerator, denominator: unknown.denominator
+      #todo
     end
+    x
   end
 
+
+  #####################################
+  #####################################
 
   before_save :save_token
   protected

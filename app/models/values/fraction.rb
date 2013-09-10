@@ -29,4 +29,10 @@ class Fraction < Value
   def rational
     Rational(numerator, denominator)
   end
+
+  # @return [Fraction] new and unsaved Fraction
+  def self.build(numerator, denominator)
+    where(numerator: numerator, denominator: denominator).first_or_create
+  end
+
 end

@@ -4,6 +4,7 @@ class Question::Binary < Question
   #############
   class << self
     # override this
+    # @abstract
     def new_expression(left, right)
     end
 
