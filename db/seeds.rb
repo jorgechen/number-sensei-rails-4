@@ -13,3 +13,18 @@ YAML.load(ENV['ROLES']).each do |role|
   Role.first_or_create!(name: role)
   puts 'role: ' << role
 end
+
+
+################################################
+## Called by environment-specific seeds:
+################################################
+
+def basic_multiplication(a_start, a_end, b_start, b_end) # 2 factors
+  (a_start..a_end).each do |i|
+    (b_start..b_end).each do |j|
+      q = Question::Multiplication.build i, j
+      q.save!
+      #print "id#{q.id}\t"
+    end
+  end
+end

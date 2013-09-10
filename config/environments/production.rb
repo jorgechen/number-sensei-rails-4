@@ -22,6 +22,10 @@ NumberSenseiRails4::Application.configure do
   # Disable Rails's static asset server (Apache or nginx will already do this).
   config.serve_static_assets = true #TODO configure content server to serve public/assets/*
 
+  # Other assets we should precompile:
+  config.assets.precompile += ['bootstrap.css', 'bootstrap.js', 'font-awesome.css']
+
+
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
