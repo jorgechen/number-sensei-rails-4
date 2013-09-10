@@ -5,28 +5,25 @@ KnavUtil.print_with_padding 'Constants'
     # Pi
     {
         value: 3.1415926535897932384626433832795,
-        plain_text: 'pi',
-        html:  '&pi;',
-        name:  'pi'
+        symbol: '&pi;',
+        name: 'pi'
     },
     # Euler's number
     {
         value: 2.7182818284590452353602874713527,
-        plain_text: 'e',
-        html:  'e',
-        name:  "Euler's number",
+        symbol: 'e',
+        name: "Euler's number",
     },
     # golden ratio
     {
         value: 1.61803398875,
-        plain_text: 'phi',
-        html:  '&phi;',
-        name:  'golden ratio',
+        symbol: '&phi;',
+        name: 'golden ratio',
     },
 ].each do |hash|
   c = Constant.new(hash)
   puts c.inspect
-  c.save
+  c.save!
 end
 
 ########################################################################

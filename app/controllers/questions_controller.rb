@@ -4,7 +4,7 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
-    @questions = Question.includes(:expression, :answer).first(10)
+    @questions = Question.includes(:expression, :answer).all
   end
 
   # GET /questions/1

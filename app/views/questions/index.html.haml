@@ -22,9 +22,9 @@
       %td= question.plain_text
       %td= question.answer_html
       %td= question.answer_plain_text
-      %td= link_to 'Show', question
+      %td= link_to 'Show', question_path(question)
       %td= link_to 'Edit', edit_question_path(question)
-      %td= link_to 'Destroy', question, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= link_to 'Destroy', question_path(question), :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 

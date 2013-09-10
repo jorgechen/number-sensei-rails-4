@@ -38,7 +38,7 @@ class Question < ActiveRecord::Base
   end
 
   # can be overridden
-  def to_h
+  def to_html
     html + ' = '
   end
 
