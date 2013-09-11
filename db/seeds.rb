@@ -13,3 +13,9 @@ YAML.load(ENV['ROLES']).each do |role|
   Role.first_or_create!(name: role)
   puts 'role: ' << role
 end
+
+# Seed admin user
+admin = User.new name: ENV['ADMIN_NAME'], email: ENV['ADMIN_EMAIL']
+admin.password = ENV['ADMIN_PASSWORD']
+admin.password_confirmation = ENV['ADMIN_PASSWORD']
+admin.save

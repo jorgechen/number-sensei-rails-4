@@ -23,9 +23,13 @@ end
 
 
 # Default
-class Strategy::None < Strategy
+class Strategy::Memorize < Strategy
+  def name
+    'Memorize'
+  end
+
   def hint
-    'Good luck!'
+    'Sometimes you gotta use the old-fashioned way.'
   end
 end
 
@@ -45,12 +49,3 @@ class Strategy::GCD < Strategy
   end
 end
 
-class Strategy::Memorize < Strategy
-  def name
-    'Basic Memorization'
-  end
-
-  def hint
-    'Just memorize whenever possible, like in the shower.'
-  end
-end
