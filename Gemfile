@@ -51,6 +51,7 @@ gem 'pg'
 gem 'rails-erd', '~> 1.1.0', :group => :development
 
 # authentication
+gem 'devise', '>= 3.0.0'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-twitter'
