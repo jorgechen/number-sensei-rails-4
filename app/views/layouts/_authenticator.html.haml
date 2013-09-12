@@ -1,0 +1,13 @@
+/ A modal that offers supported log in methods
+#authenticator.modal.fade{'aria-hidden' => 'true', 'aria-labelledby' => 'authenticatorLabel', :role => 'dialog', :tabindex => '-1'}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{'aria-hidden' => 'true', 'data-dismiss' => 'modal', :type => 'button'} ×
+        %h4.modal-title Sign in
+      .modal-body
+        = link_to 'Simple login', new_user_session_path
+        = link_to 'Login with Google', user_omniauth_authorize_path(:google_oauth2)
+
+:javascript
+  $('#authenticator').modal('show)

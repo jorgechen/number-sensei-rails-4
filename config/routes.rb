@@ -1,7 +1,7 @@
 NumberSenseiRails4::Application.routes.draw do
 
   # Sign up/in/out paths:
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => 'users/omniauth_callbacks' }
 
   resources :lessons
 

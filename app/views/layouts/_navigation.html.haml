@@ -8,7 +8,9 @@
       %span.icon-bar
     %a.navbar-brand{:href => root_path}= NumberSenseiRails4::Application.config.app_title
 
+
   .collapse.navbar-collapse.navbar-ex1-collapse
+
     %ul.nav.navbar-nav
       %li= link_to 'Learn', '/learn'
       %li= link_to 'Challenge', '/challenge'
@@ -16,18 +18,23 @@
       %li= link_to 'Dojo', '/dojo'
 
     %ul.nav.navbar-nav.navbar-right
+
       - if user_signed_in?
+        %li= link_to 'Logout', destroy_user_session_path, :method => 'delete'
         %li
-          = link_to 'Logout', destroy_user_session_path, :method => 'delete'
+          = link_to edit_user_registration_path do
+            %i.icon-user
+
       - else
+        %li= link_to 'Simple login', new_user_session_path
+        -#TODO enable later
+        -#%li
+        -#  %a{data: {target: '#authenticator', toggle: 'modal'}}
+        -#    Sign in
+        -#= render 'layouts/authenticator'
+        %li= link_to 'Register', new_user_registration_path
+
+
+      - if user_signed_in? and current_user.has_role? :admin
         %li
-          = link_to 'Login', new_user_session_path
-      - if user_signed_in?
-        %li
-          = link_to 'Edit account', edit_user_registration_path
-        - if current_user.has_role? :admin
-          %li
-            = link_to 'Admin', users_path
-      - else
-        %li
-          = link_to 'Sign up', new_user_registration_path
+          = link_to 'Admin', users_path
