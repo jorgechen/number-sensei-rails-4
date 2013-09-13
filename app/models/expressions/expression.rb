@@ -4,6 +4,7 @@ class Expression < ActiveRecord::Base
 
   # This model acts as a hierarchical tree
   acts_as_tree order: 'sort_order',
+               dependent: :destroy,
                with_advisory_lock: false
 
   has_one :expression_value_pairing,
@@ -93,12 +94,11 @@ class Expression < ActiveRecord::Base
   def self.new_from_value unknown
     x = nil
     if unknown.is_a? Integer
-      x = IntegerExpression.build unknown
+      x = IntegerExpression.build(unknown)
     elsif unknown.is_a? Float
-      x = DecimalExpression.build unknown
+      x = DecimalExpression.build(unknown)
     elsif unknown.is_a? Rational
-      n = Fraction.new numerator: unknown.numerator, denominator: unknown.denominator
-      #todo
+      x = FractionExpression.build(numerator: unknown.numerator, denominator: unknown.denominator)
     end
     x
   end

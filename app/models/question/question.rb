@@ -1,3 +1,4 @@
+# Question is a relationship between the problem and solution expressions.
 class Question < ActiveRecord::Base
 
   has_many :answer_attempts
@@ -7,11 +8,12 @@ class Question < ActiveRecord::Base
 
   #TODO optimize through eager loading?
   belongs_to :expression,
+             :dependent => :destroy,
              :autosave => true
 
   belongs_to :answer,
+             :dependent => :destroy,
              :class_name => 'Expression',
-             :foreign_key => 'answer_id',
              :autosave => true
 
   validates :expression_id,
@@ -20,16 +22,21 @@ class Question < ActiveRecord::Base
   validates :answer_id,
             :presence => true
 
+  #TODO why does unique check fail?
   validates :plain_text,
+            :presence => true,
             :uniqueness => true
 
   validates :html,
+            :presence => true,
             :uniqueness => true
 
   validates :answer_plain_text,
+            :presence => true,
             :uniqueness => true
 
   validates :answer_html,
+            :presence => true,
             :uniqueness => true
 
   # can be overridden
@@ -81,6 +88,10 @@ class Question < ActiveRecord::Base
 
   protected
   def confirm_associations
+    plain_text
+    html
+    answer_plain_text
+    answer_html
 
     # save new associations
 

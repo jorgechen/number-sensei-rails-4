@@ -38,6 +38,8 @@ end
 Strategy::MultiplyBy5 #includes 5, 25, 125
 Strategy::CompareFractions
 Strategy::ReadRomanNumeral
+Strategy::Square
+Strategy::Cube
 
 class Strategy::GCD < Strategy
   def name

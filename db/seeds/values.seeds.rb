@@ -21,9 +21,8 @@ KnavUtil.print_with_padding 'Constants'
         name: 'golden ratio',
     },
 ].each do |hash|
-  c = Constant.new(hash)
+  c = Constant.where(hash).first_or_create
   puts c.inspect
-  c.save!
 end
 
 ########################################################################

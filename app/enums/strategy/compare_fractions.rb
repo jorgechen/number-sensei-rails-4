@@ -4,7 +4,7 @@ class Strategy::CompareFractions < Strategy
   end
 
   def hint
-    'Divide by 2, then append 0 or 5.'
+    'The bigger fraction after crossing denominators.'
   end
 
   def question_qualifies?(q)

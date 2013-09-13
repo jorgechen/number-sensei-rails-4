@@ -29,14 +29,12 @@ class BinaryExpression < Expression
   def token_html
   end
 
-  # @override
   def plain_text
-    children.map { |x| x.plain_text }.compact.join("#{DELIMITER_PLAIN_TEXT}#{self.token_plain_text}#{DELIMITER_PLAIN_TEXT}")
+    "#{left.to_s}#{DELIMITER_PLAIN_TEXT}#{self.token_plain_text}#{DELIMITER_PLAIN_TEXT}#{right.to_s}"
   end
 
-  # @override
   def html
-    children.map { |x| x.html }.compact.join("#{DELIMITER_HTML}#{self.token_html}#{DELIMITER_HTML}")
+    "#{left.to_s}#{DELIMITER_PLAIN_TEXT}#{self.token_html}#{DELIMITER_PLAIN_TEXT}#{right.to_s}"
   end
 
   # @override
@@ -44,9 +42,9 @@ class BinaryExpression < Expression
   end
 
 
-  ################################################
-  ## Here be dragons!
-  ################################################
+  ################################################################################################
+  ## Myriad of helper functions
+  ################################################################################################
 
   # @param a [IntegerExpression]
   # @param b [IntegerExpression]
@@ -192,9 +190,9 @@ class BinaryExpression < Expression
         (base.denominator) ** exponent.to_i)
   end
 
-  ################################################
+  ################################################################################################
   ## Callbacks
-  ################################################
+  ################################################################################################
 
   validate :validate_children
 
