@@ -6,4 +6,8 @@ class Strategy::Cube < Strategy
   def hint
     'Multiply 3 of the same numbers.'
   end
+
+  def question_qualifies?(question)
+    question.is_a? Question::Exponential and question.expression.exponent == 3
+  end
 end

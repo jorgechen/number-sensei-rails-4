@@ -2,8 +2,7 @@
   %h1= @trick.name
 
   - @trick.questions.find_each do |q|
-    %p= raw q.to_html
-
+    = render partial: 'questions/question', locals: {question: q}
 
   - if admin_signed_in?
     = link_to 'Edit', edit_trick_path(@trick), class: 'btn btn-success'

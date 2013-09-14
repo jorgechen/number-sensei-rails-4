@@ -8,7 +8,7 @@ class Strategy::Square < Strategy
   end
 
   def question_qualifies?(question)
-    question.is_a? Question::Exponential
+    question.is_a? Question::Exponential and question.expression.exponent == 2
   end
 
 end

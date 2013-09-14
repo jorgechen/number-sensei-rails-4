@@ -5,6 +5,16 @@ class DecimalExpression < ValueExpression
           :source => :value,
           :source_type => 'DecimalNumber'
 
+  # Special case
+  # @override
+  def ==(other)
+    if other.is_a? Float
+      to_f == other
+    else
+      super
+    end
+  end
+
 
   # @return [Float]
   def value

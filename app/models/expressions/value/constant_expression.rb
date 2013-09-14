@@ -5,6 +5,15 @@ class ConstantExpression < ValueExpression
           :source => :value,
           :source_type => 'Constant'
 
+  # Special case
+  # @override
+  def ==(other)
+    if other.is_a? String
+      constant.name == other or constant.symbol == other
+    else
+      super
+    end
+  end
 
   # @return [Float]
   def value
@@ -13,10 +22,12 @@ class ConstantExpression < ValueExpression
 
   # @override
   def plain_text
+    constant.name
   end
 
   # @override
   def html
+    constant.symbol
   end
 
 

@@ -4,12 +4,20 @@ class IntegerExpression < ValueExpression
           :source => :value,
           :source_type => 'IntegerNumber'
 
+  # Special case
+  # @override
+  def ==(other)
+    if other.is_a? Integer
+      to_i == other
+    else
+      super
+    end
+  end
 
   # @return [Integer]
   def value
     number.value
   end
-
 
   #@override
   def plain_text
@@ -32,7 +40,6 @@ class IntegerExpression < ValueExpression
   def to_i
     value
   end
-
 
   def +(other)
     if other.is_a? IntegerExpression

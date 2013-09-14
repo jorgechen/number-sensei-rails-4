@@ -7,9 +7,14 @@ class FractionExpression < ValueExpression
   validates :fraction,
             :presence => true
 
-
-  def to_s
-    plain_text
+  # Special case
+  # @override
+  def ==(other)
+    if other.is_a? Rational
+      numerator == other.numerator and denominator == other.denominator
+    else
+      super
+    end
   end
 
   #@override
