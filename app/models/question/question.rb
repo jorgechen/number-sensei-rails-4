@@ -16,11 +16,11 @@ class Question < ActiveRecord::Base
              :class_name => 'Expression',
              :autosave => true
 
-  validates :expression_id,
-            :presence => true
+  #validates :expression_id,
+  #          :presence => true
 
-  validates :answer_id,
-            :presence => true
+  #validates :answer_id,
+  #          :presence => true
 
   #TODO why does unique check fail?
   validates :plain_text,
@@ -96,6 +96,7 @@ class Question < ActiveRecord::Base
     html
     answer_plain_text
     answer_html
+    answer
 
     # save new associations
 
@@ -106,7 +107,9 @@ class Question < ActiveRecord::Base
 
     if answer.new_record?
       answer.save!
+      puts 'hi'
       self.answer = answer
+      self.answer_id = self.answer.id
     end
   end
 

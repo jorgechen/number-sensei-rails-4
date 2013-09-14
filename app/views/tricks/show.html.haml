@@ -1,37 +1,42 @@
 
 .container
-  %h1= @trick.name
+  %h1
+    %i.icon-book
+    = @trick.name
 
-  %form.form-inline{:role => 'form'}
-    - @trick.questions.find_each do |q|
-      - qid = dom_id(q)
-      - cid = "#{qid}_check"
-      .row
-        .form-group
-          %label.control-label{:for => 'inputEmail1'}
-            = render partial: 'questions/question', locals: {question: q}
-        .form-group
-          %input.form-control{:placeholder => '', :type => 'text', :id => qid}/
-        .form-group
-          %span.wrong{id: cid}
-          :javascript
-            $('##{qid}').blur(function(){
-              var attempt = $(this).val();
-              var result = ''
-              if ('#{q.answer_html}' == attempt) {
-                result = '#{raw image_tag image_path('tick.png')}'
-              }
-              else {
-                // Show correct answer:
-                result = '#{q.answer_html}'
+  - if @trick.questions.blank?
+    %p Nothing here. Yet.
+  - else
+    %form.form-inline{:role => 'form'}
+      - @trick.questions.find_each do |q|
+        - qid = dom_id(q)
+        - cid = "#{qid}_check"
+        .row
+          .form-group
+            %label.control-label{:for => ''}
+              = render partial: 'questions/question', locals: {question: q}
+          .form-group
+            %input.form-control{:placeholder => '', :type => 'text', :id => qid}/
+          - if q.appendix
+            .form-group
+              %label.control-label{:for => ''}
+                = q.appendix
+          .form-group
+            %span.wrong{id: cid}
+            :javascript
+              $('##{qid}').blur(function(){
+                var attempt = $(this).val();
+                var result = ''
+                if ('#{q.answer_html}' == attempt) {
+                  result = '#{raw image_tag image_path('tick.png')}'
+                }
+                else {
+                  // Show correct answer:
+                  result = '#{q.answer_html}'
 
-              }
-              $('##{cid}').html(result)
-
-            })
-  .form-group
-    .pull-right
-      %button.btn.btn-default{:type => 'submit'} Done
+                }
+                $('##{cid}').html(result)
+              })
 
 
   - if admin_signed_in?

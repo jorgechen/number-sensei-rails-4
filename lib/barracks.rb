@@ -7,6 +7,7 @@ module Barracks
   def self.build_all(cfg)
 
     if (list = cfg[:multiplication])
+      puts 'Two factor multiplication'
       list.each do |h|
         Barracks::build_multiplication(h[:first_factor][:start],
                                        h[:first_factor][:finish],
@@ -16,8 +17,16 @@ module Barracks
     end
 
     if (list = cfg[:exponential])
+      puts 'Exponentials'
       list.each do |h|
         Barracks.build_exponential(h[:lower_base], h[:upper_base], h[:power])
+      end
+    end
+
+    if (list = cfg[:roman_numeral])
+      puts 'Roman Numerals'
+      list.each do |h|
+        Barracks.build_roman_numeral(h[:lower], h[:upper])
       end
     end
 
@@ -33,7 +42,7 @@ module Barracks
       (b_start..b_end).each do |j|
         q = Question::Multiplication.build i, j
         q.save
-        puts "id#{q.id}\t#{q.to_s}"
+        #puts "id#{q.id}\t#{q.to_s}"
       end
     end
   end
@@ -45,6 +54,16 @@ module Barracks
   def self.build_exponential(base_start, base_end, power)
     (base_start..base_end).each do |b|
       q = Question::Exponential.build(b, power)
+      q.save
+      #puts "#{q.to_s}"
+    end
+  end
+
+  # @param lower [Integer]
+  # @param upper [Integer]
+  def self.build_roman_numeral(lower, upper)
+    (lower..upper).each do |b|
+      q = Question::RomanNumeral.build(b)
       q.save
       puts "#{q.to_s}"
     end

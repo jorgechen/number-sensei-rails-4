@@ -12,35 +12,19 @@
     :second_factor:
       :start: 125
       :finish: 125
-
 :exponential:
   - :power: 2
     :lower_base: 1
-    :upper_base: 35
+    :upper_base: 25
   - :power: 3
     :lower_base: 1
-    :upper_base: 25
+    :upper_base: 10
   - :power: 4
     :lower_base: 2
     :upper_base: 7
   - :power: 5
     :lower_base: 2
     :upper_base: 4
-  - :power: 6
-    :lower_base: 2
-    :upper_base: 3
-  - :power: 7
-    :lower_base: 2
-    :upper_base: 2
-  - :power: 8
-    :lower_base: 2
-    :upper_base: 2
-  - :power: 9
-    :lower_base: 2
-    :upper_base: 2
-  - :power: 10
-    :lower_base: 2
-    :upper_base: 2
-  - :power: 11
-    :lower_base: 2
-    :upper_base: 2
+:roman_numeral:
+  - :lower: 1
+    :upper: 100

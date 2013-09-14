@@ -6,7 +6,6 @@
     :second_factor:
       :start: 1
       :finish: 9999
-
 :exponential:
   - :power: 2
     :lower_base: 1
@@ -38,3 +37,6 @@
   - :power: 11
     :lower_base: 2
     :upper_base: 2
+:roman_numeral:
+  - :lower: 1
+    :upper: 4999

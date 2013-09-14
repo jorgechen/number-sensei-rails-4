@@ -8,6 +8,6 @@ class Strategy::ReadRomanNumeral < Strategy
   end
 
   def question_qualifies?(q)
-
+    q.is_a? Question::RomanNumeral
   end
 end
