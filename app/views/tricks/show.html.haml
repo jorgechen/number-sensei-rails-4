@@ -1,8 +1,38 @@
+
 .container
   %h1= @trick.name
 
-  - @trick.questions.find_each do |q|
-    = render partial: 'questions/question', locals: {question: q}
+  %form.form-inline{:role => 'form'}
+    - @trick.questions.find_each do |q|
+      - qid = dom_id(q)
+      - cid = "#{qid}_check"
+      .row
+        .form-group
+          %label.control-label{:for => 'inputEmail1'}
+            = render partial: 'questions/question', locals: {question: q}
+        .form-group
+          %input.form-control{:placeholder => '', :type => 'text', :id => qid}/
+        .form-group
+          %span.wrong{id: cid}
+          :javascript
+            $('##{qid}').blur(function(){
+              var attempt = $(this).val();
+              var result = ''
+              if ('#{q.answer_html}' == attempt) {
+                result = '#{raw image_tag image_path('tick.png')}'
+              }
+              else {
+                // Show correct answer:
+                result = '#{q.answer_html}'
+
+              }
+              $('##{cid}').html(result)
+
+            })
+  .form-group
+    .pull-right
+      %button.btn.btn-default{:type => 'submit'} Done
+
 
   - if admin_signed_in?
     = link_to 'Edit', edit_trick_path(@trick), class: 'btn btn-success'

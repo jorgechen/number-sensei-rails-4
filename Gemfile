@@ -81,5 +81,8 @@ gem 'classy_enum'
 gem 'closure_tree'
 gem 'ranked-model'
 
-#
+# base conversion, also useful for unique IDs and checksums
 gem 'radix'
+
+# Roman Numerals, my favorite hmmm
+gem 'roman-numerals'

@@ -45,8 +45,12 @@ class Question < ActiveRecord::Base
   end
 
   # can be overridden
-  def to_html
+  def problem_statement
     html + ' = '
+  end
+
+  # The appendix is an optional part of the question appended after the answer box
+  def appendix
   end
 
   def answer
