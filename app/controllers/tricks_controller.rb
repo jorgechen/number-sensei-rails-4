@@ -5,6 +5,16 @@ class TricksController < ApplicationController
   # GET /tricks.json
   def index
     @tricks = Trick.all
+
+    if admin_signed_in?
+      # For admin:
+      @tricks = Trick.all
+    else
+      # For anonymous users:
+      @tricks = Trick.all.reject { |t| t.questions.count == 0 }
+    end
+
+
   end
 
   # GET /tricks/1

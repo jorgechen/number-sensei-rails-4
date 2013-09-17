@@ -19,8 +19,7 @@ NumberSenseiRails4::Application.routes.draw do
 
   get '/learn', to: 'tricks#index'
   get '/dojo', to: 'courses#index'
-  get '/challenge', to: 'challenges#index'
-  get '/download', to: 'official_challenges#index'
+  get '/downloads', to: 'official_challenges#index'
   resources :official_challenges
 
   root :to => 'home#index'

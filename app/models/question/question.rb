@@ -107,9 +107,7 @@ class Question < ActiveRecord::Base
 
     if answer.new_record?
       answer.save!
-      puts 'hi'
       self.answer = answer
-      self.answer_id = self.answer.id
     end
   end
 
