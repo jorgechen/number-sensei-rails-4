@@ -1,5 +1,6 @@
-# Asks you to convert a Roman numeral to Arabic
-class Question::RomanNumeral < Question
+# Convert Arabic numeral to Roman numeral
+# Example: 783 = ______ (Roman numeral)
+class Question::ArabicToRomanNumeral < Question
 
   def roman
     RomanNumerals.to_roman(expression.to_i)
@@ -10,16 +11,26 @@ class Question::RomanNumeral < Question
   end
 
   def appendix
-    '(Arabic numeral)'
+    '(Roman numeral)'
   end
 
   def plain_text
-    roman
+    arabic.to_s
   end
 
   def html
-    roman
+    arabic.to_s
   end
+
+  def answer_plain_text
+    roman.to_s
+  end
+
+  def answer_html
+    roman.to_s
+  end
+
+
 
   def self.build(arabic)
     x = self.new

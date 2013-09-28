@@ -28,3 +28,6 @@
 :roman_numeral:
   - :lower: 1
     :upper: 100
+:arabic_to_roman_numeral:
+  - :lower: 1
+    :upper: 1000

@@ -40,3 +40,6 @@
 :roman_numeral:
   - :lower: 1
     :upper: 4999
+:arabic_to_roman_numeral:
+  - :lower: 1
+    :upper: 4999

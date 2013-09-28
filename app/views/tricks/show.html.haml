@@ -27,7 +27,7 @@
               $('##{qid}').blur(function(){
                 var attempt = $(this).val();
                 var result = ''
-                if ('#{q.answer_html}' == attempt) {
+                if ('#{q.answer_html}'.toLowerCase() == attempt.toLowerCase()) {
                   result = '#{raw image_tag image_path('tick.png')}'
                 }
                 else {

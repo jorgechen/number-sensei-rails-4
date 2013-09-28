@@ -65,6 +65,16 @@ module Barracks
     (lower..upper).each do |b|
       q = Question::RomanNumeral.build(b)
       q.save
+      #puts "#{q.to_s}"
+    end
+  end
+
+  # @param lower [Integer]
+  # @param upper [Integer]
+  def self.build_arabic_to_roman_numeral(lower, upper)
+    (lower..upper).each do |b|
+      q = Question::ArabicToRomanNumeral.build(b)
+      q.save
       puts "#{q.to_s}"
     end
   end

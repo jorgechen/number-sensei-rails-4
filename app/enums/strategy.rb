@@ -40,6 +40,7 @@ Strategy::MultiplyBy25
 Strategy::MultiplyBy125
 Strategy::CompareFractions
 Strategy::ReadRomanNumeral
+Strategy::WriteRomanNumeral
 Strategy::Square
 Strategy::Cube
 
