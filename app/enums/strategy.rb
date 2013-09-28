@@ -38,6 +38,9 @@ end
 Strategy::MultiplyBy5
 Strategy::MultiplyBy25
 Strategy::MultiplyBy125
+Strategy::MultiplyBy11
+Strategy::MultiplyBy12
+
 Strategy::CompareFractions
 Strategy::ReadRomanNumeral
 Strategy::WriteRomanNumeral

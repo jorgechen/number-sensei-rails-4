@@ -6,16 +6,6 @@ module Barracks
   # Builds everything with the given configuration hash
   def self.build_all(cfg)
 
-    if (list = cfg[:multiplication])
-      puts 'Two factor multiplication'
-      list.each do |h|
-        Barracks::build_multiplication(h[:first_factor][:start],
-                                       h[:first_factor][:finish],
-                                       h[:second_factor][:start],
-                                       h[:second_factor][:finish])
-      end
-    end
-
     if (list = cfg[:exponential])
       puts 'Exponentials'
       list.each do |h|

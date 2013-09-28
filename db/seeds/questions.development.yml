@@ -1,17 +1,17 @@
 ---
 :multiplication:
-  - :first_factor:
-      :start: 11
+#  - :first_factor: # Multiply by 5, 25, 11-19; TODO separate these
+#      :start: 11
+#      :finish: 99
+#    :second_factor:
+#      :start: 5
+#      :finish: 25
+  - :first_factor: # Multiply by 125
+      :start: 32
       :finish: 99
     :second_factor:
-      :start: 5
-      :finish: 25
-#  - :first_factor:
-#      :start: 32
-#      :finish: 38
-#    :second_factor:
-#      :start: 125
-#      :finish: 125
+      :start: 125
+      :finish: 125
 :exponential:
   - :power: 2
     :lower_base: 1

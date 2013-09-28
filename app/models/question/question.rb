@@ -92,6 +92,8 @@ class Question < ActiveRecord::Base
 
   protected
   def confirm_associations
+
+    #TODO fix this, this implementation does not actually save these rows to the DB!!!
     plain_text
     html
     answer_plain_text
