@@ -24,6 +24,9 @@ NumberSenseiRails4::Application.routes.draw do
 
   root :to => 'home#index'
 
+  # clock demo
+  get '/clock', to: 'home#clock'
+
   resources :users, :only => [:index, :show, :edit, :update ]
   #get '/auth/:provider/callback' => 'sessions#create'
   #get '/signin' => 'sessions#new', :as => :signin

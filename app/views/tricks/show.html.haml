@@ -1,4 +1,3 @@
-
 .container
   %h1
     %i.icon-book
@@ -27,13 +26,15 @@
               $('##{qid}').blur(function(){
                 var attempt = $(this).val();
                 var result = ''
-                if ('#{q.answer_html}'.toLowerCase() == attempt.toLowerCase()) {
-                  result = '#{raw image_tag image_path('tick.png')}'
-                }
-                else {
-                  // Show correct answer:
-                  result = '#{q.answer_html}'
-
+                if (attempt)
+                {
+                  if ('#{q.answer_html}'.toLowerCase() == attempt.toLowerCase()) {
+                    result = '#{raw image_tag image_path('tick.png')}'
+                  }
+                  else {
+                    // Show correct answer:
+                    result = '#{q.answer_html}'
+                  }
                 }
                 $('##{cid}').html(result)
               })
