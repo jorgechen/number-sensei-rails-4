@@ -16,28 +16,19 @@ class Question < ActiveRecord::Base
              :class_name => 'Expression',
              :autosave => true
 
-  #validates :expression_id,
-  #          :presence => true
-
-  #validates :answer_id,
-  #          :presence => true
-
-  #TODO why does unique check fail?
+  # The problem statement should be unique
   validates :plain_text,
             :presence => true,
             :uniqueness => true
-
   validates :html,
             :presence => true,
             :uniqueness => true
 
   validates :answer_plain_text,
-            :presence => true,
-            :uniqueness => true
+            :presence => true
 
   validates :answer_html,
-            :presence => true,
-            :uniqueness => true
+            :presence => true
 
   # can be overridden
   def to_s
@@ -53,52 +44,17 @@ class Question < ActiveRecord::Base
   def appendix
   end
 
-  def answer
-    if @answer.blank?
-      @answer = expression.evaluate
-    end
-    @answer
-  end
-
-  def plain_text
-    if @plain_text.blank?
-      @plain_text = expression.plain_text
-    end
-    @plain_text
-  end
-
-  def html
-    if @html.blank?
-      @html = expression.html
-    end
-    @html
-  end
-
-  def answer_plain_text
-    if @answer_plain_text.blank?
-      @answer_plain_text = answer.plain_text
-    end
-    @answer_plain_text
-  end
-
-  def answer_html
-    if @answer_html.blank?
-      @answer_html = answer.html
-    end
-    @answer_html
-  end
 
   before_validation :confirm_associations, :confirm_answer
 
   protected
   def confirm_associations
 
-    #TODO fix this, this implementation does not actually save these rows to the DB!!!
-    plain_text
-    html
-    answer_plain_text
-    answer_html
-    answer
+    self.plain_text = expression.plain_text
+    self.html = expression.html
+    self.answer = expression.evaluate
+    self.answer_plain_text = answer.plain_text
+    self.answer_html = answer.html
 
     # save new associations
 

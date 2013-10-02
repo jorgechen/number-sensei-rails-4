@@ -1,8 +1,8 @@
-#after :questions do #TODO uncomment later
+require 'sylvan_rails/knav_util'
 
-  require 'sylvan_rails/knav_util'
-
+after :questions do
   KnavUtil.print_with_padding 'Tricks'
+
 
   questions = Question.all
 
@@ -18,4 +18,4 @@
     end
   end
 
-#end
+end

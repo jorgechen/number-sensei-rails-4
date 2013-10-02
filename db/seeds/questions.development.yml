@@ -1,11 +1,23 @@
 ---
 :multiplication:
-#  - :first_factor: # Multiply by 5, 25, 11-19; TODO separate these
-#      :start: 11
-#      :finish: 99
-#    :second_factor:
-#      :start: 5
-#      :finish: 25
+  - :first_factor: # Multiply by 5
+      :start: 11
+      :finish: 99
+    :second_factor:
+      :start: 5
+      :finish: 5
+  - :first_factor: # Multiply by 25
+      :start: 11
+      :finish: 99
+    :second_factor:
+      :start: 25
+      :finish: 25
+  - :first_factor: # Multiply by 11, 12 ... 19
+      :start: 11
+      :finish: 99
+    :second_factor:
+      :start: 11
+      :finish: 19
   - :first_factor: # Multiply by 125
       :start: 32
       :finish: 99
@@ -30,4 +42,4 @@
     :upper: 100
 :arabic_to_roman_numeral:
   - :lower: 1
-    :upper: 1000
+    :upper: 100

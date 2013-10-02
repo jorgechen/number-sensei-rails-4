@@ -3,23 +3,44 @@
 ################################################
 module Barracks
 
-  # Builds everything with the given configuration hash
-  def self.build_all(cfg)
+  def self.data()
+    YAML::load_file(File.join(Rails.root, 'db', 'seeds', "questions.development.yml"))
+    #YAML::load_file(File.join(Rails.root, 'db', 'seeds', "questions.#{Rails.env}.yml")) #TODO use this
+  end
 
-    if (list = cfg[:exponential])
+  # Builds everything with the given configuration hash
+  def self.build_all(data)
+
+    if (list = data[:exponential])
       puts 'Exponentials'
       list.each do |h|
         Barracks.build_exponential(h[:lower_base], h[:upper_base], h[:power])
       end
     end
 
-    if (list = cfg[:roman_numeral])
+    if (list = data[:roman_numeral])
       puts 'Roman Numerals'
       list.each do |h|
         Barracks.build_roman_numeral(h[:lower], h[:upper])
       end
     end
 
+    if (list = data[:arabic_to_roman_numeral])
+      puts 'Arabic to Roman Numerals'
+      list.each do |h|
+        Barracks.build_arabic_to_roman_numeral(h[:lower], h[:upper])
+      end
+    end
+
+    if (list = data[:multiplication])
+      puts 'Two factor multiplication'
+      list.each do |h|
+        Barracks::build_multiplication(h[:first_factor][:start],
+                                       h[:first_factor][:finish],
+                                       h[:second_factor][:start],
+                                       h[:second_factor][:finish])
+      end
+    end
   end
 
   # 2 factor multiplication
@@ -31,8 +52,9 @@ module Barracks
     (a_start..a_end).each do |i|
       (b_start..b_end).each do |j|
         q = Question::Multiplication.build i, j
-        q.save
-        #puts "id#{q.id}\t#{q.to_s}"
+        if q.save
+          puts "id#{q.id}\t#{q.to_s}"
+        end
       end
     end
   end
@@ -44,8 +66,9 @@ module Barracks
   def self.build_exponential(base_start, base_end, power)
     (base_start..base_end).each do |b|
       q = Question::Exponential.build(b, power)
-      q.save
-      #puts "#{q.to_s}"
+      if q.save
+        puts "#{q.to_s}"
+      end
     end
   end
 
@@ -54,8 +77,9 @@ module Barracks
   def self.build_roman_numeral(lower, upper)
     (lower..upper).each do |b|
       q = Question::RomanNumeral.build(b)
-      q.save
-      #puts "#{q.to_s}"
+      if q.save
+        puts "#{q.to_s}"
+      end
     end
   end
 
@@ -64,8 +88,9 @@ module Barracks
   def self.build_arabic_to_roman_numeral(lower, upper)
     (lower..upper).each do |b|
       q = Question::ArabicToRomanNumeral.build(b)
-      q.save
-      puts "#{q.to_s}"
+      if q.save
+        puts "#{q.to_s}"
+      end
     end
   end
 

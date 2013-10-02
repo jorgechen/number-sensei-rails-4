@@ -9,7 +9,10 @@ KnavUtil.print_with_padding 'ChallengeCategory'
     'other',
 ].each do |c|
   challenge_category = ChallengeCategory.where(name: c).first_or_create
-  puts challenge_category.inspect
+  if challenge_category.new_record?
+    puts "added new category: #{challenge_category.inspect}"
+  end
+
 end
 
 
