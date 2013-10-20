@@ -1,5 +1,5 @@
 # Seed questions based on current environment
-# If in development, it takes millenniums to seed 10k questions, therefore we need to cut that down.
+# TODO use seed-fu or such to seed many questions in the background
 
 KnavUtil.print_with_padding "Questions in #{Rails.env} mode"
 

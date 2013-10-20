@@ -16,8 +16,8 @@ class BinaryExpression < Expression
 
   def self.build left, right
     x = self.new
-    x.left = left
-    x.right = right
+    x.left = Expression.new_from_value(left)
+    x.right = Expression.new_from_value(right)
     x
   end
 

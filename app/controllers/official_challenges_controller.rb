@@ -4,6 +4,8 @@ class OfficialChallengesController < ApplicationController
   # GET /official_challenges
   # GET /official_challenges.json
   def index
+    flash[:notice]= 'This page is still in the works'
+
     @official_challenges = OfficialChallenge.all
   end
 

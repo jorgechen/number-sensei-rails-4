@@ -9,14 +9,17 @@ class Question::RomanNumeral < Question
     expression.to_i
   end
 
+  # @override
   def appendix
     '(Arabic numeral)'
   end
 
+  # @override
   def plain_text
     roman
   end
 
+  # @override
   def html
     roman
   end

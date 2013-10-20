@@ -1,5 +1,6 @@
 # Question is a relationship between the problem and solution expressions.
 class Question < ActiveRecord::Base
+  has_and_belongs_to_many :chunks
 
   has_many :answer_attempts
 
@@ -44,20 +45,23 @@ class Question < ActiveRecord::Base
   def appendix
   end
 
+  def answer_match
+    answer_html
+  end
 
-  before_validation :confirm_associations, :confirm_answer
+
+  before_validation :confirm_answer, :confirm_associations
 
   protected
   def confirm_associations
 
     self.plain_text = expression.plain_text
     self.html = expression.html
-    self.answer = expression.evaluate
+
     self.answer_plain_text = answer.plain_text
     self.answer_html = answer.html
 
     # save new associations
-
     if expression.new_record?
       expression.save!
       self.expression = expression
@@ -71,7 +75,7 @@ class Question < ActiveRecord::Base
 
   # @abstract
   def confirm_answer
-    if answer.blank?
+    if answer.blank? and expression
       self.answer = expression.evaluate
     end
   end

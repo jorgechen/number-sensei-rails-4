@@ -24,4 +24,5 @@ class Trick < ActiveRecord::Base
   def to_s
     strategy.to_s
   end
+
 end

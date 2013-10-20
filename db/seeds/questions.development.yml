@@ -37,6 +37,15 @@
   - :power: 5
     :lower_base: 2
     :upper_base: 4
+:radix_conversion:
+  - :decimal_from: 2
+    :decimal_to: 64
+    :radix_from: 4
+    :radix_to: 10
+  - :decimal_from: 2
+    :decimal_to: 64
+    :radix_from: 10
+    :radix_to: 4
 :roman_numeral:
   - :lower: 1
     :upper: 100

@@ -46,6 +46,7 @@ Strategy::ReadRomanNumeral
 Strategy::WriteRomanNumeral
 Strategy::Square
 Strategy::Cube
+Strategy::RadixConversion
 
 class Strategy::GCD < Strategy
   def name

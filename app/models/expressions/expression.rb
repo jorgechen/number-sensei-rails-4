@@ -92,7 +92,7 @@ class Expression < ActiveRecord::Base
 
   #############
   def self.new_from_value unknown
-    x = nil
+    x = unknown
     if unknown.is_a? Integer
       x = IntegerExpression.build(unknown)
     elsif unknown.is_a? Float

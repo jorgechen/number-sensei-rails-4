@@ -8,7 +8,7 @@ class Question::Binary < Question
     def new_expression(left, right)
     end
 
-    #@return new question
+    # @return new question
     def build(left_leaf, right_leaf)
 
       # new question

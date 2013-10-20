@@ -5,20 +5,4 @@ class Question::Multiplication < Question::Binary
     MultiplicationExpression.build left, right
   end
 
-  #validates :plain_text,
-  #          :presence => true,
-  #          :uniqueness => true
-  #
-  #validates :html,
-  #          :presence => true,
-  #          :uniqueness => true
-  #
-  #validates :answer_plain_text,
-  #          :presence => true,
-  #          :uniqueness => true
-  #
-  #validates :answer_html,
-  #          :presence => true,
-  #          :uniqueness => true
-
 end

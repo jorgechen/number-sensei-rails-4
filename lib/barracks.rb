@@ -18,6 +18,13 @@ module Barracks
       end
     end
 
+    if (list = data[:radix_conversion])
+      puts 'Radix conversions'
+      list.each do |h|
+        Barracks.build_radix_conversion(h[:decimal_from], h[:decimal_to], h[:radix_from], h[:radix_to])
+      end
+    end
+
     if (list = data[:roman_numeral])
       puts 'Roman Numerals'
       list.each do |h|
@@ -72,6 +79,19 @@ module Barracks
     end
   end
 
+  # @param decimal_from [Integer]
+  # @param decimal_to   [Integer]
+  # @param radix_from   [Integer]
+  # @param radix_to     [Integer]
+  def self.build_radix_conversion(decimal_from, decimal_to, radix_from, radix_to)
+    (decimal_from..decimal_to).each do |b|
+      q = Question::RadixConversion.build(b, radix_from, radix_to)
+      if q.save
+        puts "#{q.to_s}"
+      end
+    end
+  end
+
   # @param lower [Integer]
   # @param upper [Integer]
   def self.build_roman_numeral(lower, upper)
@@ -93,5 +113,7 @@ module Barracks
       end
     end
   end
+
+
 
 end

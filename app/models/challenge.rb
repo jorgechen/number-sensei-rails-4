@@ -1,4 +1,5 @@
 class Challenge < ActiveRecord::Base
+  has_and_belongs_to_many :chunks
 
   has_many :challenge_attempts
 
@@ -14,7 +15,7 @@ class Challenge < ActiveRecord::Base
             :uniqueness => true
 
   validates :name,
-            :presence => true,
+            #:presence => true,
             :uniqueness => true
 
 
@@ -28,6 +29,24 @@ class Challenge < ActiveRecord::Base
 
   def determine_checksum
     self.checksum = questions.map {|x| x.id.b(62).to_s(Radix::BASE::B62)}.join(' ')
+  end
+
+
+  def self.make(trick)
+    # random questions
+    list_of_questions = []
+    # NOTE: try to avoid random, due to efficiency
+    #TODO
+
+    self.make_with_questions(trick, list_of_questions)
+  end
+
+
+  def self.make_with_questions(trick, list_of_questions)
+    chunk = Challenge.new
+    chunk.questions << list_of_questions
+    chunk.save
+    chunk
   end
 
 end
