@@ -1,5 +1,18 @@
 # Number Sensei
 
-[Number Sensei](http://numbersensei.com) is a direct result of the lack of engaging software for extracurricular math in American K-12 education. When I tried in math club in high school, it was nigh impossible to understand the content because it was very organized, very disengaging, or very hard for mere humans (much less kids) to read. As a result, I was allergic to mental math despite loving it oh so dearly in elementary. Now I am back with a vengeance to rectify this grievous error.
+Number Sensei, aka #Sensei, is a direct result of the lack of engaging software for extracurricular math in American K-12 education. 
 
-Our content is based on popular math competitions like the Number Sense, Mathematics, and Science contests held in real school systems.
+When I tried math club in high school, it was nigh impossible to understand the content because it was very disorganized, very disengaging, and very hard for mere humans to read. As a result, I was allergic to mental math despite loving it dearly before age 10. Now I am back with a vengeance to rectify this grievous problem.
+
+Our content is based on the Number Sense, Mathematics, and similar competitions that are popular in Texas schools.
+
+
+See [Number Sensei](http://numbersensei.org)
+
+
+======
+### Updates
+
+* **2013-11-6**
+  * Project in early development for 3 months in my spare time. 
+  * Many aspects of the site are incomplete or and gradually user-tested by my students.
