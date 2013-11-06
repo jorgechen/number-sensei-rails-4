@@ -5,4 +5,9 @@ class HomeController < ApplicationController
 
   def clock
   end
+
+
+  def seed
+
+  end
 end

@@ -48,7 +48,7 @@ gem 'hirb'
 gem 'pg'
 
 # database visualizer
-gem 'rails-erd', '~> 1.1.0', :group => :development
+#gem 'rails-erd' # enable when we want to generate a ERD diagram with visualize_schema.sh
 
 # authentication
 gem 'devise', '>= 3.0.0'
@@ -86,3 +86,6 @@ gem 'radix'
 
 # Roman Numerals, my favorite hmmm
 gem 'roman-numerals'
+
+# background jobs
+gem 'sidekiq'
