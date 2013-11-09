@@ -89,3 +89,5 @@ gem 'roman-numerals'
 
 # background jobs
 gem 'sidekiq'
+gem 'sinatra', require: false # for Sidekiq's web UI
+gem 'slim' # for Sidekiq's web UI
