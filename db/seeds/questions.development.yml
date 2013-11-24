@@ -1,54 +1,54 @@
 ---
-:multiplication:
-  - :first_factor: # Multiply by 5
-      :start: 11
-      :finish: 99
-    :second_factor:
-      :start: 5
-      :finish: 5
-  - :first_factor: # Multiply by 25
-      :start: 11
-      :finish: 99
-    :second_factor:
-      :start: 25
-      :finish: 25
-  - :first_factor: # Multiply by 11, 12 ... 19
-      :start: 11
-      :finish: 99
-    :second_factor:
-      :start: 11
-      :finish: 19
-  - :first_factor: # Multiply by 125
-      :start: 32
-      :finish: 99
-    :second_factor:
-      :start: 125
-      :finish: 125
-:exponential:
-  - :power: 2
-    :lower_base: 1
-    :upper_base: 25
-  - :power: 3
-    :lower_base: 1
-    :upper_base: 10
-  - :power: 4
-    :lower_base: 2
-    :upper_base: 7
-  - :power: 5
-    :lower_base: 2
-    :upper_base: 4
-:radix_conversion:
-  - :decimal_from: 2
-    :decimal_to: 64
-    :radix_from: 4
-    :radix_to: 10
-  - :decimal_from: 2
-    :decimal_to: 64
-    :radix_from: 10
-    :radix_to: 4
-:roman_numeral:
-  - :lower: 1
-    :upper: 100
-:arabic_to_roman_numeral:
-  - :lower: 1
-    :upper: 100
+multiplication:
+  - first_factor: # Multiply by 5
+      start: 11
+      finish: 99
+    second_factor:
+      start: 5
+      finish: 5
+  - first_factor: # Multiply by 25
+      start: 11
+      finish: 99
+    second_factor:
+      start: 25
+      finish: 25
+  - first_factor: # Multiply by 11, 12 ... 19
+      start: 11
+      finish: 99
+    second_factor:
+      start: 11
+      finish: 19
+  - first_factor: # Multiply by 125
+      start: 32
+      finish: 99
+    second_factor:
+      start: 125
+      finish: 125
+exponential:
+  - power: 2
+    lower_base: 1
+    upper_base: 25
+  - power: 3
+    lower_base: 1
+    upper_base: 10
+  - power: 4
+    lower_base: 2
+    upper_base: 7
+  - power: 5
+    lower_base: 2
+    upper_base: 4
+radix_conversion:
+  - decimal_from: 2
+    decimal_to: 64
+    radix_from: 4
+    radix_to: 10
+  - decimal_from: 2
+    decimal_to: 64
+    radix_from: 10
+    radix_to: 4
+roman_numeral:
+  - lower: 1
+    upper: 100
+arabic_to_roman_numeral:
+  - lower: 1
+    upper: 100

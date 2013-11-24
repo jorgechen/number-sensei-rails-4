@@ -1,0 +1,35 @@
+.container
+  %h2 Seed questions in background
+
+  - data = Barracks::data
+
+  %table.table
+    - data.each do |key, values|
+      - current_id = "#{key}"
+      %tr
+        %td
+          %h3= key
+
+        %td
+          = link_to 'Seed', '#', class: 'btn btn-primary', id: current_id
+
+        :coffee
+          $('##{current_id}').click ->
+
+            # Prevent page reloading unintentionally.
+            event.preventDefault()
+
+            # Start seeding for the given question set.
+            # The button will be disabled if request is received.
+            $.ajax
+              url: '/seed'
+              type: 'put'
+              dataType: 'html'
+              contentType: 'application/json'
+              data: JSON.stringify({ #{key} : #{values.to_json} })
+              error: (jqXHR, textStatus, errorThrown) ->
+                alert (jqXHR.status + " " + textStatus + " - " + errorThrown)
+              success: (data, textStatus, jqXHR) ->
+                $('##{current_id}').attr('disabled', 'disabled')
+
+

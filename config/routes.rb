@@ -1,6 +1,6 @@
 NumberSenseiRails4::Application.routes.draw do
 
-  # Sign up/in/out paths:
+  # User authentication:
   devise_for :users, :controllers => { :omniauth_callbacks => 'users/omniauth_callbacks' }
 
   resources :lessons
@@ -20,6 +20,7 @@ NumberSenseiRails4::Application.routes.draw do
   get '/learn', to: 'tricks#index'
   get '/dojo', to: 'courses#index'
   get '/downloads', to: 'official_challenges#index'
+  get '/play_god', to: 'home#play_god'
   resources :official_challenges
 
   root :to => 'home#index'
@@ -32,4 +33,10 @@ NumberSenseiRails4::Application.routes.draw do
   #get '/signin' => 'sessions#new', :as => :signin
   #get '/signout' => 'sessions#destroy', :as => :signout
   #get '/auth/failure' => 'sessions#failure'
+
+  # Background jobs, aka BJs
+  require 'sidekiq/web'
+  mount Sidekiq::Web => "/sidekiq"
+
+  put '/seed' => 'home#seed'
 end

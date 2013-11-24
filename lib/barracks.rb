@@ -3,6 +3,7 @@
 ################################################
 module Barracks
 
+  #@return question configuration read from a file
   def self.data()
     YAML::load_file(File.join(Rails.root, 'db', 'seeds', "questions.development.yml"))
     #YAML::load_file(File.join(Rails.root, 'db', 'seeds', "questions.#{Rails.env}.yml")) #TODO use this
@@ -10,52 +11,57 @@ module Barracks
 
   # Builds everything with the given configuration hash
   def self.build_all(data)
+    puts 'Barracks is building questions with data:'
+    puts data
 
-    if (list = data[:exponential])
-      puts 'Exponentials'
+    if (list = data['exponential'])
+      puts 'Exponential'
       list.each do |h|
-        Barracks.build_exponential(h[:lower_base], h[:upper_base], h[:power])
+        Barracks.build_exponential(h)
       end
     end
 
-    if (list = data[:radix_conversion])
+    if (list = data['radix_conversion'])
       puts 'Radix conversions'
       list.each do |h|
-        Barracks.build_radix_conversion(h[:decimal_from], h[:decimal_to], h[:radix_from], h[:radix_to])
+        Barracks.build_radix_conversion(h)
       end
     end
 
-    if (list = data[:roman_numeral])
+    if (list = data['roman_numeral'])
       puts 'Roman Numerals'
       list.each do |h|
-        Barracks.build_roman_numeral(h[:lower], h[:upper])
+        Barracks.build_roman_numeral(h)
       end
     end
 
-    if (list = data[:arabic_to_roman_numeral])
+    if (list = data['arabic_to_roman_numeral'])
       puts 'Arabic to Roman Numerals'
       list.each do |h|
-        Barracks.build_arabic_to_roman_numeral(h[:lower], h[:upper])
+        Barracks.build_arabic_to_roman_numeral(h)
       end
     end
 
-    if (list = data[:multiplication])
+    if (list = data['multiplication'])
       puts 'Two factor multiplication'
       list.each do |h|
-        Barracks::build_multiplication(h[:first_factor][:start],
-                                       h[:first_factor][:finish],
-                                       h[:second_factor][:start],
-                                       h[:second_factor][:finish])
+        Barracks::build_multiplication(h)
       end
     end
   end
+
 
   # 2 factor multiplication
   # @param a_start [Integer] smallest number for 1st factor
   # @param a_end   [Integer] biggest number for 1st factor
   # @param b_start [Integer] smallest number for 2nd factor
   # @param b_end   [Integer] biggest number for 2nd factor
-  def self.build_multiplication(a_start, a_end, b_start, b_end)
+  def self.build_multiplication(h)
+    a_start = h['first_factor']['start'].to_i
+    a_end = h['first_factor']['finish'].to_i
+    b_start = h['second_factor']['start'].to_i
+    b_end = h['second_factor']['finish'].to_i
+
     (a_start..a_end).each do |i|
       (b_start..b_end).each do |j|
         q = Question::Multiplication.build i, j
@@ -70,7 +76,11 @@ module Barracks
   # @param base_start [Integer] lower bound of base
   # @param base_end   [Integer] upper bound of base
   # @param power      [Integer] the exponent part
-  def self.build_exponential(base_start, base_end, power)
+  def self.build_exponential(h)
+    base_start = h['lower_base'].to_i
+    base_end = h['upper_base'].to_i
+    power = h['power']
+
     (base_start..base_end).each do |b|
       q = Question::Exponential.build(b, power)
       if q.save
@@ -83,7 +93,12 @@ module Barracks
   # @param decimal_to   [Integer]
   # @param radix_from   [Integer]
   # @param radix_to     [Integer]
-  def self.build_radix_conversion(decimal_from, decimal_to, radix_from, radix_to)
+  def self.build_radix_conversion(h)
+    decimal_from = h['decimal_from'].to_i
+    decimal_to = h['decimal_to'].to_i
+    radix_from = h['radix_from'].to_i
+    radix_to = h['radix_to'].to_i
+
     (decimal_from..decimal_to).each do |b|
       q = Question::RadixConversion.build(b, radix_from, radix_to)
       if q.save
@@ -94,7 +109,10 @@ module Barracks
 
   # @param lower [Integer]
   # @param upper [Integer]
-  def self.build_roman_numeral(lower, upper)
+  def self.build_roman_numeral(h)
+    lower = h['lower'].to_i
+    upper = h['upper'].to_i
+
     (lower..upper).each do |b|
       q = Question::RomanNumeral.build(b)
       if q.save
@@ -105,7 +123,10 @@ module Barracks
 
   # @param lower [Integer]
   # @param upper [Integer]
-  def self.build_arabic_to_roman_numeral(lower, upper)
+  def self.build_arabic_to_roman_numeral(h)
+    lower = h['lower'].to_i
+    upper = h['upper'].to_i
+
     (lower..upper).each do |b|
       q = Question::ArabicToRomanNumeral.build(b)
       if q.save
@@ -113,7 +134,6 @@ module Barracks
       end
     end
   end
-
 
 
 end

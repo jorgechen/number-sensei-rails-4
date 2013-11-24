@@ -1,4 +1,4 @@
 #!/bin/bash
 
-# Stop the Sidekiq background processing. Last arg is seconds to timeout.
-bundle exec sidekiqctl stop tmp/pids/sidekiq.pid 30
+echo '# Stop the Sidekiq background processing.'
+bundle exec sidekiqctl stop tmp/pids/sidekiq.pid 30 # Last arg is seconds to timeout.
