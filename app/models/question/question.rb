@@ -1,5 +1,9 @@
 # Question is a relationship between the problem and solution expressions.
 class Question < ActiveRecord::Base
+  # Callbacks:
+  before_validation :confirm_answer, :confirm_associations
+  after_save :associate_related_tricks
+
   has_and_belongs_to_many :chunks
 
   has_many :answer_attempts
@@ -50,8 +54,6 @@ class Question < ActiveRecord::Base
   end
 
 
-  before_validation :confirm_answer, :confirm_associations
-
   protected
   def confirm_associations
 
@@ -80,4 +82,8 @@ class Question < ActiveRecord::Base
     end
   end
 
+  # Add relationships to any existing tricks that apply
+  def associate_related_tricks
+    Armory::assign_tricks(self)
+  end
 end

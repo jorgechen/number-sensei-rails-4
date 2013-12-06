@@ -3,7 +3,7 @@ require 'sylvan_rails/knav_util'
 after :questions do
   KnavUtil.print_with_padding 'Tricks'
 
-
+  #TODO this is unnecessary if questions are not seeded
   questions = Question.all
 
   # Ensure all tricks exist, and they connect with all applicable questions.
