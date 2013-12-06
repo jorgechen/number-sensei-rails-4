@@ -1,7 +1,12 @@
-%h1 Editing trick
+.container
+  .page-header
+    %h1
+      Editing Trick
+      %small= @trick.name
 
-= render 'form'
+  = render 'form'
 
-= link_to 'Show', @trick
-\|
-= link_to 'Back', tricks_path
+  %hr
+
+  = link_to 'Show', @trick, class: 'btn btn-primary'
+  = link_to 'Back', tricks_path, class: 'btn btn-default'

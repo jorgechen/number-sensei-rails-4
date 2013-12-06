@@ -6,23 +6,17 @@ class Trick < ActiveRecord::Base
   has_many :questions_tricks
 
   delegate :question_qualifies?, :to => :strategy
-
-  def name
-    if @name.blank?
-      @name = strategy.name
-    end
-    @name
-  end
-
-  def hint
-    if @hint.blank?
-      @hint = strategy.hint
-    end
-    @hint
-  end
+  delegate :name, :to => :strategy
 
   def to_s
     strategy.to_s
+  end
+
+  after_initialize :populate_rows
+
+  def populate_rows
+    self.name = strategy.name
+    self.hint = strategy.hint
   end
 
 end

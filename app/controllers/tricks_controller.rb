@@ -79,6 +79,6 @@ class TricksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def trick_params
-      params.require(:trick).permit(:strategy, :name)
+      params.require(:trick).permit(:strategy, :name, :guide)
     end
 end

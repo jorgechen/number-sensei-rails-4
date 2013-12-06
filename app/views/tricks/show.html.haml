@@ -4,6 +4,10 @@
     %i.icon-book
     = @trick.name
 
+  .panel.panel-default
+    .panel-body
+      = raw @trick.guide
+
   - if @trick.questions.blank?
     %p Nothing here. Yet.
   - else
