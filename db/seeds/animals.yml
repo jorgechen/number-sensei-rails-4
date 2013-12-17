@@ -1,0 +1,148 @@
+### list of animal names in English
+
+### 1. Go to source
+# http://en.wikipedia.org/wiki/List_of_English_animal_nouns
+
+### 2. Input this Chrome console script to parse the animal names to YML
+#names = $('tr > td:nth-child(1)').map(function() {
+#  return this.innerText;
+#}).get().join('\n- ')
+#$('body').prepend(names);
+
+---
+- alligator
+- alpaca
+- ant
+- antelope
+- ape
+- armadillo
+- baboon
+- badger
+- bat
+- bear
+- beaver
+- bee
+- beetle
+- buffalo
+- butterfly
+- camel
+- caribou
+- cat
+- cattle
+- cheetah
+- chimpanzee
+- chinchilla
+- cicada
+- clam
+- cod
+- coyote
+- crab
+- cricket
+- crocodile
+- crow
+- deer
+- dinosaur
+- dog
+- dolphin
+- donkey
+- duck
+- earthworm
+- eel
+- elephant
+- elk
+- ferret
+- fish
+- fly
+- fox
+- frog
+- gerbil
+- giraffe
+- gnat
+- goat
+- goldfish
+- gorilla
+- grasshopper
+- guinea pig
+- hamster
+- hare
+- hedgehog
+- herring
+- hippopotamus
+- hornet
+- horse
+- hound
+- hyena
+- impala
+- jackal
+- jellyfish
+- kangaroo
+- leopard
+- lion
+- lizard
+- llama
+- locust
+- louse
+- mallard
+- mammoth
+- manatee
+- marten
+- mink
+- minnow
+- mole
+- monkey
+- moose
+- mosquito
+- moth
+- mouse
+- mule
+- muskrat
+- otter
+- ox
+- oyster
+- panda
+- pig
+- platypus
+- porcupine
+- porpoise
+- prairie dog
+- pug
+- rabbit
+- raccoon
+- rat
+- raven
+- reindeer
+- rhinoceros
+- roach
+- salmon
+- sardine
+- scorpion
+- sea lion
+- seal
+- serval
+- shark
+- sheep
+- skunk
+- snail
+- snake
+- spider
+- squirrel
+- termite
+- tiger
+- toad
+- tortoise
+- trout
+- turtle
+- wallaby
+- walrus
+- warthog
+- wasp
+- water buffalo
+- weasel
+- whale
+- wildebeest
+- wolf
+- wombat
+- woodchuck
+- yak
+- yellow jacket
+- zebra
