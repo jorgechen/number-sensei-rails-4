@@ -37,12 +37,12 @@ class Question < ActiveRecord::Base
 
   # can be overridden
   def to_s
-    plain_text + ' = '
+    "#{plain_text} = "
   end
 
   # can be overridden
   def problem_statement
-    html + ' = '
+    "#{html} = "
   end
 
   # The appendix is an optional part of the question appended after the answer box
