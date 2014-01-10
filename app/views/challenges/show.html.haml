@@ -7,6 +7,9 @@
   %b Checksum:
   = @challenge.checksum
 
+- @challenge.questions.each do |question|
+  %p= raw question.html
+
 = link_to 'Edit', edit_challenge_path(@challenge)
 \|
 = link_to 'Back', challenges_path

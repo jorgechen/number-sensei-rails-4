@@ -12,7 +12,7 @@ class Trick < ActiveRecord::Base
     strategy.to_s
   end
 
-  after_initialize :populate_rows
+  after_create :populate_rows
 
   def populate_rows
     self.name = strategy.name

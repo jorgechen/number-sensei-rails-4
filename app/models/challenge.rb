@@ -19,34 +19,41 @@ class Challenge < ActiveRecord::Base
             :uniqueness => true
 
 
-  before_validation :determine_checksum, :determine_name
+  before_validation :determine_checksum
   protected
 
   def determine_name
-    #TODO instead, randomly generate adjective noun pairs, e.g. 'Pretty Pig', 'Soaring Kite'
     self.name = "Challenge #{id}"
+    #TODO instead, randomly generate adjective noun pairs, e.g. 'Pretty Pig', 'Soaring Kite'
   end
 
   def determine_checksum
-    self.checksum = questions.map {|x| x.id.b(62).to_s(Radix::BASE::B62)}.join(' ')
+    self.checksum = questions.sort.map {|x| x.id.b(62).to_s(Radix::BASE::B62)}.join('.')
   end
 
 
-  def self.make(trick)
-    # random questions
-    list_of_questions = []
-    # NOTE: try to avoid random, due to efficiency
-    #TODO
+  #@return
+  def self.make(trick, requested_question_count = 10)
+    # Number of questions
+    count = [trick.questions.count, requested_question_count].min
+    puts "count=#{count}"
 
-    self.make_with_questions(trick, list_of_questions)
-  end
+    challenge = nil
+
+    begin
+      # generate a random list of questions
+      list_of_ids = trick.questions.select('questions.id').to_a
+      random_set = list_of_ids.sort{rand() - 0.5}[0...count] # reference http://stackoverflow.com/a/119250/982802
+      list_of_questions = Question.where(id: random_set)
+
+      # generate a random name
+      #TODO after curating the list of colors
 
 
-  def self.make_with_questions(trick, list_of_questions)
-    chunk = Challenge.new
-    chunk.questions << list_of_questions
-    chunk.save
-    chunk
+      challenge = Challenge.new(questions: list_of_questions)
+    end# while challenge.valid? # checksum invalidates if questions are the same
+
+    challenge
   end
 
 end

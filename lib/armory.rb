@@ -9,6 +9,8 @@ module Armory
     Trick.all.each do |t|
       if t.question_qualifies? question
         begin
+          # If the relationship already exists between QUESTION and TRICK,
+          # then an exception must be caught.
           question.tricks << t
         rescue Exception => e
           puts e.message
