@@ -5,8 +5,7 @@ module Barracks
 
   #@return question configuration read from a file
   def self.data()
-    YAML::load_file(File.join(Rails.root, 'db', 'seeds', "questions.development.yml"))
-    #YAML::load_file(File.join(Rails.root, 'db', 'seeds', "questions.#{Rails.env}.yml")) #TODO use this
+    YAML::load_file(File.join(Rails.root, 'db', 'seeds', "questions.#{Rails.env}.yml"))
   end
 
   # Builds everything with the given configuration hash
