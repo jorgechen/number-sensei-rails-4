@@ -3,7 +3,7 @@ development:
   adapter: postgresql
   encoding: unicode
   database: nsdev
-  pool: 5
+  pool: 25 #same as sidekiq default
   username: knav
   password:
 
@@ -24,7 +24,7 @@ production:
   adapter: postgresql
   encoding: unicode
   database: number-sensei
-  pool: 5
+  pool: 25 #same as sidekiq default
   username: ubuntu
   password:
 
