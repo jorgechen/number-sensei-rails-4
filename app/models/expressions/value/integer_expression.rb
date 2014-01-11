@@ -16,7 +16,7 @@ class IntegerExpression < ValueExpression
 
   # @return [Integer]
   def value
-    number.value
+    number.value if number
   end
 
   #@override
