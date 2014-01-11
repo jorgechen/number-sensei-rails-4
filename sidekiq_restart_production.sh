@@ -12,6 +12,6 @@ echo '# Stop the Sidekiq background processing.' # Last arg is seconds to timeou
 bundle exec sidekiqctl stop tmp/pids/sidekiq.pid 30
 
 echo '# Starting Sidekiq process.'
-bundle exec sidekiq -L log/sidekiq.log -C config/sidekiq.yml -d
+bundle exec sidekiq -L log/sidekiq.log -C config/sidekiq.yml -d -e production
 
 
