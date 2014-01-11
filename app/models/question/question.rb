@@ -4,8 +4,6 @@ class Question < ActiveRecord::Base
   before_validation :confirm_answer, :confirm_associations
   after_save :associate_related_tricks
 
-  has_and_belongs_to_many :chunks
-
   has_many :answer_attempts
 
   has_many :tricks, :through => :questions_tricks
