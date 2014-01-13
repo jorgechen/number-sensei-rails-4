@@ -24,6 +24,9 @@
 #
 #$('body').prepend('<p>' + yml_string + '</p>');
 
+# Find regex for each string element in this list:
+# ^-.*\n.*$
+
 - name: Acid green
   color: '#a8bb19'
 - name: Aero
@@ -32,8 +35,6 @@
   color: '#c9ffe5'
 - name: African violet
   color: '#b284be'
-- name: Air superiority blue
-  color: '#72a0c1'
 - name: Alabama Crimson
   color: '#af002a'
 - name: Alice blue
@@ -60,8 +61,6 @@
   color: '#9966cc'
 - name: Android green
   color: '#a4c639'
-- name: Anti-flash white
-  color: '#f2f3f4'
 - name: Antique brass
   color: '#cd9575'
 - name: Antique bronze
@@ -98,13 +97,11 @@
   color: '#a52a2a'
 - name: Aureolin
   color: '#fdee00'
-- name: AuroMetalSaurus
-  color: '#6e7f80'
 - name: Avocado
   color: '#568203'
 - name: Azure
   color: '#007fff'
-- name: Azure mist/web
+- name: Azure mist
   color: '#f0ffff'
 - name: Baby blue
   color: '#89cff0'
@@ -114,8 +111,6 @@
   color: '#f4c2c2'
 - name: Baby powder
   color: '#fefefa'
-- name: Baker-Miller pink
-  color: '#ff91af'
 - name: Ball blue
   color: '#21abcd'
 - name: Banana Mania
@@ -166,8 +161,6 @@
   color: '#3b3c36'
 - name: Blanched almond
   color: '#ffebcd'
-- name: Blast-off bronze
-  color: '#a57164'
 - name: Bleu de France
   color: '#318ce7'
 - name: Blizzard Blue
@@ -178,14 +171,6 @@
   color: '#0000ff'
 - name: Blue Bell
   color: '#a2a2d0'
-- name: Blue-gray
-  color: '#6699cc'
-- name: Blue-green
-  color: '#0d98ba'
-- name: Blue sapphire
-  color: '#126180'
-- name: Blue-violet
-  color: '#8a2be2'
 - name: Blue yonder
   color: '#5072a7'
 - name: Blueberry
@@ -242,8 +227,6 @@
   color: '#cd7f32'
 - name: Bronze Yellow
   color: '#737000'
-- name: Brown-nose
-  color: '#6b4423'
 - name: Brunswick green
   color: '#1b4d3e'
 - name: Bubble gum
@@ -462,8 +445,6 @@
   color: '#f0e130'
 - name: Dark blue
   color: '#00008b'
-- name: Dark blue-gray
-  color: '#666699'
 - name: Dark brown
   color: '#654321'
 - name: Dark byzantium
@@ -822,12 +803,6 @@
   color: '#6f2da8'
 - name: Gray
   color: '#808080'
-- name: Gray-asparagus
-  color: '#465945'
-- name: Gray-blue
-  color: '#8c92ac'
-- name: Green-yellow
-  color: '#adff2f'
 - name: Grullo
   color: '#a99a86'
 - name: Guppie green
@@ -1144,8 +1119,6 @@
   color: '#0067a5'
 - name: Medium purple
   color: '#9370db'
-- name: Medium red-violet
-  color: '#bb3385'
 - name: Medium ruby
   color: '#aa4069'
 - name: Medium sea green
@@ -1166,8 +1139,6 @@
   color: '#79443b'
 - name: Medium vermilion
   color: '#d9603b'
-- name: Medium violet-red
-  color: '#c71585'
 - name: Mellow apricot
   color: '#f8b878'
 - name: Mellow yellow
@@ -1240,8 +1211,6 @@
   color: '#214fc6'
 - name: New York pink
   color: '#d7837f'
-- name: Non-photo blue
-  color: '#a4dded'
 - name: North Texas Green
   color: '#059033'
 - name: Nyanza
@@ -1284,7 +1253,7 @@
   color: '#b784a7'
 - name: Orange peel
   color: '#ff9f00'
-- name: Orange-red
+- name: Orange red
   color: '#ff4500'
 - name: Orchid
   color: '#da70d6'
@@ -1338,7 +1307,7 @@
   color: '#fadadd'
 - name: Pale plum
   color: '#dda0dd'
-- name: Pale red-violet
+- name: Pale red
   color: '#db7093'
 - name: Pale robin egg blue
   color: '#96ded1'
@@ -1350,7 +1319,7 @@
   color: '#bc987e'
 - name: Pale turquoise
   color: '#afeeee'
-- name: Pale violet-red
+- name: Pale violet
   color: '#db7093'
 - name: Pansy purple
   color: '#78184a'
@@ -1392,12 +1361,8 @@
   color: '#ffe5b4'
 - name: Peach
   color: '#ffcba4'
-- name: Peach-orange
-  color: '#ffcc99'
 - name: Peach puff
   color: '#ffdab9'
-- name: Peach-yellow
-  color: '#fadfad'
 - name: Pear
   color: '#d1e231'
 - name: Pearl
@@ -1450,8 +1415,6 @@
   color: '#ffddf4'
 - name: Pink lavender
   color: '#d8b2d1'
-- name: Pink-orange
-  color: '#ff9966'
 - name: Pink pearl
   color: '#e7accf'
 - name: Pink Sherbet
@@ -1528,16 +1491,8 @@
   color: '#8d4e85'
 - name: Red
   color: '#ff0000'
-- name: Red-brown
-  color: '#a52a2a'
 - name: Red devil
   color: '#860111'
-- name: Red-orange
-  color: '#ff5349'
-- name: Red-purple
-  color: '#e40078'
-- name: Red-violet
-  color: '#c71585'
 - name: Redwood
   color: '#a45a52'
 - name: Regalia
@@ -1962,10 +1917,6 @@
   color: '#a020f0'
 - name: Violet
   color: '#8f00ff'
-- name: Violet-blue
-  color: '#324ab2'
-- name: Violet-red
-  color: '#f75394'
 - name: Viridian
   color: '#40826d'
 - name: Viridian green
@@ -2026,8 +1977,6 @@
   color: '#1c2841'
 - name: Yellow
   color: '#ffff00'
-- name: Yellow-green
-  color: '#9acd32'
 - name: Yellow Orange
   color: '#ffae42'
 - name: Yellow rose
