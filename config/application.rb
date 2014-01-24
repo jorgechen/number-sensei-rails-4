@@ -46,5 +46,9 @@ module NumberSenseiRails4
     ######################
     config.app_title = '#Sensei'
     config.app_description = 'Number Sensei makes learning mathematics simple and addicting, by motivating kids and teachers, providing resources, and improving everything important with fun and games'
+
+    # Disable asset generation in Rails generator
+    config.generators.stylesheets = false
+    config.generators.javascripts = false
   end
 end
