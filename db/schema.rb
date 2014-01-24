@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131231193238) do
+ActiveRecord::Schema.define(version: 20140122175521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -96,6 +96,23 @@ ActiveRecord::Schema.define(version: 20131231193238) do
   end
 
   add_index "decimal_numbers", ["value"], name: "index_decimal_numbers_on_value", unique: true, using: :btree
+
+  create_table "experience_functions", force: true do |t|
+    t.float    "coefficient_a"
+    t.float    "coefficient_b"
+    t.string   "type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "experience_levels", force: true do |t|
+    t.integer  "level"
+    t.integer  "experience"
+    t.integer  "delta"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "experience_function_id"
+  end
 
   create_table "expression_hierarchies", id: false, force: true do |t|
     t.integer "ancestor_id",   null: false
