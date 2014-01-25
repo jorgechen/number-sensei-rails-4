@@ -1,6 +1,14 @@
 class Question::Binary < Question
   self.abstract_class = true
 
+  def left
+    expression.left
+  end
+
+  def right
+    expression.right
+  end
+
   #############
   class << self
     # override this

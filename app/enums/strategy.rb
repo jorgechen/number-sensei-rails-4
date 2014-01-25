@@ -40,6 +40,8 @@ Strategy::MultiplyBy25
 Strategy::MultiplyBy125
 Strategy::MultiplyBy11
 Strategy::MultiplyBy12
+Strategy::MultiplyLessThanCloseTo100
+Strategy::MultiplyGreaterThanCloseTo100
 
 Strategy::CompareFractions
 Strategy::ReadRomanNumeral
