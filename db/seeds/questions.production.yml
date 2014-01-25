@@ -9,7 +9,7 @@ multiplication:
 exponential:
   - power: 2
     lower_base: 1
-    upper_base: 35
+    upper_base: 125
   - power: 3
     lower_base: 1
     upper_base: 25
