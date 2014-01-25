@@ -45,6 +45,7 @@ Strategy::CompareFractions
 Strategy::ReadRomanNumeral
 Strategy::WriteRomanNumeral
 Strategy::Square
+Strategy::SquareNumberEndingIn5
 Strategy::Cube
 Strategy::RadixConversion
 

@@ -8,6 +8,7 @@ KnavUtil.print_with_padding 'Tricks'
 Strategy.enum_options.each do |s|
   t = Trick.where(strategy: s.enum).first_or_create!
 
+  #NOTE: Currently we automatically associate tricks upon creating a question
   ## associate pre-seeded questions with applicable tricks
   #questions = Question.all
   #puts "Finding questions for trick \t #{t.name} (#{t.to_s})"
