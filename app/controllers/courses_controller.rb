@@ -4,8 +4,6 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
   def index
-    flash[:notice]= 'This page is still in the works'
-
     @courses = Course.all
   end
 
