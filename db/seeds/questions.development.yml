@@ -24,6 +24,12 @@ multiplication:
     second_factor:
       start: 125
       finish: 125
+  - first_factor: # Multiply close to 100
+      start: 91
+      finish: 109
+    second_factor:
+      start: 91
+      finish: 109
 exponential:
   - power: 2
     lower_base: 1
