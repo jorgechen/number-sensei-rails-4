@@ -27,6 +27,7 @@ NumberSenseiRails4::Application.routes.draw do
 
   # clock demo
   get '/clock', to: 'home#clock'
+  get '/about', to: 'home#about'
 
   resources :users, :only => [:index, :show, :edit, :update ]
   #get '/auth/:provider/callback' => 'sessions#create'
