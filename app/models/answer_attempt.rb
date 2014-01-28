@@ -11,4 +11,10 @@ class AnswerAttempt < ActiveRecord::Base
   validates :question_id,
             :presence => true,
             :uniqueness => { :scope => :challenge_attempt_id }
+
+  validates :user_id,
+            :presence => true
+
+  validates :answer,
+            :presence => true
 end

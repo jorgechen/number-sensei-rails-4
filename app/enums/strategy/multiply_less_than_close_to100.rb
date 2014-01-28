@@ -1,6 +1,6 @@
 class Strategy::MultiplyLessThanCloseTo100 < Strategy
   def name
-    'Multiply Numbers Less Than and Close to 100'
+    'Multiply Numbers a Little Under 100'
   end
 
   def hint
