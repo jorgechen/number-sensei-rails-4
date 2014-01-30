@@ -10,8 +10,8 @@
       %h1
         %i.icon-book
         Tricks
-      %h3.pretty.center
-        start here
+      -#%h3.pretty.center
+      -#  Learn and master strategies
       %hr
 
 
@@ -22,26 +22,27 @@
         %i.icon-trophy
         Challenges
       -#%h3.pretty.center
-        -#test your might, prove your worth
+      -#  Prove yourself
       %hr
 
 
-  %a.gargantuan{href: downloads_path}
-    .row.brown
-      %hr
-      %h1
-        %i.icon-download-alt
-        Downloads
-      %hr
+  - if admin_signed_in?
+    %a.gargantuan{href: downloads_path}
+      .row.brown
+        %hr
+        %h1
+          %i.icon-download-alt
+          Downloads
+        %hr
 
 
-  %a.gargantuan{href: dojo_path}
-    .row.purple
-      %hr
-      %h1
-        %i.icon-home
-        The Dojo
-      %hr
+    %a.gargantuan{href: dojo_path}
+      .row.purple
+        %hr
+        %h1
+          %i.icon-home
+          The Dojo
+        %hr
 
 
   .hidden
