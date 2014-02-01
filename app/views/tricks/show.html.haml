@@ -9,7 +9,7 @@
       = raw @trick.guide
 
   - if @trick.questions.blank?
-    %p Nothing here. Yet.
+    %p Nothing here yet! Just keep swimming.
   - else
     %form.form-inline{:role => 'form'}
       - @trick.questions.sample(10).each do |q|
@@ -20,7 +20,7 @@
             %label.control-label{:for => ''}
               = render partial: 'questions/question', locals: {question: q}
           .form-group
-            %input.form-control{:placeholder => '', :type => 'text', :id => qid}/
+            %input.form-control{:placeholder => '', :type => 'number', :id => qid}/
           - if q.appendix
             .form-group
               %label.control-label{:for => ''}
