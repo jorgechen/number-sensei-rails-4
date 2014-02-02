@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'figaro'
 gem 'haml-rails'
 
+gem 'simple_form'
 gem 'thin'
 group :development do
   gem 'better_errors'
