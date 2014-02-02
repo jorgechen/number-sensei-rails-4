@@ -35,6 +35,7 @@ end
 
 # This will allow reload! in Rails console to work
 # [Reference] https://github.com/beerlington/classy_enum/issues/9
+Strategy::MultiplicationTable
 Strategy::MultiplyBy5
 Strategy::MultiplyBy25
 Strategy::MultiplyBy125

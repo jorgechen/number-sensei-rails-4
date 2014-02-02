@@ -1,5 +1,11 @@
 ---
 multiplication:
+  - first_factor: # Multiplication table
+      start: 1
+      finish: 12
+    second_factor:
+      start: 1
+      finish: 12
   - first_factor: # Multiply by 5
       start: 11
       finish: 99
