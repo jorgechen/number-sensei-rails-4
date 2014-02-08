@@ -1,4 +1,11 @@
 ---
+addition:
+  - first_factor:
+      start: 1
+      finish: 100
+    second_factor:
+      start: 1
+      finish: 100
 multiplication:
   - first_factor: # Multiplication table
       start: 1

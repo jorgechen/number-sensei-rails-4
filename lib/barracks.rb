@@ -41,21 +41,43 @@ module Barracks
       end
     end
 
+    if (list = data['addition'])
+      puts 'Two factor addition'
+      list.each do |h|
+        Barracks::build_two_factor_question(h, Question::Addition)
+      end
+    end
+
+    if (list = data['subtraction'])
+      puts 'Two factor subtraction'
+      list.each do |h|
+        Barracks::build_two_factor_question(h, Question::Subtraction)
+      end
+    end
+
     if (list = data['multiplication'])
       puts 'Two factor multiplication'
       list.each do |h|
-        Barracks::build_multiplication(h)
+        Barracks::build_two_factor_question(h, Question::Multiplication)
       end
     end
+
+    if (list = data['division'])
+      puts 'Two factor division'
+      list.each do |h|
+        Barracks::build_two_factor_question(h, Question::Division)
+      end
+    end
+
   end
 
 
-  # 2 factor multiplication
+  # 2 factor addition
   # @param a_start [Integer] smallest number for 1st factor
   # @param a_end   [Integer] biggest number for 1st factor
   # @param b_start [Integer] smallest number for 2nd factor
   # @param b_end   [Integer] biggest number for 2nd factor
-  def self.build_multiplication(h)
+  def self.build_two_factor_question(h, type)
     a_start = h['first_factor']['start'].to_i
     a_end = h['first_factor']['finish'].to_i
     b_start = h['second_factor']['start'].to_i
@@ -63,7 +85,7 @@ module Barracks
 
     (a_start..a_end).each do |i|
       (b_start..b_end).each do |j|
-        q = Question::Multiplication.build i, j
+        q = type.build i, j
         if q.save
           puts "id#{q.id}\t#{q.to_s}"
         end
