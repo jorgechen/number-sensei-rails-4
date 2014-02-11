@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140123174931) do
+ActiveRecord::Schema.define(version: 20140208055815) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,15 @@ ActiveRecord::Schema.define(version: 20140123174931) do
 
   add_index "challenge_categories", ["name"], name: "index_challenge_categories_on_name", unique: true, using: :btree
 
+  create_table "challenge_hierarchies", id: false, force: true do |t|
+    t.integer "ancestor_id",   null: false
+    t.integer "descendant_id", null: false
+    t.integer "generations",   null: false
+  end
+
+  add_index "challenge_hierarchies", ["ancestor_id", "descendant_id", "generations"], name: "challenge_anc_desc_udx", unique: true, using: :btree
+  add_index "challenge_hierarchies", ["descendant_id"], name: "challenge_desc_idx", using: :btree
+
   create_table "challenge_question_pairings", force: true do |t|
     t.integer  "challenge_id"
     t.integer  "question_id"
@@ -72,6 +81,7 @@ ActiveRecord::Schema.define(version: 20140123174931) do
     t.text     "checksum"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "parent_id"
   end
 
   create_table "constants", force: true do |t|

@@ -1,5 +1,9 @@
 class Challenge < ActiveRecord::Base
-  has_and_belongs_to_many :chunks
+
+  # Challenge is a hierarchical tree
+  acts_as_tree with_advisory_lock: false
+
+  #TODO associate trick directly?
 
   has_many :challenge_attempts
 
@@ -10,27 +14,19 @@ class Challenge < ActiveRecord::Base
   has_many :challenge_question_pairings,
            -> { order('challenge_question_pairings.numbering') }
 
-  validates :checksum,
-            :presence => true,
-            :uniqueness => true
+  #TODO checksums for 'super' challenges
+  #validates :checksum,
+  #          :presence => true,
+  #          :uniqueness => true
 
-  validates :name,
-            #:presence => true,
-            :uniqueness => true
+  #TODO Aesthetically, give each (root) challenge a name
+  #validates :name,
+  #          :presence => true,
+  #          :uniqueness => true
 
-
-  before_validation :determine_checksum
-  protected
-
-  def determine_name
-    self.name = "Challenge #{id}"
-    #TODO instead, randomly generate adjective noun pairs, e.g. 'Pretty Pig', 'Soaring Kite'
+  def all_questions
+    Question.joins(:challenges).where('challenges.id' => self_and_descendants.select(:id))
   end
-
-  def determine_checksum
-    self.checksum = questions.sort.map {|x| x.id.b(62).to_s(Radix::BASE::B62)}.join('.')
-  end
-
 
   #@return
   def self.make(trick, requested_question_count = 10)
@@ -54,6 +50,19 @@ class Challenge < ActiveRecord::Base
     end# while challenge.valid? # checksum invalidates if questions are the same
 
     challenge
+  end
+
+  ########################################
+  before_validation :determine_checksum
+  protected
+
+  def determine_name
+    self.name = "Challenge #{id}"
+    #TODO instead, randomly generate adjective noun pairs, e.g. 'Pretty Pig', 'Soaring Kite'
+  end
+
+  def determine_checksum
+    self.checksum = questions.sort.map {|x| x.id.b(62).to_s(Radix::BASE::B62)}.join('.')
   end
 
 end

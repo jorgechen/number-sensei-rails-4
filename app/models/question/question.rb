@@ -6,6 +6,10 @@ class Question < ActiveRecord::Base
 
   has_many :answer_attempts
 
+  has_many :challenges,
+           :through => :challenge_question_pairings
+  has_many :challenge_question_pairings
+
   has_many :tricks, :through => :questions_tricks
   has_many :questions_tricks
 

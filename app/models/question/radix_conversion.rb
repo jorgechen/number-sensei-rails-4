@@ -4,6 +4,13 @@ class Question::RadixConversion < Question
     "<sub>#{answer.radix}</sub>"
   end
 
+  #@override
+  def problem_statement
+    #TODO refine
+    "#{html} = <code>_____________</code><sub>#{answer.radix}</sub>"
+  end
+
+
   def self.build(decimal, base_from, base_to)
     x = self.new
     x.expression = RadixExpression.build(decimal, base_from)

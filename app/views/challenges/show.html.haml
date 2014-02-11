@@ -1,15 +1,33 @@
-%p#notice= notice
+.container
+  - unless @challenge.name.blank?
+    %p
+      %b Name:
+      = @challenge.name
 
-%p
-  %b Name:
-  = @challenge.name
-%p
-  %b Checksum:
-  = @challenge.checksum
+  - answers = []
 
-- @challenge.questions.each do |question|
-  %p= raw question.html
+  -#TODO fix copy-paste, otherwise this would be perfect
+  -#%table.table
+  -#  - @challenge.all_questions.shuffle.each do |question|
+  -#    %tr
+  -#      %td= raw question.problem_statement
+  -#      %td= question.answer_html
 
-= link_to 'Edit', edit_challenge_path(@challenge)
-\|
-= link_to 'Back', challenges_path
+  %p
+    - @challenge.all_questions.shuffle.each do |question|
+      = raw question.problem_statement
+      %br
+      - answers.append "#{question.answer_html}"
+
+  %br
+  %p
+    = raw answers.join('<br/>')
+
+  - if admin_signed_in?
+    %p
+      %b Checksum:
+      = @challenge.checksum
+
+    = link_to 'Edit', edit_challenge_path(@challenge)
+    \|
+    = link_to 'Back', challenges_path
