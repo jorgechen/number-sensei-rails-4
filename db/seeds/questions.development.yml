@@ -43,6 +43,13 @@ multiplication:
     second_factor:
       start: 91
       finish: 109
+division:
+  - first_factor:
+      start: 1
+      finish: 100
+    second_factor:
+      start: 2
+      finish: 10
 exponential:
   - power: 2
     lower_base: 1

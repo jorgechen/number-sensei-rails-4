@@ -1,4 +1,4 @@
-class DivisionExpression
+class DivisionExpression < BinaryExpression
 
   def token_plain_text
     '/'
@@ -8,4 +8,8 @@ class DivisionExpression
     '&divide;'
   end
 
+  #@override
+  def evaluate
+    left.evaluate / right.evaluate
+  end
 end

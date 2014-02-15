@@ -6,6 +6,13 @@ multiplication:
     second_factor:
       start: 1
       finish: 9999
+division:
+  - first_factor:
+      start: 1
+      finish: 99999
+    second_factor:
+      start: 2
+      finish: 10
 exponential:
   - power: 2
     lower_base: 1
