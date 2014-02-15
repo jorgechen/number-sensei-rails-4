@@ -72,8 +72,9 @@ class Challenge < ActiveRecord::Base
   end
 
   def determine_name
-    self.name = "Challenge #{id}" #TODO this does not work before it is saved...
     #TODO instead, randomly generate adjective noun pairs, e.g. 'Pretty Pig', 'Soaring Kite'
+    #self.name = "Challenge #{id}"
+    #save #TODO error occurs where saving causes self to be cleared in challenge_hierarchy?!
   end
 
   def determine_checksum
