@@ -2,6 +2,8 @@ class Trick < ActiveRecord::Base
   classy_enum_attr :strategy, default: ->(enum){ enum.min }
   #TODO validate uniqueness of strategy, without using the default, which causes error
 
+  has_many :challenges
+
   has_many :questions, :through => :questions_tricks
   has_many :questions_tricks
 

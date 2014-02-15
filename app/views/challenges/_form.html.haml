@@ -3,7 +3,10 @@
 
   .form-inputs
     = f.input :name
-    = f.input :checksum
+    = f.input :checksum, disabled: true
+
+    = f.label :trick
+    = f.collection_select :trick_id, Trick.all, :id, :name
 
   .form-actions
     = f.button :submit

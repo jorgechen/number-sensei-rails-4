@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140208055815) do
+ActiveRecord::Schema.define(version: 20140211040134) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,7 +82,10 @@ ActiveRecord::Schema.define(version: 20140208055815) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "parent_id"
+    t.integer  "trick_id"
   end
+
+  add_index "challenges", ["trick_id"], name: "index_challenges_on_trick_id", using: :btree
 
   create_table "constants", force: true do |t|
     t.float    "value"

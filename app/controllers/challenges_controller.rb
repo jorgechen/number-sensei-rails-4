@@ -69,6 +69,6 @@ class ChallengesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def challenge_params
-      params.require(:challenge).permit(:name, :checksum)
+      params.require(:challenge).permit(:name, :checksum, :trick_id)
     end
 end
