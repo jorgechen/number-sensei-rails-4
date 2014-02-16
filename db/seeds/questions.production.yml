@@ -55,7 +55,7 @@ radix_conversion:
     radix_to: 4
 roman_numeral:
   - lower: 1
-    upper: 4999
+    upper: 2000 # This range will covers all letters from I to M
 arabic_to_roman_numeral:
   - lower: 1
     upper: 4999
