@@ -24,19 +24,3 @@ KnavUtil.print_with_padding 'Constants'
   c = Constant.where(hash).first_or_create
   puts c.inspect
 end
-
-########################################################################
-KnavUtil.print_with_padding 'Integers'
-
-(-100..100).each do |i|
-  IntegerNumber.create value: i
-end
-
-########################################################################
-KnavUtil.print_with_padding 'Fractions'
-
-(10..20).each do |numerator|
-  (2...10).each do |denominator|
-    Fraction.create numerator: numerator, denominator: denominator
-  end
-end
