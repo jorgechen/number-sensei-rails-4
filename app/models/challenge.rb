@@ -26,6 +26,16 @@ class Challenge < ActiveRecord::Base
   #          :presence => true,
   #          :uniqueness => true
 
+  #@return If the challenge is a composition of other challenges.
+  def mixed?
+    root? and not children.empty?
+  end
+
+  #@return If this is a challenge with a single trick
+  def single?
+    questions and not questions.empty? and leaf?
+  end
+
   def all_questions
     Question.joins(:challenges).where('challenges.id' => self_and_descendants.select(:id))
   end
@@ -78,14 +88,15 @@ class Challenge < ActiveRecord::Base
   end
 
   def determine_checksum
-    if questions and not questions.empty?
+    if single?
       # When challenge is a leaf, generate checksum based on questions
       self.checksum = questions.sort.map { |x| x.id.b(62).to_s(Radix::BASE::B62) }.join('.')
-    else
+    elsif mixed?
       # Root challenges contain child nodes that contain the actual questions
       # In this case, generate checksum based on child nodes
       self.checksum = "Challenge:#{children.sort.map { |x| x.id.b(62).to_s(Radix::BASE::B62) }.join('.')}"
     end
+    # Otherwise challenge might be invalid, e.g. there were no questions found
   end
 
 end
