@@ -4,9 +4,10 @@
     %i.icon-book
     = @trick.name
 
-  .panel.panel-default
-    .panel-body
-      = raw @trick.guide
+  - if @trick.guide
+    .panel.panel-default
+      .panel-body
+        = raw @trick.guide
 
   - if @trick.questions.blank?
     %p Nothing here yet! Just keep swimming.
@@ -34,7 +35,7 @@
                 if (attempt)
                 {
                   if ('#{q.answer_html}'.toLowerCase() == attempt.toLowerCase()) {
-                    result = '#{raw image_tag image_path('tick.png')}'
+                    result = '#{check_mark_image}'
                   }
                   else {
                     // Show correct answer:

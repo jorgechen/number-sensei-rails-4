@@ -55,6 +55,12 @@ class Question < ActiveRecord::Base
     answer_html
   end
 
+  #@param solution [String] The user's solution to this question
+  #@return True if solution is correct
+  def attempt_to_solve(solution)
+    #TODO improve checking...
+    answer_plain_text == solution
+  end
 
   protected
   def confirm_associations

@@ -1,29 +1,32 @@
 .container
+
   - unless @challenge.name.blank?
     %p
       %b Name:
       = @challenge.name
 
-  - answers = []
-
-  -#TODO fix copy-paste, otherwise this would be perfect
-  -#%table.table
-  -#  - @challenge.all_questions.shuffle.each do |question|
-  -#    %tr
-  -#      %td= raw question.problem_statement
-  -#      %td= question.answer_html
-
-  %p
-    - @challenge.all_questions.shuffle.each do |question|
-      = raw question.problem_statement
-      %br
-      - answers.append "#{question.answer_html}"
-
-  %br
-  %p
-    = raw answers.join('<br/>')
+  = render @challenge
 
   - if admin_signed_in?
+    - answers = []
+
+    -#TODO fix copy-paste, otherwise this would be perfect
+    -#%table.table
+    -#  - @challenge.all_questions.shuffle.each do |question|
+    -#    %tr
+    -#      %td= raw question.problem_statement
+    -#      %td= question.answer_html
+
+    %p
+      - @challenge.all_questions.shuffle.each do |question|
+        = raw question.problem_statement
+        %br
+        - answers.append "#{question.answer_html}"
+
+    %br
+    %p
+      = raw answers.join('<br/>')
+
     %p
       %b Checksum:
       = @challenge.checksum

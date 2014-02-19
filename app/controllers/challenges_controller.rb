@@ -1,5 +1,5 @@
 class ChallengesController < ApplicationController
-  before_action :set_challenge, only: [:show, :edit, :update, :destroy]
+  before_action :set_challenge, only: [:show, :edit, :update, :destroy, :attempt]
 
   # GET /challenges
   # GET /challenges.json
@@ -61,14 +61,45 @@ class ChallengesController < ApplicationController
     end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_challenge
-      @challenge = Challenge.find(params[:id])
+  # User does a challenge!
+  def attempt
+    @results = {}
+
+    # Retrieve hash of {Question id => user's answer}
+    @answers_hash = {}
+    params.each do |k,v|
+      matches = k.match /^question_(\d+)$/
+      if matches
+        question_id = matches[1].to_i
+        @answers_hash[question_id] = v
+      end
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def challenge_params
-      params.require(:challenge).permit(:name, :checksum, :trick_id)
+    # Get list of questions
+    @questions = @challenge.all_questions
+
+    #TODO record order in which questions are answered
+    #TODO record missed, skipped questions
+
+    @questions.each do |q|
+      attempted_answer = @answers_hash[q.id]
+      @results["question_#{q.id}"] = q.attempt_to_solve(attempted_answer) ? true : q.answer_plain_text;
     end
+
+    respond_to do |format|
+      format.html { render json: @results }
+      format.json { render json: @results }
+    end
+  end
+
+  private
+  # Use callbacks to share common setup or constraints between actions.
+  def set_challenge
+    @challenge = Challenge.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def challenge_params
+    params.require(:challenge).permit(:name, :checksum, :trick_id)
+  end
 end

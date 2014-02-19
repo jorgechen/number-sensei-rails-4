@@ -9,7 +9,11 @@ NumberSenseiRails4::Application.routes.draw do
 
   resources :tricks
 
-  resources :challenges
+  resources :challenges do
+    member do
+      post 'attempt'
+    end
+  end
 
   resources :questions
 

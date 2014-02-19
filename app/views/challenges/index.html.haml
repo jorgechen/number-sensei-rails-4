@@ -17,6 +17,7 @@
           - about = 'Mix'
         %td= about
         - if admin_signed_in?
+          %td= challenge.id
           %td= challenge.checksum
           %td= link_to 'Edit', edit_challenge_path(challenge)
           %td= link_to 'Destroy', challenge, :method => :delete, :data => { :confirm => 'Are you sure?' }
