@@ -84,11 +84,10 @@ module Barracks
     b_end = h['second_factor']['finish'].to_i
 
     (a_start..a_end).each do |i|
-      puts "seeding #{i}/[#{a_end}~#{a_start}]"
       (b_start..b_end).each do |j|
         q = type.build i, j
         if q.save
-          #puts "id#{q.id}\t#{q.to_s}"
+          #TODO Log progress in database
         end
       end
     end
@@ -106,7 +105,7 @@ module Barracks
     (base_start..base_end).each do |b|
       q = Question::Exponential.build(b, power)
       if q.save
-        puts "#{q.to_s}"
+        #TODO Log progress in database
       end
     end
   end
@@ -124,7 +123,7 @@ module Barracks
     (decimal_from..decimal_to).each do |b|
       q = Question::RadixConversion.build(b, radix_from, radix_to)
       if q.save
-        puts "#{q.to_s}"
+        #TODO Log progress in database
       end
     end
   end
@@ -138,7 +137,7 @@ module Barracks
     (lower..upper).each do |b|
       q = Question::RomanNumeral.build(b)
       if q.save
-        puts "#{q.to_s}"
+        #TODO Log progress in database
       end
     end
   end
@@ -152,7 +151,7 @@ module Barracks
     (lower..upper).each do |b|
       q = Question::ArabicToRomanNumeral.build(b)
       if q.save
-        puts "#{q.to_s}"
+        #TODO Log progress in database
       end
     end
   end
