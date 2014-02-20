@@ -84,10 +84,11 @@ module Barracks
     b_end = h['second_factor']['finish'].to_i
 
     (a_start..a_end).each do |i|
+      puts "seeding #{i}/[#{a_end}~#{a_start}]"
       (b_start..b_end).each do |j|
         q = type.build i, j
         if q.save
-          puts "id#{q.id}\t#{q.to_s}"
+          #puts "id#{q.id}\t#{q.to_s}"
         end
       end
     end
