@@ -10,13 +10,20 @@ class Strategy < ClassyEnum::Base
 
   # @abstract
   def hint
-    'Nobody knows how to do this.'
+    'No hints!'
   end
 
   # @return true if current trick can be used for given question
   # @abstract
   def question_qualifies?(question)
     false
+  end
+
+  # Returns a list of questions that is much smaller than Question.all because iterating through all questions in the DB takes longer than George in the shower.
+  # @return pool of possible questions
+  # @abstract
+  def possible_questions
+    Question.all
   end
 
 end
@@ -33,7 +40,8 @@ class Strategy::Memorize < Strategy
   end
 end
 
-# This will allow reload! in Rails console to work
+# List of all tricks we've implemented
+# Note: this will allow reload! in Rails console to work
 # [Reference] https://github.com/beerlington/classy_enum/issues/9
 Strategy::MultiplicationTable
 Strategy::MultiplyBy5
@@ -49,6 +57,7 @@ Strategy::ReadRomanNumeral
 Strategy::WriteRomanNumeral
 Strategy::Square
 Strategy::SquareNumberEndingIn5
+Strategy::SquareNumberCloseTo50
 Strategy::Cube
 Strategy::RadixConversion
 

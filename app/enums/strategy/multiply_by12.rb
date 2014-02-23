@@ -12,4 +12,10 @@ class Strategy::MultiplyBy12 < Strategy
       true
     end
   end
+
+  # @override
+  def possible_questions
+    Question::Multiplication.all
+  end
+
 end

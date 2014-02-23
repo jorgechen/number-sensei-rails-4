@@ -10,4 +10,10 @@ class Strategy::WriteRomanNumeral < Strategy
   def question_qualifies?(q)
     q.is_a? Question::ArabicToRomanNumeral
   end
+
+  # @override
+  def possible_questions
+    Question::ArabicToRomanNumeral.all
+  end
+
 end

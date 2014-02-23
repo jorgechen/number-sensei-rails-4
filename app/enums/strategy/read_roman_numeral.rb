@@ -10,4 +10,10 @@ class Strategy::ReadRomanNumeral < Strategy
   def question_qualifies?(q)
     q.is_a? Question::RomanNumeral
   end
+
+  # @override
+  def possible_questions
+    Question::RomanNumeral.all
+  end
+
 end

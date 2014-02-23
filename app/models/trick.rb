@@ -5,9 +5,11 @@ class Trick < ActiveRecord::Base
   has_many :challenges
 
   has_many :questions, :through => :questions_tricks
-  has_many :questions_tricks
+  has_many :questions_tricks,
+           :dependent => :destroy
 
   delegate :question_qualifies?, :to => :strategy
+  delegate :possible_questions, :to => :strategy
   delegate :name, :to => :strategy
 
   def to_s

@@ -11,4 +11,10 @@ class Strategy::Square < Strategy
     question.is_a? Question::Exponential and question.expression.exponent == 2
   end
 
+  # @override
+  def possible_questions
+    Question::Exponential.all
+  end
+
+
 end

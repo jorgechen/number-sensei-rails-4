@@ -1,30 +1,27 @@
-class Strategy::SquareNumberEndingIn5 < Strategy
+class Strategy::SquareNumberCloseTo50 < Strategy
   def name
-    'Square a Number Ending in 5'
+    'Square a Number Between 40 and 50'
   end
 
   def hint
-    'Multiply first part by its increment, then write 25.'
+    'Use the difference from 50.'
   end
 
-  UPPER_LIMIT = 115
+  LOWER_LIMIT = 40
+  UPPER_LIMIT = 60
 
   # @override
   def question_qualifies?(question)
     if question.is_a? Question::Multiplication
       a = question.left.to_i
       b = question.right.to_i
-      if  a == b and
-          a % 10 == 5 and
-          a <= UPPER_LIMIT
+      if a == b and LOWER_LIMIT < a and a < UPPER_LIMIT
         return true
       end
     elsif question.is_a? Question::Exponential
       exponent = question.exponent.to_i
       base = question.base.to_i
-      if  exponent == 2 and
-          base % 10 == 5 and
-          base <= UPPER_LIMIT
+      if exponent == 2 and LOWER_LIMIT < base and base < UPPER_LIMIT
         return true
       end
     end

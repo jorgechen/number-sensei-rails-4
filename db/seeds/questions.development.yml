@@ -43,6 +43,12 @@ multiplication:
     second_factor:
       start: 91
       finish: 109
+  - first_factor: # Square a number around 50
+      start: 40
+      finish: 60
+    second_factor:
+      start: 40
+      finish: 60
 division:
   - first_factor:
       start: 1
@@ -74,7 +80,7 @@ radix_conversion:
     radix_to: 4
 roman_numeral:
   - lower: 1
-    upper: 100
+    upper: 1000
 arabic_to_roman_numeral:
   - lower: 1
-    upper: 100
+    upper: 1000

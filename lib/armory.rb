@@ -23,7 +23,9 @@ module Armory
   # Assigns a given trick to applicable questions.
   #@param trick [Trick]
   def self.assign_questions(trick)
-    Question.all.find_each do |q|
+    questions = trick.possible_questions
+    puts "Iterating over #{questions.count} questions"
+    questions.find_each do |q|
       if trick.question_qualifies?(q)
         begin
           q.tricks << trick

@@ -18,4 +18,10 @@ class Strategy::MultiplyLessThanCloseTo100 < Strategy
     end
     false
   end
+
+  # @override
+  def possible_questions
+    Question::Multiplication.all
+  end
+
 end
