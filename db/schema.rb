@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140211040134) do
+ActiveRecord::Schema.define(version: 20140223212436) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,16 @@ ActiveRecord::Schema.define(version: 20140211040134) do
   add_index "answer_attempts", ["challenge_attempt_id"], name: "index_answer_attempts_on_challenge_attempt_id", using: :btree
   add_index "answer_attempts", ["question_id"], name: "index_answer_attempts_on_question_id", using: :btree
   add_index "answer_attempts", ["user_id"], name: "index_answer_attempts_on_user_id", using: :btree
+
+  create_table "background_jobs", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "progress",    default: 0
+    t.integer  "total",       default: 0
+    t.boolean  "in_progress"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "challenge_attempts", force: true do |t|
     t.integer  "challenge_id"

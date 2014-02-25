@@ -22,9 +22,12 @@ module Armory
 
   # Assigns a given trick to applicable questions.
   #@param trick [Trick]
-  def self.assign_questions(trick)
+  def self.assign_questions(trick, background_job = nil)
+
     questions = trick.possible_questions
-    puts "Iterating over #{questions.count} questions"
+
+    background_job.increment!(:total, questions.count) if background_job
+
     questions.find_each do |q|
       if trick.question_qualifies?(q)
         begin
@@ -34,6 +37,8 @@ module Armory
           puts e.backtrace.inspect
         end
       end
+
+      background_job.increment!(:progress) if background_job
     end
   end
 

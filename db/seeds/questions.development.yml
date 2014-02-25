@@ -7,48 +7,12 @@ addition:
       start: 1
       finish: 100
 multiplication:
-  - first_factor: # Multiplication table
+  - first_factor:
       start: 1
-      finish: 12
-    second_factor:
-      start: 1
-      finish: 12
-  - first_factor: # Multiply by 5
-      start: 11
-      finish: 99
-    second_factor:
-      start: 5
-      finish: 5
-  - first_factor: # Multiply by 25
-      start: 11
-      finish: 99
-    second_factor:
-      start: 25
-      finish: 25
-  - first_factor: # Multiply by 11, 12 ... 19
-      start: 11
-      finish: 99
-    second_factor:
-      start: 11
-      finish: 19
-  - first_factor: # Multiply by 125
-      start: 32
-      finish: 99
-    second_factor:
-      start: 125
       finish: 125
-  - first_factor: # Multiply close to 100
-      start: 91
-      finish: 109
     second_factor:
-      start: 91
-      finish: 109
-  - first_factor: # Square a number around 50
-      start: 40
-      finish: 60
-    second_factor:
-      start: 40
-      finish: 60
+      start: 1
+      finish: 125
 division:
   - first_factor:
       start: 1

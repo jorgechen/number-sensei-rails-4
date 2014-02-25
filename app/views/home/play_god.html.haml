@@ -1,9 +1,62 @@
 .container
-  %h2 Seed questions in background
+
+  %h2 Background Jobs
+
+  - BackgroundJob.where(in_progress: true).each do |bj|
+    - progress = bj.total == 0 ? 0 : bj.progress * 100 / bj.total;
+    .row
+      .col-lg-3
+        %p= bj.name
+      .col-lg-6
+        %p= bj.description
+      .col-lg-3
+        %p.text-right= "#{bj.progress}/#{bj.total}"
+    .progress
+      .progress-bar{'aria-valuemax' => '100', 'aria-valuemin' => '0', 'aria-valuenow' => progress, role: 'progressbar', style: "width: #{progress}%;"}
+        %span.sr-only= "#{progress}% Complete"
+
+
+
+
+  %hr
+  %h2 Tricks
+
+  %p When new tricks are implemented, click this to seed them and assign questions to them.
+
+  = link_to 'Seed new or missing tricks', '#', class: 'btn btn-primary', id: 'tricks'
+
+  :coffee
+    $('#tricks').click ->
+
+      # Prevent page reloading unintentionally.
+      event.preventDefault()
+
+      $.ajax
+        url: '/seed'
+        type: 'put'
+        dataType: 'html'
+        contentType: 'application/json'
+        data: JSON.stringify({'tricks': true})
+        error: (jqXHR, textStatus, errorThrown) ->
+          alert (jqXHR.status + " " + textStatus + " - " + errorThrown)
+        success: (data, textStatus, jqXHR) ->
+          $(this).attr('disabled', 'disabled')
+
+
+
+
+  %hr
+  %h2 Questions
 
   - data = Barracks::data
 
   %table.table
+    %tr
+      %th Question Type
+      %th
+      %th Previous Run Count
+
+
     - data.each do |key, values|
       - current_id = "#{key}"
       %tr
@@ -11,7 +64,10 @@
           %h3= key
 
         %td
-          = link_to 'Seed', '#', class: 'btn btn-primary', id: current_id
+          - if BackgroundJob.where(name: key, in_progress: true).empty?
+            = link_to 'Seed', '#', class: 'btn btn-primary', id: current_id
+        %td
+          = BackgroundJob.where(name: key, in_progress: false).count
 
         :coffee
           $('##{current_id}').click ->
