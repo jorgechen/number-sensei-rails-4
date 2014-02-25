@@ -43,6 +43,7 @@ end
 # List of all tricks we've implemented
 # Note: this will allow reload! in Rails console to work
 # [Reference] https://github.com/beerlington/classy_enum/issues/9
+
 Strategy::MultiplicationTable
 Strategy::MultiplyBy5
 Strategy::MultiplyBy25
@@ -51,15 +52,20 @@ Strategy::MultiplyBy11
 Strategy::MultiplyBy12
 Strategy::MultiplyLessThanCloseTo100
 Strategy::MultiplyGreaterThanCloseTo100
+Strategy::BumpUp
 
 Strategy::CompareFractions
 Strategy::ReadRomanNumeral
 Strategy::WriteRomanNumeral
+
 Strategy::Square
 Strategy::SquareNumberEndingIn5
 Strategy::SquareNumberCloseTo50
+Strategy::SquareNumberCloseTo100
 Strategy::Cube
+
 Strategy::RadixConversion
+
 
 class Strategy::GCD < Strategy
   def name

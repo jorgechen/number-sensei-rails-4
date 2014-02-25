@@ -1,14 +1,14 @@
-class Strategy::SquareNumberCloseTo50 < Strategy
+class Strategy::SquareNumberCloseTo100 < Strategy
   def name
-    'Square a Number Close to 50'
+    'Square a Number Close to 100'
   end
 
   def hint
-    'Use the difference from 50.'
+    'Use the difference from 100.'
   end
 
-  LOWER_LIMIT = 40
-  UPPER_LIMIT = 60
+  LOWER_LIMIT = 90
+  UPPER_LIMIT = 110
 
   # @override
   def question_qualifies?(question)
@@ -16,7 +16,7 @@ class Strategy::SquareNumberCloseTo50 < Strategy
       a = question.left.to_i
       b = question.right.to_i
       if  a == b and
-          a != 50 and
+          a != 100 and
           LOWER_LIMIT < a and
           a < UPPER_LIMIT
         return true
@@ -25,7 +25,7 @@ class Strategy::SquareNumberCloseTo50 < Strategy
       exponent = question.exponent.to_i
       base = question.base.to_i
       if  exponent == 2 and
-          a != 50 and
+          a != 100 and
           LOWER_LIMIT < base and
           base < UPPER_LIMIT
         return true
