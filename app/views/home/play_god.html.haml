@@ -3,17 +3,45 @@
   %h2 Background Jobs
 
   - BackgroundJob.where(in_progress: true).each do |bj|
-    - progress = bj.total == 0 ? 0 : bj.progress * 100 / bj.total;
+    - job_id = dom_id(bj)
+    - progress = bj.total == 0 ? 0 : bj.progress * 100 / bj.total
     .row
       .col-lg-3
         %p= bj.name
       .col-lg-6
         %p= bj.description
       .col-lg-3
-        %p.text-right= "#{bj.progress}/#{bj.total}"
-    .progress
+        %p.text-right
+          %span{id: "#{job_id}_text"}}= bj.progress
+          %span= "/#{bj.total}"
+    .progress{id: job_id}
       .progress-bar{'aria-valuemax' => '100', 'aria-valuemin' => '0', 'aria-valuenow' => progress, role: 'progressbar', style: "width: #{progress}%;"}
         %span.sr-only= "#{progress}% Complete"
+
+
+    :javascript
+      $(document).ready(function(){
+        (function refresher(){
+          $.ajax({
+            url: '/background_jobs/check_progress',
+            type: 'POST',
+            dataType: 'text',
+            contentType: 'application/json',
+            data: JSON.stringify({'id': "#{bj.id}"}),
+            success: function(data){
+              percent = parseInt(parseInt(data) * 100 / #{bj.total});
+              console.log('Progressed ' + data + '/#{bj.total} (' + percent + ')');
+
+              bar = $('##{job_id}');
+              update_progress_bar(bar, percent);
+              $("##{job_id}_text").text(data);
+            },
+            complete: function(){
+              setTimeout(refresher, 5000)
+            }
+          });
+        })()
+      })
 
 
 

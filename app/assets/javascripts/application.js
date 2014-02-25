@@ -8,13 +8,20 @@
  It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
  compiled file.
 
- Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
+ Read Sprockets README (https://github.com/sstephenson/sprocketssprockets-directives) for details
  about supported directives.
 
  = require jquery
  = require jquery_ujs
  = require bootstrap
- require respond.min
+ = require respond.min
  = require turbolinks
  = require_tree .
- */
+*/
+
+//Helper method to update a Bootstrap progress bar
+function update_progress_bar(element, progress) {
+    bar = element.find('.progress-bar:first');
+    bar.attr('aria-valuenow', progress);
+    bar.css('width', progress + '%');
+}
