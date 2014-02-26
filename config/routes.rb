@@ -1,5 +1,7 @@
 NumberSenseiRails4::Application.routes.draw do
 
+  post 'background_jobs/check_progress'
+
   # User authentication:
   devise_for :users, :controllers => { :omniauth_callbacks => 'users/omniauth_callbacks' }
 
