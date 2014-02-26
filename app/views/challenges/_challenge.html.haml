@@ -2,7 +2,7 @@
   %form.form-horizontal{role: 'form', id: 'challenge'}
     %label#challenge_id.hidden
       = challenge.id
-    - challenge.all_questions.each do |question|
+    - challenge.all_questions.shuffle.each do |question|
       - question_id = "question_#{question.id}"
       .form-group
         %label.col-sm-2.control-label{for: question_id}
@@ -15,7 +15,7 @@
       %label.col-sm-2.control-label{for: 'username'} Your name
       .col-sm-4
         - username = current_user.name if current_user
-        %input#username.form-control{placeholder: username, type: 'text'}/
+        %input#username.form-control{name: 'username', placeholder: username, type: 'text'}/
     .form-group
       .col-sm-offset-2.col-sm-10
         %button.btn.btn-default{type: 'submit'} Submit

@@ -77,7 +77,7 @@ class Challenge < ActiveRecord::Base
       random_set = list_of_ids.sort { rand() - 0.5 }[0...count] # reference http://stackoverflow.com/a/119250/982802
       list_of_questions = Question.where(id: random_set)
 
-      self.questions = list_of_questions
+      self.questions = list_of_questions.order(:id)
     end
   end
 
@@ -90,11 +90,11 @@ class Challenge < ActiveRecord::Base
   def determine_checksum
     if single?
       # When challenge is a leaf, generate checksum based on questions
-      self.checksum = questions.sort.map { |x| x.id.b(62).to_s(Radix::BASE::B62) }.join('.')
+      self.checksum = self.questions.map { |x| x.id.b(62).to_s(Radix::BASE::B62) }.join('.')
     elsif mixed?
       # Root challenges contain child nodes that contain the actual questions
       # In this case, generate checksum based on child nodes
-      self.checksum = "Challenge:#{children.sort.map { |x| x.id.b(62).to_s(Radix::BASE::B62) }.join('.')}"
+      self.checksum = "Challenge:#{children.order(:id).map { |x| x.id.b(62).to_s(Radix::BASE::B62) }.join('.')}"
     end
     # Otherwise challenge might be invalid, e.g. there were no questions found
   end

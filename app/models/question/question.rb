@@ -8,10 +8,12 @@ class Question < ActiveRecord::Base
 
   has_many :challenges,
            :through => :challenge_question_pairings
-  has_many :challenge_question_pairings
+  has_many :challenge_question_pairings,
+           :dependent => :destroy
 
   has_many :tricks, :through => :questions_tricks
-  has_many :questions_tricks
+  has_many :questions_tricks,
+           :dependent => :destroy
 
   #TODO optimize through eager loading?
   belongs_to :expression,

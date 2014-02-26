@@ -9,7 +9,7 @@
     - @challenges.each do |challenge|
       %tr
         %td
-          - name = challenge.name ?  challenge.name : "Challenge #{challenge.id}"
+          - name = challenge.name.blank? ?  "Challenge #{challenge.id}" : challenge.name
           = link_to name, challenge
         - if challenge.leaf?
           - about = challenge.questions.first.tricks.first.name #fix this
