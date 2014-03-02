@@ -53,6 +53,7 @@ Strategy::MultiplyBy12
 Strategy::MultiplyLessThanCloseTo100
 Strategy::MultiplyGreaterThanCloseTo100
 Strategy::BumpUp
+Strategy::LIOF
 
 Strategy::CompareFractions
 Strategy::ReadRomanNumeral
