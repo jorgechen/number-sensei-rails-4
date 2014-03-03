@@ -7,11 +7,11 @@
         -#= stylesheet_link_tag '//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css'
         -#= stylesheet_link_tag '//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css'
         = stylesheet_link_tag 'font-awesome'
-        = stylesheet_link_tag 'bootstrap'
-        = stylesheet_link_tag 'bootstrap-theme' #todo load from CDN, if that fails, load from server
+        = stylesheet_link_tag '//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css'
+        = stylesheet_link_tag '//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css'
         = stylesheet_link_tag 'application', :media => 'all'
         = javascript_include_tag 'application'
-        -#= javascript_include_tag '//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js'
+        = javascript_include_tag '//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js'
         = csrf_meta_tags
         = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Rum+Raisin|Roboto+Slab:400,700|Open+Sans:400,700', :media => 'all'
         = yield(:head)
