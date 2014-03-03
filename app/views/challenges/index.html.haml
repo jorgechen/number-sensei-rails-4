@@ -12,7 +12,7 @@
           - name = challenge.name.blank? ?  "Challenge #{challenge.id}" : challenge.name
           = link_to name, challenge
         - if challenge.leaf?
-          - about = challenge.questions.first.tricks.first.name #fix this
+          - about = challenge.trick.name
         - else
           - about = 'Mix'
         %td= about

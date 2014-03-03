@@ -40,6 +40,16 @@ class Challenge < ActiveRecord::Base
     Question.joins(:challenges).where('challenges.id' => self_and_descendants.select(:id))
   end
 
+
+  #@return A new mixed challenge
+  def self.create_mixed(challenge_id_list)
+    c = Challenge.new
+    c.add_child Challenge.find(challenge_id_list)
+    c.save
+    c
+  end
+
+
   #@return
   def self.make(trick, requested_question_count = 10)
     # Number of questions
@@ -94,7 +104,8 @@ class Challenge < ActiveRecord::Base
     elsif mixed?
       # Root challenges contain child nodes that contain the actual questions
       # In this case, generate checksum based on child nodes
-      self.checksum = "Challenge:#{children.order(:id).map { |x| x.id.b(62).to_s(Radix::BASE::B62) }.join('.')}"
+      self.checksum = children.sort.map { |x| x.id.b(62).to_s(Radix::BASE::B62) }.join('-')
+      #NOTE: children.order(:id) does not seem to work when creating new mixed challenge
     end
     # Otherwise challenge might be invalid, e.g. there were no questions found
   end
