@@ -4,7 +4,7 @@ class Question < ActiveRecord::Base
   before_validation :confirm_answer, :confirm_associations
   after_save :associate_related_tricks
 
-  has_many :answer_attempts
+  has_many :question_attempts
 
   has_many :challenges,
            :through => :challenge_question_pairings

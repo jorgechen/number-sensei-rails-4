@@ -11,25 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140223212436) do
+ActiveRecord::Schema.define(version: 20140304004652) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "answer_attempts", force: true do |t|
-    t.integer  "challenge_attempt_id"
-    t.integer  "question_id"
-    t.string   "result"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "user_id"
-    t.integer  "order"
-    t.string   "answer"
-  end
-
-  add_index "answer_attempts", ["challenge_attempt_id"], name: "index_answer_attempts_on_challenge_attempt_id", using: :btree
-  add_index "answer_attempts", ["question_id"], name: "index_answer_attempts_on_question_id", using: :btree
-  add_index "answer_attempts", ["user_id"], name: "index_answer_attempts_on_user_id", using: :btree
 
   create_table "background_jobs", force: true do |t|
     t.string   "name"
@@ -211,6 +196,21 @@ ActiveRecord::Schema.define(version: 20140223212436) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "question_attempts", force: true do |t|
+    t.integer  "challenge_attempt_id"
+    t.integer  "question_id"
+    t.string   "result"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+    t.integer  "order"
+    t.string   "answer"
+  end
+
+  add_index "question_attempts", ["challenge_attempt_id"], name: "index_question_attempts_on_challenge_attempt_id", using: :btree
+  add_index "question_attempts", ["question_id"], name: "index_question_attempts_on_question_id", using: :btree
+  add_index "question_attempts", ["user_id"], name: "index_question_attempts_on_user_id", using: :btree
 
   create_table "questions", force: true do |t|
     t.integer  "expression_id"
