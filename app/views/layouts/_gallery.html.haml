@@ -1,0 +1,6 @@
+.col-lg-4
+  %ul.list-group
+    - link_map.each do |name, link|
+      = link_to link, class: 'list-group-item' do
+        %h3.list-group-item-heading
+          = name

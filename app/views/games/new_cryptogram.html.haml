@@ -1,0 +1,31 @@
+%h3.text-center= @question
+
+%table.table
+  %tr
+    - 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.each_char do |letter|
+      %td= letter
+  %tr
+    - (1..26).each do |key|
+      %td= key
+
+%table
+  %tr
+    %td
+      %input{size: 2}
+    %td
+      %input{size: 2}
+    %td
+      %input{size: 2}
+    %td
+      %input{size: 2}
+    %td
+      %input{size: 2}
+    %td
+      %input{size: 2}
+  %tr
+    %td 15
+    %td 9 x 2
+    %td 20 - 19
+    %td 14
+    %td 3 + 4
+    %td 25 / 5

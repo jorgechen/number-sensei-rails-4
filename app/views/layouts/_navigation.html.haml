@@ -14,6 +14,7 @@
     %ul.nav.navbar-nav
       %li= link_to 'Tricks', tricks_path
       %li= link_to 'Challenges', challenges_path
+      -#%li= link_to 'Games', games_path
       -#%li= link_to 'Downloads', '/downloads'
       -#%li= link_to 'Dojo', '/dojo'
       %li= link_to 'About', '/about'
@@ -36,6 +37,6 @@
         %li= link_to 'Register', new_user_registration_path
 
 
-      - if user_signed_in? and current_user.has_role? :admin
+      - if admin_signed_in?
         %li
-          = link_to 'Admin', users_path
+          = link_to 'Admin', '/play_god'

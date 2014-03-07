@@ -1,0 +1,55 @@
+.container
+  %h1
+    Cryptogram
+    %small Solve the operations for the answer.
+
+  .panel.panel-default#sample
+    .panel-body#answer_key
+      %h3.text-center What color is a tangerine?
+
+      %table.table
+        %tr
+          - 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.each_char do |letter|
+            %td= letter
+        %tr
+          - (1..26).each do |key|
+            %td= key
+
+      %table
+        %tr
+          %td
+            %input{size: 2}
+          %td
+            %input{size: 2}
+          %td
+            %input{size: 2}
+          %td
+            %input{size: 2}
+          %td
+            %input{size: 2}
+          %td
+            %input{size: 2}
+        %tr
+          %td 15
+          %td 9 x 2
+          %td 20 - 19
+          %td 14
+          %td 3 + 4
+          %td 25 / 5
+
+  #accordion.panel-group
+    .panel.panel-default
+      .panel-heading
+        %h4.panel-title
+          %a{"data-parent" => "#accordion", "data-toggle" => "collapse", href: "#collapseOne"}
+            %h4 Make your own
+      #collapseOne.panel-collapse.collapse.in
+        .panel-body
+          %form#cryptogram_form{role: 'form'}
+            .form-group
+              %label{for: 'createCryptoQuestion'} New Question
+              %input#custom_question.form-control{placeholder: 'Example: Who is the current president?', type: 'question'}/
+            .form-group
+              %label{for: 'createCryptoAnswer'} New Answer
+              %input#custom_answer.form-control{placeholder: 'Example: Barack Obama', type: 'answer'}/
+            %button.btn.btn-default{type: 'submit'} Submit

@@ -2,6 +2,11 @@ NumberSenseiRails4::Application.routes.draw do
 
   post 'background_jobs/check_progress'
 
+  get 'games/index'
+  get 'games/cryptogram'
+  post 'games/new_cryptogram', to: 'games#new_cryptogram'
+  get 'games', to: 'games#index'
+
   # User authentication:
   devise_for :users, :controllers => { :omniauth_callbacks => 'users/omniauth_callbacks' }
 
