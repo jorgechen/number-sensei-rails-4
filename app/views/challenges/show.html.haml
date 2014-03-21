@@ -31,6 +31,5 @@
       %b Checksum:
       = @challenge.checksum
 
-    = link_to 'Edit', edit_challenge_path(@challenge)
-    \|
-    = link_to 'Back', challenges_path
+    = link_to 'Edit', edit_challenge_path(@challenge), class: 'btn btn-default'
+    = link_to 'Back', challenges_path, class: 'btn btn-info'

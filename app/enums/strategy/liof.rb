@@ -1,4 +1,4 @@
-class Strategy::LIOF < Strategy
+class Strategy::Liof < Strategy
   def name
     'LIOF'
   end
