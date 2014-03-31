@@ -4,8 +4,8 @@
 
 %table.table
   %tr
-    %th Expression
-    %th Answer
+    %th Problem
+    %th Solution
     %th Html
     %th Plain text
     %th Answer html
@@ -16,12 +16,12 @@
 
   - @questions.each do |question|
     %tr
-      %td= question.expression
-      %td= question.answer
-      %td= raw question.html
-      %td= question.plain_text
-      %td= question.answer_html
-      %td= question.answer_plain_text
+      %td= question.problem
+      %td= question.solution
+      %td= raw question.problem_html
+      %td= question.problem_plain_text
+      %td= raw question.solution_html
+      %td= question.solution_plain_text
       %td= link_to 'Show', question_path(question), class: 'btn btn-default'
       %td= link_to 'Edit', edit_question_path(question), class: 'btn btn-info'
       %td= link_to 'Destroy', question_path(question), :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn btn-danger'

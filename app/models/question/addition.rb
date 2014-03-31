@@ -1,8 +1,18 @@
 class Question::Addition < Question::Binary
 
   #@override
-  def self.new_expression(left, right)
-    AdditionExpression.build left, right
+  def token_plain_text
+    '+'
+  end
+
+  #@override
+  def token_html
+    '+'
+  end
+
+  #@override
+  def self.build_problem(left, right)
+    ::BinaryAddition.build(left, right)
   end
 
 end

@@ -2,12 +2,8 @@
   = f.error_notification
 
   .form-inputs
-    = f.association :expression
-    = f.association :answer
-    = f.input :html
-    = f.input :plain_text
-    = f.input :answer_html
-    = f.input :answer_plain_text
+    = f.association :problem
+    = f.association :solution
 
   .form-actions
     = f.button :submit

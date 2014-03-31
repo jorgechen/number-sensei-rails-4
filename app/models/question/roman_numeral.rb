@@ -2,7 +2,7 @@
 class Question::RomanNumeral < Question
 
   def roman
-    RomanNumerals.to_roman(expression.to_i)
+    RomanNumerals.to_roman(answer_plain_text.to_i) #TODO this is such a hack...
   end
 
   def arabic

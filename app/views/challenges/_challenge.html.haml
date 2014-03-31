@@ -6,7 +6,7 @@
       - question_id = "question_#{question.id}"
       .form-group
         %label.col-sm-2.control-label{for: question_id}
-          = raw question.html
+          = raw question.problem_html
         .col-sm-2
           %input.form-control{id: question_id, name: question_id, type: 'number'}/
         .col-sm-1

@@ -7,15 +7,11 @@ class Strategy::MultiplicationTable < Strategy
     'Know it by heart!'
   end
 
-  def question_qualifies?(q)
-    if q.is_a? Question::Multiplication
-      a = q.left.to_i
-      b = q.right.to_i
-      if 1 <= a and 1 <= b and a <= 12 and b <= 12
-        return true
-      end
-    end
-    false
+  LOWER_LIMIT = 1
+  UPPER_LIMIT = 12
+
+  def question_qualifies?(question)
+    question.is_a? Question::Multiplication and question.is_in_range?(LOWER_LIMIT, UPPER_LIMIT)
   end
 
   # @override

@@ -7,6 +7,7 @@ class Strategy::CompareFractions < Strategy
     'The bigger fraction after crossing denominators.'
   end
 
-  def question_qualifies?(q)
+  def question_qualifies?(question)
+    false
   end
 end

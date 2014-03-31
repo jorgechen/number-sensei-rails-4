@@ -1,15 +1,26 @@
 class Question::Exponential < Question::Binary
 
   def base
-    expression.left
+    left
   end
 
   def exponent
-    expression.right
+    right
+  end
+
+
+  #@override
+  def token_plain_text
+    '^'
   end
 
   #@override
-  def self.new_expression(left, right)
-    ExponentialExpression.build left, right
+  def problem_html
+    "#{base}<sup>#{exponent}</sup>"
+  end
+
+  #@override
+  def self.build_problem(left, right)
+    ::Exponential.build left, right
   end
 end

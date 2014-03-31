@@ -7,10 +7,8 @@ class Strategy::MultiplyBy125 < Strategy
     'Divide by 8, then append the remainder of 1000 to the right.'
   end
 
-  def question_qualifies?(q)
-    if q.is_a? Question::Multiplication and q.expression.has_a? 125
-      true
-    end
+  def question_qualifies?(question)
+    question.is_a? Question::Multiplication and question.contains?(125)
   end
 
   # @override

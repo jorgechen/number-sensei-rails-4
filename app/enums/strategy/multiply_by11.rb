@@ -4,13 +4,11 @@ class Strategy::MultiplyBy11 < Strategy
   end
 
   def hint
-    #'Add adjacent digits, one by one, from right to left.'
+    'Add adjacent digits from right to left.'
   end
 
-  def question_qualifies?(q)
-    if q.is_a? Question::Multiplication and q.expression.has_a? 11
-      true
-    end
+  def question_qualifies?(question)
+    question.is_a? Question::Multiplication and question.contains?(11)
   end
 
   # @override

@@ -33,9 +33,11 @@ module NumberSenseiRails4
     # config.i18n.default_locale = :de
 
 
-    # load all models
+    # load models in subdirectories
     config.autoload_paths = Dir[
-        "#{config.root}/app/models/**/",
+        "#{config.root}/app/models/values/**/",
+        "#{config.root}/app/models/expressions/**/",
+        "#{config.root}/app/models/gamification/**/",
         "#{config.root}/app/enums/**/",
         #"#{config.root}/lib/**/",
         "#{config.root}/lib",

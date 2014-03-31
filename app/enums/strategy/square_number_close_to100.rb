@@ -25,7 +25,7 @@ class Strategy::SquareNumberCloseTo100 < Strategy
       exponent = question.exponent.to_i
       base = question.base.to_i
       if  exponent == 2 and
-          a != 100 and
+          base != 100 and
           LOWER_LIMIT < base and
           base < UPPER_LIMIT
         return true

@@ -4,13 +4,11 @@ class Strategy::MultiplyBy25 < Strategy
   end
 
   def hint
-    'Divide by 4, then append 0, 25, 50, or 75.'
+    'Divide by 4.'
   end
 
-  def question_qualifies?(q)
-    if q.is_a? Question::Multiplication and q.expression.has_a? 25
-      true
-    end
+  def question_qualifies?(question)
+    question.is_a? Question::Multiplication and question.contains?(25)
   end
 
   # @override

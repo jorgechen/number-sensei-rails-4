@@ -1,6 +1,5 @@
 # Squares to memorize
 class Strategy::Square < Strategy
-  UPPER_LIMIT = 36
 
   def name
     'Square'
@@ -11,7 +10,7 @@ class Strategy::Square < Strategy
   end
 
   def question_qualifies?(question)
-    question.is_a? Question::Exponential and question.exponent.to_i == 2 and question.base.to_i < UPPER_LIMIT
+    question.is_a? Question::Exponential and question.exponent == 2 and question.base <= 35
   end
 
   # @override

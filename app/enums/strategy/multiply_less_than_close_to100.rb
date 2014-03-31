@@ -7,16 +7,12 @@ class Strategy::MultiplyLessThanCloseTo100 < Strategy
     ''
   end
 
+  LOWER_LIMIT = 91
+  UPPER_LIMIT = 99
+
   #@param q [Question::Multiplication]
-  def question_qualifies?(q)
-    if q.is_a? Question::Multiplication
-      a = q.left.to_i
-      b = q.right.to_i
-      if 90 < a and 90 < b and a < 100 and b < 100
-        return true
-      end
-    end
-    false
+  def question_qualifies?(question)
+    question.is_a? Question::Multiplication and question.is_in_range?(LOWER_LIMIT, UPPER_LIMIT)
   end
 
   # @override

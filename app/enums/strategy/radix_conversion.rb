@@ -8,10 +8,8 @@ class Strategy::RadixConversion < Strategy
   end
 
   # @override
-  def question_qualifies?(q)
-    if q.is_a? Question::RadixConversion
-      true
-    end
+  def question_qualifies?(question)
+    question.is_a? Question::RadixConversion
   end
 
   # @override

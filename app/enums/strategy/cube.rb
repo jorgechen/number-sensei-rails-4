@@ -8,7 +8,7 @@ class Strategy::Cube < Strategy
   end
 
   def question_qualifies?(question)
-    question.is_a? Question::Exponential and question.expression.exponent == 3
+    question.is_a? Question::Exponential and question.exponent == 3
   end
 
   # @override

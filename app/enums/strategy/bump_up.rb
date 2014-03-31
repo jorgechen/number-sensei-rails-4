@@ -12,25 +12,18 @@ class Strategy::BumpUp < Strategy
   UPPER_LIMIT = 360 # Assuming kids memorize squares up to 35
 
 
-  #@param q [Question::Multiplication]
-  def question_qualifies?(q)
+  #@param question [Question::Multiplication]
+  def question_qualifies?(question)
     qualifies = false
 
-    if q.is_a? Question::Multiplication
-      a = q.left.to_i
-      b = q.right.to_i
-
-      if  LOWER_LIMIT < a and a < UPPER_LIMIT and
-          LOWER_LIMIT < b and b < UPPER_LIMIT
-        a_tens = a / 10
-        b_tens = b / 10
-        a_ones = a % 10
-        b_ones = b % 10
-        if a_tens == b_tens and a_ones + b_ones == 10
-          qualifies = true
-        end
+    if question.is_a? Question::Multiplication and question.is_in_range?(LOWER_LIMIT, UPPER_LIMIT)
+      a = question.left.to_i
+      b = question.right.to_i
+      if a / 10 == b / 10 and a % 10 + b % 10 == 10
+        qualifies = true
       end
     end
+
     qualifies
   end
 

@@ -1,38 +1,43 @@
-class Fraction < Value
-  # Attribute numerator
-  validates :numerator,
+#NOTE: equivalent to a binary integer division
+class Fraction < BinaryOperation
+
+  def numerator
+    left
+  end
+
+  def denominator
+    right
+  end
+
+  # numerator
+  validates :left,
             :presence => true,
-            :uniqueness => {:scope => :denominator}
+            :uniqueness => {:scope => :right}
 
-  # Attribute denominator
-  validates :denominator,
+  # denominator
+  validates :right,
             :presence => true,
-            :numericality => {:greater_than =>  0}
+            :numericality => {:greater_than => 0}
 
 
-  # @override
+  #@override
   def to_s
-    "#{numerator}/#{denominator}"
+    "#{left}/#{right}"
   end
 
-  # @return [Integer] a whole number part of this fraction
+  #@return [Integer] a whole number part of this fraction
   def whole_number
-    numerator / denominator
+    left / right
   end
 
-  # @return [Integer] the numerator in this fraction minus the whole number
-  def proper_fraction_numerator
-    numerator % denominator
+  #@return [Integer] reminder, a.k.a. numerator of the mixed number
+  def remainder
+    left % right
   end
 
-  # @return [Rational]
+  #@return [Rational] a Ruby object representing the fraction
   def rational
-    Rational(numerator, denominator)
-  end
-
-  # @return [Fraction] new and unsaved Fraction
-  def self.build(numerator, denominator)
-    where(numerator: numerator, denominator: denominator).first_or_create
+    Rational(left, right)
   end
 
 end

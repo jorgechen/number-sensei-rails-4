@@ -19,9 +19,9 @@
 
     %p
       - @challenge.all_questions.shuffle.each do |question|
-        = raw question.problem_statement
+        = raw question.problem_html
         %br
-        - answers.append "#{question.answer_html}"
+        - answers.append "#{question.solution_html}"
 
     %br
     %p

@@ -4,13 +4,11 @@ class Strategy::MultiplyBy5 < Strategy
   end
 
   def hint
-    'Divide by 2, then append 0 or 5.'
+    'Divide by 2, be careful with the remainder.'
   end
 
-  def question_qualifies?(q)
-    if q.is_a? Question::Multiplication and q.expression.has_a? 5
-      true
-    end
+  def question_qualifies?(question)
+    question.is_a? Question::Multiplication and question.contains?(5)
   end
 
   # @override

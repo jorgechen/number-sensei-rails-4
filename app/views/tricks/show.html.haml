@@ -34,12 +34,12 @@
                 var result = ''
                 if (attempt)
                 {
-                  if ('#{q.answer_html}'.toLowerCase() == attempt.toLowerCase()) {
+                  if ('#{q.solution_html}'.toLowerCase() == attempt.toLowerCase()) {
                     result = '#{check_mark_image}'
                   }
                   else {
                     // Show correct answer:
-                    result = '#{q.answer_html}'
+                    result = '#{q.solution_html}'
                   }
                 }
                 $('##{cid}').html(result)

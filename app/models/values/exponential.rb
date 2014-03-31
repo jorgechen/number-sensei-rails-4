@@ -1,0 +1,3 @@
+class Exponential < BinaryOperation
+
+end
