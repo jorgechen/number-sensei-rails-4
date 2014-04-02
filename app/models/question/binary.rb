@@ -70,6 +70,7 @@ class Question::Binary < Question
     x = self.new
 
     x.problem = build_problem(left_leaf, right_leaf)
+    x.solution = x.problem.solve
 
     x
   end

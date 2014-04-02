@@ -7,6 +7,8 @@ class CreateChallengeAttempts < ActiveRecord::Migration
       t.integer :incorrect
       t.integer :skipped
       t.integer :total
+      t.integer :score
+      t.integer :time_taken
 
       t.timestamps
     end

@@ -30,11 +30,6 @@ class Question < ActiveRecord::Base
     "#{plain_text} = "
   end
 
-  # can be overridden
-  def problem_statement
-    "#{html} = "
-  end
-
   BLANK_TEXT = '2 + 2'
 
   #@abstract
@@ -57,20 +52,17 @@ class Question < ActiveRecord::Base
     BLANK_TEXT
   end
 
-
   # The appendix is an optional part of the question appended after the answer box
+  #@abstract
   def appendix
-  end
-
-  def answer_match
-    answer_html
+    ''
   end
 
   #@param solution [String] The user's solution to this question
   #@return True if solution is correct
   def attempt_to_solve(solution)
     #TODO improve checking...
-    answer_plain_text == solution
+    solution_plain_text == solution
   end
 
   # CALLBACKS

@@ -8,7 +8,6 @@ class Question::Exponential < Question::Binary
     right
   end
 
-
   #@override
   def token_plain_text
     '^'
@@ -16,7 +15,7 @@ class Question::Exponential < Question::Binary
 
   #@override
   def problem_html
-    "#{base}<sup>#{exponent}</sup>"
+    "#{problem.base}<sup>#{problem.exponent}</sup>"
   end
 
   #@override

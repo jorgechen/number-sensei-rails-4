@@ -2,39 +2,42 @@
 # Example: 783 = ______ (Roman numeral)
 class Question::ArabicToRomanNumeral < Question
 
-  def roman
-    RomanNumerals.to_roman(expression.to_i)
-  end
-
   def arabic
-    expression.to_i
+    problem.value
   end
 
+  def roman
+    RomanNumerals.to_roman(arabic)
+  end
+
+  #@abstract
+  def problem_plain_text
+    "#{arabic}"
+  end
+
+  #@abstract
+  def problem_html
+    "#{arabic}"
+  end
+
+  #@abstract
+  def solution_plain_text
+    "#{roman}"
+  end
+
+  #@abstract
+  def solution_html
+    "#{roman}"
+  end
+
+  # @override
   def appendix
     '(Roman numeral)'
   end
 
-  def plain_text
-    arabic.to_s
-  end
-
-  def html
-    arabic.to_s
-  end
-
-  def answer_plain_text
-    roman.to_s
-  end
-
-  def answer_html
-    roman.to_s
-  end
-
-
-
   def self.build(arabic)
     x = self.new
-    x.expression = IntegerExpression.build(arabic)
+    x.problem = IntegerNumber.build(arabic)
     x
   end
 

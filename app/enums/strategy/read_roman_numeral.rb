@@ -8,12 +8,12 @@ class Strategy::ReadRomanNumeral < Strategy
   end
 
   def question_qualifies?(question)
-    question.is_a? Question::RomanNumeral
+    question.is_a? Question::RomanToArabicNumeral
   end
 
   # @override
   def possible_questions
-    Question::RomanNumeral.all
+    Question::RomanToArabicNumeral.all
   end
 
 end

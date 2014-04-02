@@ -1,11 +1,15 @@
 class Constant < ActiveRecord::Base
   validates :name,
+            :presence => true,
             :uniqueness => true
 
   validates :value,
+            :presence => true,
             :uniqueness => true
 
+  # symbol in HTML
   validates :symbol,
+            :presence => true,
             :uniqueness => true
 
   def to_s

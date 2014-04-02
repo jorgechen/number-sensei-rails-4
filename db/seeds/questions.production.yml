@@ -53,7 +53,7 @@ radix_conversion:
     decimal_to: 64
     radix_from: 10
     radix_to: 4
-roman_numeral:
+roman_to_arabic_numeral:
   - lower: 1
     upper: 2000 # This range will covers all letters from I to M
 arabic_to_roman_numeral:

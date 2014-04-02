@@ -41,10 +41,10 @@ module Barracks
       end
     end
 
-    if (list = data['roman_numeral'])
+    if (list = data['roman_to_arabic_numeral'])
       puts 'Roman Numerals'
       list.each do |h|
-        Barracks.build_roman_numeral(h, background_job)
+        Barracks.build_roman_to_arabic_numeral(h, background_job)
       end
     end
 
@@ -104,7 +104,9 @@ module Barracks
     (a_start..a_end).each do |a|
       (b_start..b_end).each do |b|
         q = type.build a, b
-        q.save
+        unless q.save
+          puts q.errors.messages
+        end
       end
       background_job.increment!(:progress, b_length) if background_job
     end
@@ -126,10 +128,13 @@ module Barracks
     end
 
     (base_start..base_end).each do |b|
-      q = Question::Exponential.build(b, power)
-      q.save
 
-        background_job.increment!(:progress) if background_job
+      q = Question::Exponential.build(b, power)
+      unless q.save
+        puts q.errors.messages
+      end
+
+      background_job.increment!(:progress) if background_job
     end
   end
 
@@ -151,7 +156,9 @@ module Barracks
 
     (decimal_from..decimal_to).each do |b|
       q = Question::RadixConversion.build(b, radix_from, radix_to)
-      q.save
+      unless q.save
+        puts q.errors.messages
+      end
 
       background_job.increment!(:progress) if background_job
     end
@@ -160,7 +167,7 @@ module Barracks
 
   # @param lower [Integer]
   # @param upper [Integer]
-  def self.build_roman_numeral(h, background_job)
+  def self.build_roman_to_arabic_numeral(h, background_job)
     lower = h['lower'].to_i
     upper = h['upper'].to_i
 
@@ -170,8 +177,10 @@ module Barracks
     end
 
     (lower..upper).each do |b|
-      q = Question::RomanNumeral.build(b)
-      q.save
+      q = Question::RomanToArabicNumeral.build(b)
+      unless q.save
+        puts q.errors.messages
+      end
 
       background_job.increment!(:progress) if background_job
     end
@@ -191,7 +200,9 @@ module Barracks
 
     (lower..upper).each do |b|
       q = Question::ArabicToRomanNumeral.build(b)
-      q.save
+      unless q.save
+        puts q.errors.messages
+      end
 
       background_job.increment!(:progress) if background_job
     end

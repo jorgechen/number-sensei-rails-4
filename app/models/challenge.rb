@@ -5,9 +5,6 @@ class Challenge < ActiveRecord::Base
   # Challenge is a hierarchical tree
   acts_as_tree with_advisory_lock: false
 
-  # Each leaf node associates with 1 trick only
-  belongs_to :trick
-
   has_many :challenge_attempts
 
   has_many :questions,

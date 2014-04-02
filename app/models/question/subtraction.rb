@@ -1,8 +1,18 @@
 class Question::Subtraction < Question::Binary
 
   #@override
-  def self.new_expression(left, right)
-    SubtractionExpression.build left, right
+  def token_plain_text
+    '-'
+  end
+
+  #@override
+  def token_html
+    '&minus;'
+  end
+
+  #@override
+  def self.build_problem(left, right)
+    ::BinarySubtraction.build(left, right)
   end
 
 end

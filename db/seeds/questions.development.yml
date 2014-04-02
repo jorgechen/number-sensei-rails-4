@@ -42,7 +42,7 @@ radix_conversion:
     decimal_to: 64
     radix_from: 10
     radix_to: 4
-roman_numeral:
+roman_to_arabic_numeral:
   - lower: 1
     upper: 1000
 arabic_to_roman_numeral:

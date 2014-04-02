@@ -40,4 +40,9 @@ class Fraction < BinaryOperation
     Rational(left, right)
   end
 
+
+  #@override
+  def solve
+    self
+  end
 end
