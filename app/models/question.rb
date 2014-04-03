@@ -22,12 +22,14 @@ class Question < ActiveRecord::Base
              :dependent => :destroy,
              :autosave => true
 
-  # Make sure problem is valid
-  validates_associated :problem
+  # This essentially validates uniqueness of a question
+  # NOTE: it is possible to have the same problem/answer for 2 questions
+  validates :problem_id,
+            :uniqueness => {:scope => :solution_id}
 
   # can be overridden
   def to_s
-    "#{plain_text} = "
+    "#{problem_plain_text}=#{solution_plain_text}"
   end
 
   BLANK_TEXT = '2 + 2'

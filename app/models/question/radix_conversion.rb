@@ -1,4 +1,5 @@
-# This
+# This question asks you to convert a number from base to base
+# 104 (base 4) = ____ (base 8)
 class Question::RadixConversion < Question
 
   #@abstract
@@ -32,10 +33,10 @@ class Question::RadixConversion < Question
     "#{problem_html} = <code>_____________</code><sub>#{answer.radix}</sub>"
   end
 
-  def self.build(decimal_value, base_from, base_to)
+  def self.build(base_10_value, base_from, base_to)
     x = self.new
-    x.problem = RadixNumber.build(decimal_value, base_from)
-    x.solution = RadixNumber.build(decimal_value, base_to)
+    x.problem = RadixNumber.build(base_10_value, base_from)
+    x.solution = RadixNumber.build(base_10_value, base_to)
     x
   end
 

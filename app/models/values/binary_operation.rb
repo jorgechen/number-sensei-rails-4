@@ -17,7 +17,7 @@ class BinaryOperation < ActiveRecord::Base
 
   #@return new, unsaved instance
   def self.build(left, right)
-    self.new(left: left, right: right)
+    where(left: left, right: right, type: self.name).first_or_initialize
   end
 
 end

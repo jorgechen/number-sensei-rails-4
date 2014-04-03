@@ -105,7 +105,7 @@ module Barracks
       (b_start..b_end).each do |b|
         q = type.build a, b
         unless q.save
-          puts q.errors.messages
+          puts "#{q} ... #{q.errors.messages}"
         end
       end
       background_job.increment!(:progress, b_length) if background_job
@@ -131,7 +131,7 @@ module Barracks
 
       q = Question::Exponential.build(b, power)
       unless q.save
-        puts q.errors.messages
+        puts "#{q} ... #{q.errors.messages}"
       end
 
       background_job.increment!(:progress) if background_job
@@ -157,7 +157,7 @@ module Barracks
     (decimal_from..decimal_to).each do |b|
       q = Question::RadixConversion.build(b, radix_from, radix_to)
       unless q.save
-        puts q.errors.messages
+        puts "#{q} ... #{q.errors.messages}"
       end
 
       background_job.increment!(:progress) if background_job
@@ -179,7 +179,7 @@ module Barracks
     (lower..upper).each do |b|
       q = Question::RomanToArabicNumeral.build(b)
       unless q.save
-        puts q.errors.messages
+        puts "#{q} ... #{q.errors.messages}"
       end
 
       background_job.increment!(:progress) if background_job
@@ -201,7 +201,7 @@ module Barracks
     (lower..upper).each do |b|
       q = Question::ArabicToRomanNumeral.build(b)
       unless q.save
-        puts q.errors.messages
+        puts "#{q} ... #{q.errors.messages}"
       end
 
       background_job.increment!(:progress) if background_job
