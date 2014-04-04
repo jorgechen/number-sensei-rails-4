@@ -2,10 +2,10 @@
 multiplication:
   - first_factor:
       start: 1
-      finish: 9999
+      finish: 1000
     second_factor:
       start: 1
-      finish: 9999
+      finish: 1000
 #division:
 #  - first_factor: # supposedly this is for divisibility rules
 #      start: 1
