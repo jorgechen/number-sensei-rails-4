@@ -1,6 +1,6 @@
 class Challenge < ActiveRecord::Base
 
-  DEFAULT_QUESTION_COUNT = 8
+  DEFAULT_QUESTION_COUNT = 20
 
   # Challenge is a hierarchical tree
   acts_as_tree with_advisory_lock: false
@@ -48,13 +48,11 @@ class Challenge < ActiveRecord::Base
 
 
   #@return
-  def self.make(trick, requested_question_count = 10)
+  def self.make_by_trick(trick, requested_question_count = DEFAULT_QUESTION_COUNT)
     # Number of questions
-    count = [trick.questions.count, requested_question_count].min
-    puts "count=#{count}"
+    count = [trick.questions.question_count, requested_question_count].min
 
     challenge = nil
-
     begin
       # generate a random list of questions
       list_of_ids = trick.questions.select('questions.id').to_a
@@ -67,6 +65,11 @@ class Challenge < ActiveRecord::Base
     challenge
   end
 
+  attr_accessor :question_count
+  def question_count
+    @question_count and @question_count.to_i > 0 ? @question_count.to_i : DEFAULT_QUESTION_COUNT
+  end
+
   ########################################
   before_validation :determine_questions,
                     :determine_checksum
@@ -75,12 +78,12 @@ class Challenge < ActiveRecord::Base
 
   # Populates with questions
   def determine_questions
-    if new_record? and trick and not trick.questions.empty?
+    if new_record?
       # Number of questions
-      count = [trick.questions.count, DEFAULT_QUESTION_COUNT].min
+      count = [Question.count, self.question_count].min
 
       # generate a random list of questions
-      list_of_ids = trick.questions.select('questions.id').to_a
+      list_of_ids = Question.select('questions.id').to_a
       random_set = list_of_ids.sort { rand() - 0.5 }[0...count] # reference http://stackoverflow.com/a/119250/982802
       list_of_questions = Question.where(id: random_set)
 

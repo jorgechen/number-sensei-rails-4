@@ -8,6 +8,10 @@ class IntegerNumber < Value
             :presence => true,
             :uniqueness => true
 
+  def to_s
+    value
+  end
+
   #@return New or existing record of given value
   def self.build(integer_value)
     where(value: integer_value).first_or_create

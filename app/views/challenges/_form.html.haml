@@ -4,9 +4,7 @@
   .form-inputs
     = f.input :name
     = f.input :checksum, disabled: true
-
-    = f.label :trick
-    = f.collection_select :trick_id, Trick.all, :id, :name
+    = f.input :question_count, as: :integer
 
   .form-actions
     = f.button :submit

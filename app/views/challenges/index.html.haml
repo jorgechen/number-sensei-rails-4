@@ -4,18 +4,15 @@
   %table.table
     %tr
       %th Name
-      %th About
+      - if admin_signed_in?
+        %th ID
+        %th Checksum
 
     - @challenges.each do |challenge|
       %tr
         %td
           - name = challenge.name.blank? ?  "Challenge #{challenge.id}" : challenge.name
           = link_to name, challenge
-        - if challenge.leaf?
-          - about = challenge.trick.name if challenge.trick
-        - else
-          - about = 'Mix'
-        %td= about
         - if admin_signed_in?
           %td= challenge.id
           %td= challenge.checksum

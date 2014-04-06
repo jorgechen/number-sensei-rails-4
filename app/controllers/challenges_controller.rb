@@ -83,7 +83,7 @@ class ChallengesController < ApplicationController
 
     @questions.each do |q|
       attempted_answer = @answers_hash[q.id]
-      @results["question_#{q.id}"] = q.attempt_to_solve(attempted_answer) ? true : q.answer_plain_text;
+      @results["question_#{q.id}"] = q.attempt_to_solve(attempted_answer) ? true : q.solution_plain_text;
     end
 
     respond_to do |format|
@@ -100,6 +100,6 @@ class ChallengesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def challenge_params
-    params.require(:challenge).permit(:name, :checksum, :trick_id)
+    params.require(:challenge).permit(:name, :checksum, :trick_id, :question_count)
   end
 end
