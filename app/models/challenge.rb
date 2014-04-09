@@ -23,6 +23,13 @@ class Challenge < ActiveRecord::Base
   #          :presence => true,
   #          :uniqueness => true
 
+  #@param answer_hash given in the form {question_id: answer}
+  def attempt(answer_hash)
+    questions.each do |q|
+
+    end
+  end
+
   #@return If the challenge is a composition of other challenges.
   def mixed?
     root? and not children.empty?
@@ -66,8 +73,14 @@ class Challenge < ActiveRecord::Base
   end
 
   attr_accessor :question_count
+
+  #@override getter
   def question_count
-    @question_count and @question_count.to_i > 0 ? @question_count.to_i : DEFAULT_QUESTION_COUNT
+    if @question_count and @question_count.to_i > 0
+      @question_count.to_i
+    else
+      DEFAULT_QUESTION_COUNT
+    end
   end
 
   ########################################
