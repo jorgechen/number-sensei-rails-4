@@ -12,9 +12,16 @@ class Question::Binary < Question
 
   #@param lower [Integer] lower limit, inclusive
   #@param upper [Integer] upper limit, inclusive
-  #@return [TrueClass] true if any field is within the range
-  def is_in_range?(lower, upper)
+  #@return [TrueClass] true if ONE of the fields is within the range
+  def is_any_in_range?(lower, upper)
     (lower <= left and left <= upper) or (lower <= right and right <= upper)
+  end
+
+  #@param lower [Integer] lower limit, inclusive
+  #@param upper [Integer] upper limit, inclusive
+  #@return [TrueClass] true if BOTH of the fields is within the range
+  def is_both_in_range?(lower, upper)
+    (lower <= left and left <= upper) and (lower <= right and right <= upper)
   end
 
   ################

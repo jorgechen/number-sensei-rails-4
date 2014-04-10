@@ -16,7 +16,7 @@ class Strategy::BumpUp < Strategy
   def question_qualifies?(question)
     qualifies = false
 
-    if question.is_a? Question::Multiplication and question.is_in_range?(LOWER_LIMIT, UPPER_LIMIT)
+    if question.is_a? Question::Multiplication and question.is_both_in_range?(LOWER_LIMIT, UPPER_LIMIT)
       a = question.left.to_i
       b = question.right.to_i
       if a / 10 == b / 10 and a % 10 + b % 10 == 10

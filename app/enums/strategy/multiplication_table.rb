@@ -11,7 +11,7 @@ class Strategy::MultiplicationTable < Strategy
   UPPER_LIMIT = 12
 
   def question_qualifies?(question)
-    question.is_a? Question::Multiplication and question.is_in_range?(LOWER_LIMIT, UPPER_LIMIT)
+    question.is_a? Question::Multiplication and question.is_both_in_range?(LOWER_LIMIT, UPPER_LIMIT)
   end
 
   # @override

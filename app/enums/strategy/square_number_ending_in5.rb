@@ -7,26 +7,21 @@ class Strategy::SquareNumberEndingIn5 < Strategy
     'Multiply first part by its increment, then write 25.'
   end
 
+  LOWER_LIMIT = 1
   UPPER_LIMIT = 115
 
   # @override
   def question_qualifies?(question)
-    if question.is_a? Question::Multiplication
+    if question.is_a? Question::Multiplication and question.is_both_in_range?(LOWER_LIMIT, UPPER_LIMIT)
       a = question.left
       b = question.right
-      if  a == b and
-          a % 10 == 5 and
-          a <= UPPER_LIMIT
-        return true
-      end
+      return true if a == b and a % 10 == 5
+
     elsif question.is_a? Question::Exponential
       exponent = question.exponent
       base = question.base
-      if  exponent == 2 and
-          base % 10 == 5 and
-          base <= UPPER_LIMIT
-        return true
-      end
+      return true if exponent == 2 and base % 10 == 5 and LOWER_LIMIT <= base and base <= UPPER_LIMIT
+
     end
     false
   end

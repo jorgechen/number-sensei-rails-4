@@ -10,7 +10,7 @@ class Strategy::Square < Strategy
   end
 
   def question_qualifies?(question)
-    question.is_a? Question::Exponential and question.exponent == 2 and question.base <= 35
+    question.is_a? Question::Exponential and question.exponent == 2 and 0 < question.base and question.base <= 35
   end
 
   # @override
