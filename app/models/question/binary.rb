@@ -46,12 +46,12 @@ class Question::Binary < Question
 
   #@override
   def problem_plain_text
-    "#{left} #{self.token_plain_text} #{right} = "
+    "#{left} #{self.token_plain_text} #{right}"
   end
 
   #@override
   def problem_html
-    "#{left} #{self.token_html} #{right} = "
+    "#{left} #{self.token_html} #{right}"
   end
 
   #@override

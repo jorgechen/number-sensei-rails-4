@@ -13,12 +13,12 @@ class Question::RomanToArabicNumeral < Question
 
   #@abstract
   def problem_plain_text
-    "#{roman} = "
+    "#{roman}"
   end
 
   #@abstract
   def problem_html
-    "#{roman} = "
+    "#{roman}"
   end
 
   #@abstract
