@@ -1,6 +1,12 @@
 # Question is, at its most basic, a relationship between the problem and answer.
 class Question < ActiveRecord::Base
 
+  attr_accessor :skip_trick_assignment
+
+  def skip_trick_assignment
+    @skip_trick_assignment || false # default is false
+  end
+
   has_many :question_attempts
 
   has_many :challenges,
@@ -74,6 +80,8 @@ class Question < ActiveRecord::Base
 
   # Add relationships to any existing tricks that apply
   def associate_related_tricks
-    Armory::assign_tricks(self)
+    unless self.skip_trick_assignment
+      Armory::assign_tricks(self)
+    end
   end
 end

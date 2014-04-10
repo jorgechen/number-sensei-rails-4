@@ -104,6 +104,7 @@ module Barracks
     (a_start..a_end).each do |a|
       (b_start..b_end).each do |b|
         q = type.build a, b
+        q.skip_trick_assignment = true
         unless q.save
           puts "#{q} ... #{q.errors.messages}"
         end
@@ -130,6 +131,7 @@ module Barracks
     (base_start..base_end).each do |b|
 
       q = Question::Exponential.build(b, power)
+      q.skip_trick_assignment = true
       unless q.save
         puts "#{q} ... #{q.errors.messages}"
       end
@@ -156,6 +158,7 @@ module Barracks
 
     (decimal_from..decimal_to).each do |b|
       q = Question::RadixConversion.build(b, radix_from, radix_to)
+      q.skip_trick_assignment = true
       unless q.save
         puts "#{q} ... #{q.errors.messages}"
       end
@@ -178,6 +181,7 @@ module Barracks
 
     (lower..upper).each do |b|
       q = Question::RomanToArabicNumeral.build(b)
+      q.skip_trick_assignment = true
       unless q.save
         puts "#{q} ... #{q.errors.messages}"
       end
@@ -200,6 +204,7 @@ module Barracks
 
     (lower..upper).each do |b|
       q = Question::ArabicToRomanNumeral.build(b)
+      q.skip_trick_assignment = true
       unless q.save
         puts "#{q} ... #{q.errors.messages}"
       end
