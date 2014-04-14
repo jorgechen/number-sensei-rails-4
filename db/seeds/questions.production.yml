@@ -67,3 +67,6 @@ roman_to_arabic_numeral:
 arabic_to_roman_numeral:
   - lower: 1
     upper: 4999
+factorial:
+  - lower: 1
+    upper: 7

@@ -27,6 +27,13 @@ module Barracks
     puts 'Barracks is building questions with data:'
     puts data
 
+    if (list = data['factorial'])
+      puts 'Factorial'
+      list.each do |h|
+        Barracks.build_one_factor_question(h, Question::Factorial, background_job)
+      end
+    end
+
     if (list = data['exponential'])
       puts 'Exponential'
       list.each do |h|
@@ -83,6 +90,22 @@ module Barracks
       end
     end
 
+  end
+
+  def self.build_one_factor_question(h, type, background_job)
+    lower = h['lower'].to_i
+    upper = h['upper'].to_i
+
+    background_job.set_total(upper - lower) if background_job
+
+    (lower..upper).each do |a|
+      q = type.build a
+      q.skip_trick_assignment = true
+      unless q.save
+        puts "#{q} ... #{q.errors.messages}"
+      end
+      background_job.increment!(:progress) if background_job
+    end
   end
 
 
