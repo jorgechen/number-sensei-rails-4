@@ -44,28 +44,27 @@ end
 # Note: this will allow reload! in Rails console to work
 # [Reference] https://github.com/beerlington/classy_enum/issues/9
 
+Strategy::BumpUp
+Strategy::CompareFractions
+Strategy::Cube
+Strategy::Factorial
+Strategy::Liof
 Strategy::MultiplicationTable
 Strategy::MultiplyBy5
-Strategy::MultiplyBy25
-Strategy::MultiplyBy125
 Strategy::MultiplyBy11
 Strategy::MultiplyBy12
-Strategy::MultiplyLessThanCloseTo100
+Strategy::MultiplyBy25
+Strategy::MultiplyBy125
 Strategy::MultiplyGreaterThanCloseTo100
-Strategy::BumpUp
-Strategy::Liof
-
-Strategy::CompareFractions
+Strategy::MultiplyLessThanCloseTo100
+Strategy::RadixConversion
 Strategy::ReadRomanNumeral
-Strategy::WriteRomanNumeral
-
 Strategy::Square
-Strategy::SquareNumberEndingIn5
 Strategy::SquareNumberCloseTo50
 Strategy::SquareNumberCloseTo100
-Strategy::Cube
+Strategy::SquareNumberEndingIn5
+Strategy::WriteRomanNumeral
 
-Strategy::RadixConversion
 
 
 class Strategy::GCD < Strategy

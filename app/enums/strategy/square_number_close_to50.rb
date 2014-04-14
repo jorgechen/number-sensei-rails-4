@@ -28,7 +28,8 @@ class Strategy::SquareNumberCloseTo50 < Strategy
 
   # @override
   def possible_questions
-    Question.where('type=? or type=?', Question::Multiplication, Question::Exponential)
+    Question::Multiplication.all_in_range(LOWER_LIMIT, UPPER_LIMIT) +
+        Question::Exponential.squares_in_range(LOWER_LIMIT, UPPER_LIMIT)
   end
 
 end

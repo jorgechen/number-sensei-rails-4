@@ -28,7 +28,7 @@ module Armory
 
     background_job.increment!(:total, questions.count) if background_job
 
-    questions.find_each do |q|
+    questions.each do |q|
       if trick.question_qualifies?(q)
         begin
           q.tricks << trick

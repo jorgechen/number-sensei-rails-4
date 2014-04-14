@@ -19,7 +19,7 @@
 
     %p
       - @challenge.all_questions.shuffle.each do |question|
-        = raw "#{question.problem_html} = ______________________ #{question.appendix}"
+        = raw "#{question.problem_html} = _______________ #{question.appendix}"
         %br
         - answers.append "#{question.solution_html}"
 

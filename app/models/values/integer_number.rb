@@ -9,6 +9,10 @@ class IntegerNumber < Value
             :uniqueness => true
 
   def to_s
+    "#{value}"
+  end
+
+  def to_i
     value
   end
 

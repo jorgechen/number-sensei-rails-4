@@ -13,7 +13,7 @@ class Strategy::MultiplyBy125 < Strategy
 
   # @override
   def possible_questions
-    Question::Multiplication.all
+    Question::Multiplication.any_matching(125)
   end
 
 end

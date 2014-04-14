@@ -9,7 +9,7 @@ class Strategy::BumpUp < Strategy
   end
 
   LOWER_LIMIT = 20
-  UPPER_LIMIT = 360 # Assuming kids memorize squares up to 35
+  UPPER_LIMIT = 120 # Assuming kids memorize squares up to 35
 
 
   #@param question [Question::Multiplication]
@@ -29,7 +29,7 @@ class Strategy::BumpUp < Strategy
 
   # @override
   def possible_questions
-    Question::Multiplication.all
+    Question::Multiplication.all_in_range(LOWER_LIMIT, UPPER_LIMIT)
   end
 
 end

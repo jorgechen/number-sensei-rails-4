@@ -13,7 +13,7 @@ class Strategy::MultiplyBy5 < Strategy
 
   # @override
   def possible_questions
-    Question::Multiplication.all
+    Question::Multiplication.any_matching(5)
   end
 
 end

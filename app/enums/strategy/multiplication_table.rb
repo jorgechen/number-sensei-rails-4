@@ -16,7 +16,7 @@ class Strategy::MultiplicationTable < Strategy
 
   # @override
   def possible_questions
-    Question::Multiplication.all
+    Question::Multiplication.all_in_range(LOWER_LIMIT, UPPER_LIMIT)
   end
 
 end

@@ -38,26 +38,24 @@ class Question < ActiveRecord::Base
     "#{problem_plain_text}=#{solution_plain_text}"
   end
 
-  BLANK_TEXT = '2 + 2'
-
   #@abstract
   def problem_plain_text
-    BLANK_TEXT
+    "#{problem}"
   end
 
   #@abstract
   def problem_html
-    BLANK_TEXT
+    "#{problem}"
   end
 
   #@abstract
   def solution_plain_text
-    BLANK_TEXT
+    "#{solution}"
   end
 
   #@abstract
   def solution_html
-    BLANK_TEXT
+    "#{solution}"
   end
 
   # The appendix is an optional part of the question appended after the answer box
@@ -66,12 +64,24 @@ class Question < ActiveRecord::Base
     ''
   end
 
+  #@abstract
+  def is_any_in_range?(lower, upper)
+    false
+  end
+
   #@param solution [String] The user's solution to this question
   #@return True if solution is correct
   def attempt_to_solve(solution)
     #TODO improve checking...
     solution_plain_text == solution
   end
+
+
+  #@return [Relation] JOIN on question and problems
+  def self.join_problem
+    joins('INNER JOIN binary_operations ON questions.problem_id = binary_operations.id')
+  end
+
 
   # CALLBACKS
   after_save :associate_related_tricks

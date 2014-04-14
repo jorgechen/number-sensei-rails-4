@@ -10,7 +10,7 @@
         .col-sm-2
           %input.form-control{id: question_id, name: question_id, type: 'number'}/
         .col-sm-2
-          = question.appendix
+          = raw question.appendix
         .col-sm-1
           %span.wrong{class: question_id}
     .form-group

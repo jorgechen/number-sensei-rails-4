@@ -1,4 +1,11 @@
 ---
+subtraction:
+  - first_factor:
+      start: 1
+      finish: 10000
+    second_factor:
+      start: 1
+      finish: 10000
 multiplication:
   - first_factor:
       start: 1
@@ -6,6 +13,7 @@ multiplication:
     second_factor:
       start: 1
       finish: 1000
+
 #division:
 #  - first_factor: # supposedly this is for divisibility rules
 #      start: 1

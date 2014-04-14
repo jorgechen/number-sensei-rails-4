@@ -10,7 +10,6 @@ class Question::RomanToArabicNumeral < Question
     RomanNumerals.to_roman(arabic)
   end
 
-
   #@abstract
   def problem_plain_text
     "#{roman}"
@@ -29,21 +28,6 @@ class Question::RomanToArabicNumeral < Question
   #@abstract
   def solution_html
     "#{arabic}"
-  end
-
-  # @override
-  def appendix
-    '(Arabic numeral)'
-  end
-
-  # @override
-  def plain_text
-    roman
-  end
-
-  # @override
-  def html
-    roman
   end
 
   def self.build(arabic)

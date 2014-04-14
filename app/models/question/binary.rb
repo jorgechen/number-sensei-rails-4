@@ -24,6 +24,16 @@ class Question::Binary < Question
     (lower <= left and left <= upper) and (lower <= right and right <= upper)
   end
 
+  #@return [TrueClass] true if left field is in range
+  def is_left_in_range?(lower, upper)
+    (lower <= left and left <= upper)
+  end
+
+  #@return [TrueClass] true if left field is in range
+  def is_right_in_range?(lower, upper)
+    (lower <= right and right <= upper)
+  end
+
   ################
 
   def left
@@ -53,17 +63,6 @@ class Question::Binary < Question
   def problem_html
     "#{left} #{self.token_html} #{right}"
   end
-
-  #@override
-  def solution_plain_text
-    "#{solution.to_s}"
-  end
-
-  #@override
-  def solution_html
-    "#{solution.to_s}"
-  end
-
 
   ################
 

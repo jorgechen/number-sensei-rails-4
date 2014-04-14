@@ -96,7 +96,7 @@ class Challenge < ActiveRecord::Base
       count = [Question.count, self.question_count].min
 
       # generate a random list of questions
-      list_of_ids = Question.select('questions.id').to_a
+      list_of_ids = Question.joins(:tricks).uniq.select('questions.id').to_a
       random_set = list_of_ids.sort { rand() - 0.5 }[0...count] # reference http://stackoverflow.com/a/119250/982802
       list_of_questions = Question.where(id: random_set)
 
