@@ -14,7 +14,7 @@ module Armory
           question.tricks << t
         rescue Exception => e
           puts e.message
-          puts e.backtrace.inspect
+          #puts e.backtrace.inspect
         end
       end
     end

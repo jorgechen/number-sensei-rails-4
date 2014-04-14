@@ -15,9 +15,15 @@ module Barracks
     Strategy.enum_options.each do |s|
       t = Trick.where(strategy: s.enum).first_or_initialize
 
-      if t.new_record? and t.save
-        puts t.name
-        Armory::assign_questions(t, background_job)
+      # This is an arbitrary number. If questions for this trick is too few, then might as well try to find more. If, in fact, there are only a few questions for this trick (e.g. memorizing Question::Factorial) then the overhead to iterate over them is negligible.
+      # Usually we will have 1-3 questions from playing around in the Rails Console.
+      threshold = 20
+
+      if t.new_record? or t.questions.count < threshold
+        if t.save
+          puts t.name
+          Armory::assign_questions(t, background_job)
+        end
       end
     end
   end
@@ -49,16 +55,16 @@ module Barracks
     end
 
     if (list = data['roman_to_arabic_numeral'])
-      puts 'Roman Numerals'
+      puts 'Roman Numerals to Arabic'
       list.each do |h|
-        Barracks.build_roman_to_arabic_numeral(h, background_job)
+        Barracks.build_one_factor_question(h, Question::RomanToArabicNumeral, background_job)
       end
     end
 
     if (list = data['arabic_to_roman_numeral'])
       puts 'Arabic to Roman Numerals'
       list.each do |h|
-        Barracks.build_arabic_to_roman_numeral(h, background_job)
+        Barracks.build_one_factor_question(h, Question::ArabicToRomanNumeral, background_job)
       end
     end
 
@@ -92,6 +98,8 @@ module Barracks
 
   end
 
+
+  # Seed a question with a single field
   def self.build_one_factor_question(h, type, background_job)
     lower = h['lower'].to_i
     upper = h['upper'].to_i
@@ -189,52 +197,5 @@ module Barracks
       background_job.increment!(:progress) if background_job
     end
   end
-
-
-  # @param lower [Integer]
-  # @param upper [Integer]
-  def self.build_roman_to_arabic_numeral(h, background_job)
-    lower = h['lower'].to_i
-    upper = h['upper'].to_i
-
-    if background_job
-      length = upper - lower
-      background_job.set_total(length)
-    end
-
-    (lower..upper).each do |b|
-      q = Question::RomanToArabicNumeral.build(b)
-      q.skip_trick_assignment = true
-      unless q.save
-        puts "#{q} ... #{q.errors.messages}"
-      end
-
-      background_job.increment!(:progress) if background_job
-    end
-  end
-
-
-  # @param lower [Integer]
-  # @param upper [Integer]
-  def self.build_arabic_to_roman_numeral(h, background_job)
-    lower = h['lower'].to_i
-    upper = h['upper'].to_i
-
-    if background_job
-      length = upper - lower
-      background_job.set_total(length)
-    end
-
-    (lower..upper).each do |b|
-      q = Question::ArabicToRomanNumeral.build(b)
-      q.skip_trick_assignment = true
-      unless q.save
-        puts "#{q} ... #{q.errors.messages}"
-      end
-
-      background_job.increment!(:progress) if background_job
-    end
-  end
-
 
 end
