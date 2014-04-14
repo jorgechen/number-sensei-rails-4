@@ -30,8 +30,7 @@ class Question < ActiveRecord::Base
 
   # This essentially validates uniqueness of a question
   # NOTE: it is possible to have the same problem/answer for 2 questions
-  validates :problem_id,
-            :uniqueness => {:scope => :solution_id}
+  validates_uniqueness_of :problem_id, :scope => [:problem_type, :solution_id, :solution_type]
 
   # can be overridden
   def to_s
