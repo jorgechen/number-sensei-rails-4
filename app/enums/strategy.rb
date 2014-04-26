@@ -23,7 +23,7 @@ class Strategy < ClassyEnum::Base
   # @return pool of possible questions
   # @abstract
   def possible_questions
-    Question.first(10)
+    []
   end
 
 end
