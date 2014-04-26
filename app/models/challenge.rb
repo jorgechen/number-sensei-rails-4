@@ -1,6 +1,6 @@
 class Challenge < ActiveRecord::Base
 
-  DEFAULT_QUESTION_COUNT = 20
+  DEFAULT_QUESTION_COUNT = 40
 
   # Challenge is a hierarchical tree
   acts_as_tree with_advisory_lock: false
@@ -23,12 +23,6 @@ class Challenge < ActiveRecord::Base
   #          :presence => true,
   #          :uniqueness => true
 
-  #@param answer_hash given in the form {question_id: answer}
-  def attempt(answer_hash)
-    questions.each do |q|
-
-    end
-  end
 
   #@return If the challenge is a composition of other challenges.
   def mixed?
@@ -57,7 +51,7 @@ class Challenge < ActiveRecord::Base
   #@return
   def self.make_by_trick(trick, requested_question_count = DEFAULT_QUESTION_COUNT)
     # Number of questions
-    count = [trick.questions.question_count, requested_question_count].min
+    count = [trick.questions.count, requested_question_count].min
 
     challenge = nil
     begin
@@ -73,6 +67,7 @@ class Challenge < ActiveRecord::Base
   end
 
   attr_accessor :question_count
+  attr_accessor :trick_id
 
   #@override getter
   def question_count
@@ -92,11 +87,16 @@ class Challenge < ActiveRecord::Base
   # Populates with questions
   def determine_questions
     if new_record?
-      # Number of questions
-      count = [Question.count, self.question_count].min
 
-      # generate a random list of questions
-      list_of_ids = Question.joins(:tricks).uniq.select('questions.id').to_a
+      if trick_id
+        trick = Trick.find(trick_id)
+        count = [trick.questions.count, self.question_count].min
+        list_of_ids = trick.questions.select('questions.id').to_a
+      else
+        count = [Question.count, self.question_count].min
+        list_of_ids = Question.joins(:tricks).uniq.select('questions.id').to_a
+      end
+
       random_set = list_of_ids.sort { rand() - 0.5 }[0...count] # reference http://stackoverflow.com/a/119250/982802
       list_of_questions = Question.where(id: random_set)
 
