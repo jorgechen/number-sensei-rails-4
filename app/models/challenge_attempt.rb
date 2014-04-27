@@ -10,4 +10,9 @@ class ChallengeAttempt < ActiveRecord::Base
 
   validates :user_id,
             presence: true
+
+  #@override
+  def to_s
+    "challenge_attempt_#{id}"
+  end
 end

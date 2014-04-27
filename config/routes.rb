@@ -22,7 +22,11 @@ NumberSenseiRails4::Application.routes.draw do
     end
   end
 
-  resources :questions
+  resources :questions do
+    member do
+      post 'attempt'
+    end
+  end
 
   resources :expressions
 

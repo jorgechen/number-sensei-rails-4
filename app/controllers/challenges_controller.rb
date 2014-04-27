@@ -67,24 +67,27 @@ class ChallengesController < ApplicationController
 
     # Retrieve hash of {Question id => user's answer}
     @answers_hash = {}
-    params.each do |k,v|
+    params.each_with_index do |(k,v), index|
       matches = k.match /^question_(\d+)$/
       if matches
         question_id = matches[1].to_i
-        @answers_hash[question_id] = v
+        @answers_hash[question_id] = {
+            answer: v,
+            order: index + 1
+        }
       end
+    end
+
+    # Record everything
+    @challenge_attempt = @challenge.attempt(@answers_hash, current_user.id)
+
+    # Parse the results
+    @challenge_attempt.question_attempts.each do |question_attempt|
+      @results[question_attempt.question_id] = question_attempt.to_hash
     end
 
     # Get list of questions
     @questions = @challenge.all_questions
-
-    #TODO record order in which questions are answered
-    #TODO record missed, skipped questions
-
-    @questions.each do |q|
-      attempted_answer = @answers_hash[q.id]
-      @results["question_#{q.id}"] = q.attempt_to_solve(attempted_answer) ? true : q.solution_plain_text;
-    end
 
     respond_to do |format|
       format.html { render json: @results }

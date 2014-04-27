@@ -16,11 +16,20 @@ $(document).ready ->
       error: (jqXHR, textStatus, errorThrown) ->
         $('body').append "AJAX Error: #{textStatus}"
       success: (data, textStatus, jqXHR) ->
+
+#        # Expected format of the returned data
+#        {
+#          "1": { # Question ID as key
+#            result: true, # If answered correctly
+#            correct_answer: '2500' # Correct answer
+#          }
+#        }
+
         # Time to grade what's on the page
         for question_id, grade of data
-          feedback_element = $("span.#{question_id}")
-          if grade == true
+          feedback_element = $("span.question_#{question_id}")
+          if grade.result == 'correct'
             feedback_element.html('<img alt="Tick" src="/images/tick.png">')
-          else
-            #TODO do not show correct answer if that question has not been reached.
-            feedback_element.text(grade)
+          else if grade.result != 'unfinished'
+            #NOTE: answer is not shown if question has not been reached.
+            feedback_element.text(grade.correct_answer)

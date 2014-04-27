@@ -23,6 +23,49 @@ class Challenge < ActiveRecord::Base
   #          :presence => true,
   #          :uniqueness => true
 
+  #@param answer_attempt_hash given in the form {question_id: {answer: '', order: 1}}
+  #@param user_id
+  #@return [ChallengeAttempt] Or nil if it failed to save.
+  def attempt(answer_attempt_hash, user_id)
+
+    result = nil
+
+    #TODO better validation for answer_attempt_hash
+    if User.exists?(user_id) and answer_attempt_hash
+
+      challenge_attempt = ChallengeAttempt.new(user_id: user_id, challenge_id: self.id)
+
+      # Iterate through questions
+      questions.each do |q|
+
+        h = answer_attempt_hash[q.id]
+        answer = h[:answer]
+
+        qa = QuestionAttempt.new(
+            challenge_attempt: challenge_attempt,
+            question_id: q.id,
+            user_id: user_id,
+            order: h[:order],
+            answer: answer
+        )
+
+        unless answer.blank?
+          qa.result = q.attempt_to_solve(answer) ? :correct : :missed
+        end
+
+        #TODO assign skipped to certain cases
+
+        qa.save
+      end
+
+      if challenge_attempt.save
+        result = challenge_attempt
+      end
+    end
+
+    result
+  end
+
 
   #@return If the challenge is a composition of other challenges.
   def mixed?

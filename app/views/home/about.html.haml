@@ -15,4 +15,4 @@
       %td= Trick.count
     %tr
       %td Number of questions
-      %td= Question.count
+      %td= Question.joins(:tricks).count

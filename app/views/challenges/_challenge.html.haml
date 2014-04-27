@@ -5,14 +5,16 @@
     - challenge.all_questions.shuffle.each do |question|
       - question_id = "question_#{question.id}"
       .form-group
-        %label.col-sm-2.control-label{for: question_id}
+        %label.control-label.col-sm-2{for: question_id}
           = raw "#{question.problem_html} = "
         .col-sm-2
           %input.form-control{id: question_id, name: question_id, type: 'number'}/
-        .col-sm-2
+        .col-sm-3
           = raw question.appendix
         .col-sm-1
           %span.wrong{class: question_id}
+        .col-sm-4
+          &nbsp;
     .form-group
       %label.col-sm-2.control-label{for: 'username'} Your name
       .col-sm-4
