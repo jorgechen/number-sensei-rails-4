@@ -22,6 +22,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    if @user
+      @challenge_attempts = @user.challenge_attempts.order('created_at DESC').first(5)
+    end
   end
 
 end

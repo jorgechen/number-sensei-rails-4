@@ -1,5 +1,32 @@
-%h3 User
-%p
-  User: #{@user.name}
-%p
-  Email: #{@user.email if @user.email}
+.container
+  .row
+    .col-sm-6
+      %h1
+        = link_to edit_user_registration_path do
+          %i.fa.fa-user
+        = @user.name
+    .col-sm-6
+      - if @user.experience_level
+        %h2 Level #{current_user.experience_level}
+
+  .row
+    %h3 Recent Challenges
+    - if @challenge_attempts.blank?
+      %p No activity.
+    - else
+      - @challenge_attempts.each do |ca|
+        -#TODO challenge name?
+        %h4
+          %b
+            #{ca.score}
+            (
+            %span.correct
+              = ca.correct
+            |
+            %span.incorrect
+              = ca.incorrect
+            |
+            %span.skipped
+              = ca.skipped
+            )
+

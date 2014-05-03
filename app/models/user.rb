@@ -7,6 +7,9 @@ class User < ActiveRecord::Base
 
   has_many :challenge_attempts
 
+  has_one :experience_level, :through => :experience_level_user
+  has_one :experience_level_user
+
   before_save { self.email = email.downcase }
 
   rolify

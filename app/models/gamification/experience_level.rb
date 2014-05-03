@@ -1,4 +1,8 @@
 class ExperienceLevel < ActiveRecord::Base
+
+  has_many :users, :through => :experience_level_user
+  has_many :experience_level_user
+
   validates :level,
             presence: true,
             uniqueness: true
