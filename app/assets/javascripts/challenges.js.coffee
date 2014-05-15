@@ -1,11 +1,11 @@
+challenge = '#challenge'
+
 $(document).ready ->
 
-  # User submits her answers which are graded immediately.
-  $('#challenge').submit (event) ->
-    event.preventDefault()
-
+  submitChallenge = ->
+    alert("hello")
     challenge_id = parseInt($('#challenge_id').text())
-    data = $(this).serialize()
+    data = $(challenge).serialize()
 
     #TODO recognize which questions are missing vs which are not reached
 
@@ -33,3 +33,14 @@ $(document).ready ->
           else if grade.result != 'unfinished'
             #NOTE: answer is not shown if question has not been reached.
             feedback_element.text(grade.correct_answer)
+
+
+  # Prevent submitting by pressing ENTER
+  $('form input').keydown (event) ->
+    if (event.keyCode == 13)
+      event.preventDefault()
+
+  # User submits her answers which are graded immediately.
+  $(challenge).submit (event) ->
+    event.preventDefault()
+    submitChallenge()
