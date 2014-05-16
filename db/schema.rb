@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140501044518) do
+ActiveRecord::Schema.define(version: 20140512055728) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -124,24 +124,24 @@ ActiveRecord::Schema.define(version: 20140501044518) do
     t.datetime "updated_at"
   end
 
-  create_table "experience_levels", force: true do |t|
-    t.integer  "level"
-    t.integer  "experience"
-    t.integer  "delta"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "experience_function_id"
-  end
-
-  create_table "experience_levels_users", force: true do |t|
+  create_table "experience_level_user_pairings", force: true do |t|
     t.integer  "user_id"
     t.integer  "experience_level_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "experience_levels_users", ["experience_level_id"], name: "index_experience_levels_users_on_experience_level_id", using: :btree
-  add_index "experience_levels_users", ["user_id"], name: "index_experience_levels_users_on_user_id", using: :btree
+  add_index "experience_level_user_pairings", ["experience_level_id"], name: "index_experience_level_user_pairings_on_experience_level_id", using: :btree
+  add_index "experience_level_user_pairings", ["user_id"], name: "index_experience_level_user_pairings_on_user_id", using: :btree
+
+  create_table "experience_levels", force: true do |t|
+    t.integer  "level"
+    t.integer  "experience"
+    t.integer  "level_up_experience"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "experience_function_id"
+  end
 
   create_table "expression_hierarchies", id: false, force: true do |t|
     t.integer "ancestor_id",   null: false
@@ -281,6 +281,7 @@ ActiveRecord::Schema.define(version: 20140501044518) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.integer  "experience",             default: 0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

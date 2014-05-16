@@ -7,26 +7,38 @@
         = @user.name
     .col-sm-6
       - if @user.experience_level
-        %h2 Level #{current_user.experience_level}
+        %h2= current_user.experience_level
+        .progress
+          .progress-bar{'aria-valuemax' => '100', 'aria-valuemin' => '0', 'aria-valuenow' => '#{60}', role: 'progressbar', style: 'width: #{@experience_progress}%;'}
+            %span.sr-only #{@experience_progress}%
+        .center-text
+          #{@user.experience} / #{@user.level_cap}
 
   .row
-    %h3 Recent Challenges
-    - if @challenge_attempts.blank?
-      %p No activity.
-    - else
-      - @challenge_attempts.each do |ca|
-        -#TODO challenge name?
-        %h4
-          %b
-            #{ca.score}
-            (
-            %span.correct
-              = ca.correct
-            |
-            %span.incorrect
-              = ca.incorrect
-            |
-            %span.skipped
-              = ca.skipped
-            )
+    .col-sm-6
+      %h3 Achievements
+      -#TODO
+
+    .col-sm-6
+      %h3 Recent Challenges
+      - if @challenge_attempts.blank?
+        %p No activity.
+      - else
+        - @challenge_attempts.each do |ca|
+          -#TODO challenge name?
+          %h4
+            - challenge = ca.challenge
+            = link_to challenge.id, challenge_path(challenge)
+            %b
+              #{ca.score}
+              (
+              %span.correct
+                = ca.correct
+              |
+              %span.incorrect
+                = ca.incorrect
+              |
+              %span.skipped
+                = ca.skipped
+              )
 

@@ -22,8 +22,15 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+
+    unless @user.blank?
+      @experience = @user.experience
+      @experience_to_level = @user.level_cap
+      @experience_progress = @experience * 100 / @experience_to_level
+    end
+
     if @user
-      @challenge_attempts = @user.challenge_attempts.order('created_at DESC').first(5)
+      @challenge_attempts = @user.challenge_attempts.order('created_at DESC').where('created_at >= ?', 1.week.ago).first(5)
     end
   end
 

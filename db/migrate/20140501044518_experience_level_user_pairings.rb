@@ -1,6 +1,6 @@
-class ExperienceLevelsUsers < ActiveRecord::Migration
+class ExperienceLevelUserPairings < ActiveRecord::Migration
   def change
-    create_table :experience_levels_users do |t|
+    create_table :experience_level_user_pairings do |t|
       t.references :user, index: true
       t.references :experience_level, index: true
 

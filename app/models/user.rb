@@ -7,8 +7,15 @@ class User < ActiveRecord::Base
 
   has_many :challenge_attempts
 
-  has_one :experience_level, :through => :experience_level_user
-  has_one :experience_level_user
+  has_one :experience_level, :through => :experience_level_user_pairing
+  has_one :experience_level_user_pairing
+
+  validates :experience,
+            :numericality => { :greater_than_or_equal_to => 0 }
+
+  def level_cap
+    experience_level.blank? ? 1 : experience_level.level_up_experience
+  end
 
   before_save { self.email = email.downcase }
 
@@ -23,8 +30,8 @@ class User < ActiveRecord::Base
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email,
             :presence => true,
-            :uniqueness => { case_insensitive: false},
-            :format => { with: VALID_EMAIL_REGEX }
+            :uniqueness => {case_insensitive: false},
+            :format => {with: VALID_EMAIL_REGEX}
 
 
   def to_s
@@ -52,7 +59,7 @@ class User < ActiveRecord::Base
     unless user
       user = User.create(name: data['name'],
                          email: data['email'],
-                         password: Devise.friendly_token[0,20]
+                         password: Devise.friendly_token[0, 20]
       )
     end
     user

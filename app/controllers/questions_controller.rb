@@ -1,10 +1,17 @@
 class QuestionsController < ApplicationController
-  before_action :set_question, only: [:show, :edit, :update, :destroy]
+  before_action :set_question, only: [:show, :edit, :update, :destroy, :attempt]
+
+  # POST /questions/:id/attempt
+  def attempt
+    @result = @question.attempt_to_solve(params[:answer])
+    #TODO implement individual question attempt when necessary. Remeber to refactor from ChallengeAttempt code.
+    render @result
+  end
 
   # GET /questions
   # GET /questions.json
   def index
-    @questions = Question.includes(:expression, :answer).all
+    @questions = Question.all
   end
 
   # GET /questions/1

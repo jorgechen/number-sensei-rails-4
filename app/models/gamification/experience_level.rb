@@ -1,7 +1,7 @@
 class ExperienceLevel < ActiveRecord::Base
 
   has_many :users, :through => :experience_level_user
-  has_many :experience_level_user
+  has_many :experience_level_user_pairings, :dependent => :destroy
 
   validates :level,
             presence: true,
@@ -11,10 +11,10 @@ class ExperienceLevel < ActiveRecord::Base
             presence: true,
             uniqueness: true
 
-  validates :delta,
+  validates :level_up_experience,
             uniqueness: true
 
   def to_s
-    "LVL#{level}"
+    "Level #{level}"
   end
 end
