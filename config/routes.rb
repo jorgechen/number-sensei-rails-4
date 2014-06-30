@@ -28,6 +28,8 @@ NumberSenseiRails4::Application.routes.draw do
     end
   end
 
+  resources :badges
+
   resources :expressions
 
   resources :challenge_categories

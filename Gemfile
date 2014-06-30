@@ -91,3 +91,6 @@ gem 'roman-numerals'
 gem 'sidekiq'
 gem 'sinatra', require: false # for Sidekiq's web UI
 gem 'slim' # for Sidekiq's web UI
+
+# Gamification
+gem 'merit', '~> 2.1.1'

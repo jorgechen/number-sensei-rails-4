@@ -3,7 +3,6 @@ challenge = '#challenge'
 $(document).ready ->
 
   submitChallenge = ->
-    alert("hello")
     challenge_id = parseInt($('#challenge_id').text())
     data = $(challenge).serialize()
 
@@ -39,6 +38,7 @@ $(document).ready ->
   $('form input').keydown (event) ->
     if (event.keyCode == 13)
       event.preventDefault()
+      submitChallenge()
 
   # User submits her answers which are graded immediately.
   $(challenge).submit (event) ->

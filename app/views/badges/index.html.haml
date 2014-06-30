@@ -1,0 +1,13 @@
+.container
+  %h1 Badges
+
+  %table.table
+    - @badges.each do |badge|
+      - name = "#{badge.name} #{badge.level}"
+      %tr
+        -#TODO include icon
+        - if admin_signed_in?
+          %td= badge.id
+        %td= link_to name, badge_path(badge)
+        %td= badge.description
+
