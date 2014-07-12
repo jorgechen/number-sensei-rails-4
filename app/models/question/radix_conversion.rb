@@ -2,29 +2,49 @@
 # 104 (base 4) = ____ (base 8)
 class Question::RadixConversion < Question
 
-  #@abstract
+  #@override
   def problem_plain_text
     "#{problem.base_10_value}b#{problem.radix}"
   end
 
-  #@abstract
+  #@override
   def problem_html
     "#{problem.base_10_value}<sub>#{problem.radix}</sub>"
   end
 
-  #@abstract
+  #@override
+  def problem_latex
+    "#{problem.base_10_value}_{#{problem.radix}}"
+  end
+
+  #@override
   def solution_plain_text
     "#{solution.base_10_value}b#{solution.radix}"
   end
 
-  #@abstract
+  #@override
   def solution_html
     "#{solution.base_10_value}<sub>#{solution.radix}</sub>"
   end
 
+  #@override
+  def solution_latex
+    "#{solution.base_10_value}_{#{solution.radix}}"
+  end
+
   # @override
   def appendix
+    "b#{solution.radix}"
+  end
+
+  # @override
+  def appendix_html
     "<sub>#{solution.radix}</sub>"
+  end
+
+  # @override
+  def appendix_latex
+    "_{#{solution.radix}}"
   end
 
   #@override

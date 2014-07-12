@@ -11,6 +11,11 @@ class Question::Subtraction < Question::Binary
   end
 
   #@override
+  def token_latex
+    '-'
+  end
+
+  #@override
   def self.build_problem(left, right)
     ::BinarySubtraction.build(left, right)
   end

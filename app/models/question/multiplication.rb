@@ -11,6 +11,11 @@ class Question::Multiplication < Question::Binary
   end
 
   #@override
+  def token_latex
+    '\times'
+  end
+
+  #@override
   def self.build_problem(left, right)
     ::BinaryMultiplication.build(left, right)
   end

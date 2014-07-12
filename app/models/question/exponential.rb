@@ -19,6 +19,11 @@ class Question::Exponential < Question::Binary
   end
 
   #@override
+  def problem_latex
+    "#{problem.base}^{#{problem.exponent}}"
+  end
+
+  #@override
   def self.build_problem(left, right)
     ::Exponential.build left, right
   end

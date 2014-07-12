@@ -48,6 +48,11 @@ class Question < ActiveRecord::Base
   end
 
   #@abstract
+  def problem_latex
+    "#{problem}"
+  end
+
+  #@abstract
   def solution_plain_text
     "#{solution}"
   end
@@ -57,9 +62,24 @@ class Question < ActiveRecord::Base
     "#{solution}"
   end
 
+  #@abstract
+  def solution_latex
+    "#{solution}"
+  end
+
   # The appendix is an optional part of the question appended after the answer box
   #@abstract
   def appendix
+    ''
+  end
+
+  #@abstract
+  def appendix_html
+    ''
+  end
+
+  #@abstract
+  def appendix_latex
     ''
   end
 

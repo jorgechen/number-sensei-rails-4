@@ -13,12 +13,22 @@ class Question::Factorial < Question
   end
 
   #@abstract
+  def problem_latex
+    "#{problem}!"
+  end
+
+  #@abstract
   def solution_plain_text
     "#{solution}"
   end
 
   #@abstract
   def solution_html
+    "#{solution}"
+  end
+
+  #@abstract
+  def solution_latex
     "#{solution}"
   end
 

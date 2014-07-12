@@ -25,7 +25,8 @@
           - if q.appendix
             .form-group
               %label.control-label{:for => ''}
-                = raw q.appendix
+                %script{type: 'math/tex'}
+                  = q.appendix_latex
           .form-group
             %span.wrong{id: cid}
             :javascript
@@ -45,7 +46,9 @@
                 $('##{cid}').html(result)
               })
 
-
   - if admin_signed_in?
     = link_to 'Edit', edit_trick_path(@trick), class: 'btn btn-success'
     = link_to 'Back', tricks_path, class: 'btn btn-default'
+
+  %script
+    MathJax.Hub.Queue(["Typeset",MathJax.Hub]);

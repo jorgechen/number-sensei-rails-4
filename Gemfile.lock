@@ -170,6 +170,8 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    mathjax-rails (2.3.0)
+      railties (>= 3.0)
     merit (2.1.1)
       ambry (~> 0.3.0)
     mime-types (1.25)
@@ -354,6 +356,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   launchy
+  mathjax-rails
   merit (~> 2.1.1)
   omniauth
   omniauth-facebook

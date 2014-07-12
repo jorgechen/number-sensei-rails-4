@@ -23,6 +23,11 @@ class Question::Division < Question::Binary
   end
 
   #@override
+  def token_latex
+    '\div'
+  end
+
+  #@override
   def self.build_problem(left, right)
     ::Fraction.build(left, right)
   end

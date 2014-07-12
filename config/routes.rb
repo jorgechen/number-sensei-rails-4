@@ -1,5 +1,7 @@
 NumberSenseiRails4::Application.routes.draw do
 
+  mathjax 'mathjax'
+
   post 'background_jobs/check_progress'
 
   get 'games/index'

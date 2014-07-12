@@ -54,6 +54,11 @@ class Question::Binary < Question
     '?'
   end
 
+  #@abstract
+  def token_latex
+    '?'
+  end
+
   #@override
   def problem_plain_text
     "#{left} #{self.token_plain_text} #{right}"
@@ -62,6 +67,11 @@ class Question::Binary < Question
   #@override
   def problem_html
     "#{left} #{self.token_html} #{right}"
+  end
+
+  #@override
+  def problem_latex
+    "#{left} #{self.token_latex} #{right}"
   end
 
   ################

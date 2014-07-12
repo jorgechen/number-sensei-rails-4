@@ -6,11 +6,13 @@
       - question_id = "question_#{question.id}"
       .form-group
         %label.control-label.col-sm-2{for: question_id}
-          = raw "#{question.problem_html} = "
+          %script{type: 'math/tex'}
+            = "#{question.problem_latex} = "
         .col-sm-2
           %input.form-control{id: question_id, name: question_id, type: 'number'}/
         .col-sm-3
-          = raw question.appendix
+          %script{type: 'math/tex'}
+            = question.appendix_latex
         .col-sm-1
           %span.wrong{class: question_id}
         .col-sm-4
