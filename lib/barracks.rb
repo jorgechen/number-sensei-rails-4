@@ -14,6 +14,7 @@ module Barracks
 
     Strategy.enum_options.each do |s|
       t = Trick.where(strategy: s.enum).first_or_initialize
+      directory = File.join(Rails.root, 'db', 'seeds', 'guides')
 
       # This is an arbitrary number. If questions for this trick is too few, then might as well try to find more. If, in fact, there are only a few questions for this trick (e.g. memorizing Question::Factorial) then the overhead to iterate over them is negligible.
       # Usually we will have 1-3 questions from playing around in the Rails Console.
@@ -25,6 +26,16 @@ module Barracks
           Armory::assign_questions(t, background_job)
         end
       end
+
+      begin
+        file_name = "#{t.name.gsub(' ', '-').underscore}.html"
+        file_path = File.join(directory, file_name)
+        data = File.read(file_path)
+        t.update_attribute :guide, data
+      rescue
+        puts "Unable to update: #{file_name}"
+      end
+
     end
   end
 

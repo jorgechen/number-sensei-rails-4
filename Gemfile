@@ -84,7 +84,7 @@ gem 'ranked-model'
 
 # Math libraries
 gem 'radix' # base conversion, also useful for unique IDs and checksums
-gem 'mathjax-rails'
+gem 'mathjax-rails' # Using CDN
 gem 'roman-numerals'
 
 # background jobs

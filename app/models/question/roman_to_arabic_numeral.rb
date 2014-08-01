@@ -52,7 +52,7 @@ class Question::RomanToArabicNumeral < Question
 
   # @override
   def appendix_latex
-    '(Arabic \ numeral)'
+    '(Arabic\ numeral)'
   end
 
 

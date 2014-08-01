@@ -1,5 +1,9 @@
 NumberSenseiRails4::Application.routes.draw do
 
+  get "monsieur", to: "monsieur#index"
+  get "monsieur/background_jobs"
+  get "monsieur/guides"
+
   mathjax 'mathjax'
 
   post 'background_jobs/check_progress'

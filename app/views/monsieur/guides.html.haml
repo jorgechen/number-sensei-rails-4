@@ -1,0 +1,24 @@
+.container
+
+  %h1.green-text Preview of Trick Guides
+
+  %p Renders the raw HTML guides from db/seeds/
+
+  - directory = File.join(Rails.root, 'db', 'seeds', 'guides')
+  - file_names = Dir.glob File.join(directory, '*.html')
+
+  #accordion.panel-group
+    - file_names.each do |file_name|
+
+      - data = File.read(file_name)
+
+      .panel.panel-default
+        .panel-heading
+          %h4.panel-title.correct
+            %a{"data-parent" => "#accordion", "data-toggle" => "collapse", href: "#collapseOne"}
+              = file_name
+        #collapseOne.panel-collapse.collapse.in
+          .panel-body
+            = raw data
+
+
