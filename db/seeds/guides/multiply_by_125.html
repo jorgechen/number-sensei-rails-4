@@ -3,15 +3,15 @@
 </h3>
 
 <p>
-    To multiply a number by 25:
+    To multiply a number by 125:
 </p>
 
-<ul>
+<ol>
     <li>
-        Divide by 4
+        Divide by 8
     </li>
     <li>
-        Depending on the remainder, append 00, 25, 50, or 75.
+        Depending on the remainder, append 3 digits using this table:
 
         <table class="table">
             <tr>
@@ -20,27 +20,42 @@
             </tr>
             <tr>
                 <td>0</td>
-                <td>00</td>
+                <td>000</td>
             </tr>
             <tr>
                 <td>1</td>
-                <td>25</td>
+                <td>125</td>
             </tr>
             <tr>
                 <td>2</td>
-                <td>50</td>
+                <td>250</td>
             </tr>
             <tr>
                 <td>3</td>
-                <td>75</td>
+                <td>375</td>
+            </tr>
+                <td>4</td>
+                <td>500</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>525</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>750</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>875</td>
             </tr>
         </table>
     </li>
-</ul>
+</ol>
 
 <p class='explanation'>
     This works because
-    <script type='math/tex'>5 = 100 \div 4</script>
+    <script type='math/tex'>125 = 1000 \div 8</script>
     .
 </p>
 
@@ -52,7 +67,7 @@
         <script type='math/tex'>
             \begin{equation}
             \begin{split}
-                32 \times 25
+                39 \times 125
             \end{split}
             \end{equation}
         </script>
@@ -61,8 +76,8 @@
         <script type='math/tex'>
             \begin{equation}
             \begin{split}
-                & 32 \div 4 &= \underline{\textbf{8}\phantom{00}} & r3  \\
-                & &= \underline{8\textbf{00}}  \\
+                & 39 \div 8 &= \underline{\textbf{4}\phantom{875}} & r7  \\
+                & &= \underline{4\textbf{875}}  \\
             \end{split}
             \end{equation}
         </script>
@@ -77,7 +92,7 @@
         <script type='math/tex'>
             \begin{equation}
             \begin{split}
-               59 \times 25
+                248 \times 125
             \end{split}
             \end{equation}
         </script>
@@ -86,8 +101,8 @@
         <script type='math/tex'>
             \begin{equation}
             \begin{split}
-                & 59 \div 4 &= \underline{\textbf{14}\phantom{75}} & r3      \\
-                & &= \underline{\textbf{1475}}  \\
+                & 248 \div 8 &= \underline{\textbf{31}\phantom{000}} & r0  \\
+                & &= \underline{31\textbf{000}}  \\
             \end{split}
             \end{equation}
         </script>
