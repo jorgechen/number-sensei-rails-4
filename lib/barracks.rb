@@ -11,10 +11,10 @@ module Barracks
   # Build all available and missing tricks.
   def self.build_tricks(background_job = nil)
     puts 'Building tricks'
+    directory = File.join(Rails.root, 'db', 'seeds', 'guides')
 
     Strategy.enum_options.each do |s|
       t = Trick.where(strategy: s.enum).first_or_initialize
-      directory = File.join(Rails.root, 'db', 'seeds', 'guides')
 
       # This is an arbitrary number. If questions for this trick is too few, then might as well try to find more. If, in fact, there are only a few questions for this trick (e.g. memorizing Question::Factorial) then the overhead to iterate over them is negligible.
       # Usually we will have 1-3 questions from playing around in the Rails Console.

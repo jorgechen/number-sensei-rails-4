@@ -2,7 +2,7 @@ class Question::Multiplication < Question::Binary
 
   #@override
   def token_plain_text
-    '*'
+    'x'
   end
 
   #@override

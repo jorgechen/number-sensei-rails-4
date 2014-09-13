@@ -12,3 +12,8 @@ end
 
 # load class extensions
 require 'sylvan_rails/string'
+
+# Custom MIME type to be rendered by controllers
+# Print format
+Mime::Type.register "text/html", :print
+

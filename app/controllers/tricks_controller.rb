@@ -13,14 +13,21 @@ class TricksController < ApplicationController
       # For anonymous users:
       @tricks = Trick.all.reject { |t| t.questions.count == 0 }
     end
-
-
   end
+
 
   # GET /tricks/1
   # GET /tricks/1.json
   def show
   end
+
+
+  # GET /tricks/1/print
+  def print
+    @trick = Trick.find(params[:id])
+    render :layout => false
+  end
+
 
   # GET /tricks/new
   def new

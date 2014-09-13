@@ -20,7 +20,11 @@ NumberSenseiRails4::Application.routes.draw do
 
   resources :courses
 
-  resources :tricks
+  resources :tricks do
+    member do
+      get 'print'
+    end
+  end
 
   resources :challenges do
     member do
@@ -41,7 +45,7 @@ NumberSenseiRails4::Application.routes.draw do
   resources :challenge_categories
 
   get '/learn', to: 'tricks#index'
-  get '/dojo', to: 'courses#index'
+  get '/dojo', to: 'lessons#index'
   get '/downloads', to: 'official_challenges#index'
   get '/play_god', to: 'home#play_god'
   resources :official_challenges

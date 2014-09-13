@@ -1,0 +1,11 @@
+= mathjax_tag
+
+%h1= @trick.name
+
+= raw @trick.guide
+
+%hr
+
+%h2 Practice
+- @trick.questions.sample(10).each do |q|
+  %p= "#{q.problem_plain_text} = ____________"

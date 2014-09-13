@@ -14,6 +14,10 @@ class Trick < ActiveRecord::Base
     strategy.to_s
   end
 
+  def file_name
+    name.gsub(' ', '-').underscore
+  end
+
   after_create :populate_rows
 
   def populate_rows
