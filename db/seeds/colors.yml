@@ -27,30 +27,24 @@
 # Find regex for each string element in this list:
 # ^-.*\n.*$
 
+# Too many colors, filter rules:
+# - proper nouns in front (French blue, Catalina red, Alabama crimson)
+# - same name as another object (feldspar, coconut), unless the color is in the word's definition
+
 - name: Acid green
   color: '#a8bb19'
 - name: Aero
   color: '#7cb9e8'
 - name: Aero blue
   color: '#c9ffe5'
-- name: African violet
-  color: '#b284be'
-- name: Alabama Crimson
-  color: '#af002a'
 - name: Alice blue
   color: '#f0f8ff'
 - name: Alizarin crimson
   color: '#e32636'
-- name: Alloy orange
-  color: '#c46210'
 - name: Almond
   color: '#efdecd'
 - name: Amaranth
   color: '#e52b50'
-- name: Amaranth pink
-  color: '#f19cbb'
-- name: Amaranth purple
-  color: '#ab274f'
 - name: Amazon
   color: '#3b7a57'
 - name: Amber
@@ -81,88 +75,40 @@
   color: '#7fffd4'
 - name: Army green
   color: '#4b5320'
-- name: Arsenic
-  color: '#3b444b'
 - name: Artichoke
   color: '#8f9779'
 - name: Arylide yellow
   color: '#e9d66b'
 - name: Ash grey
   color: '#b2beb5'
-- name: Asparagus
-  color: '#87a96b'
-- name: Atomic tangerine
-  color: '#ff9966'
 - name: Auburn
   color: '#a52a2a'
 - name: Aureolin
   color: '#fdee00'
-- name: Avocado
-  color: '#568203'
 - name: Azure
   color: '#007fff'
 - name: Azure mist
   color: '#f0ffff'
 - name: Baby blue
   color: '#89cff0'
-- name: Baby blue eyes
-  color: '#a1caf1'
 - name: Baby pink
   color: '#f4c2c2'
-- name: Baby powder
-  color: '#fefefa'
-- name: Ball blue
-  color: '#21abcd'
-- name: Banana Mania
-  color: '#fae7b5'
-- name: Banana yellow
-  color: '#ffe135'
-- name: Bangladesh green
-  color: '#006a4e'
-- name: Barbie pink
-  color: '#e0218a'
 - name: Barn red
   color: '#7c0a02'
-- name: Battleship grey
-  color: '#848482'
 - name: Bazaar
   color: '#98777b'
-- name: Beau blue
-  color: '#bcd4e6'
 - name: Beaver
   color: '#9f8170'
 - name: Beige
   color: '#f5f5dc'
-- name: B'dazzled blue
-  color: '#2e5894'
-- name: Big dip o’ruby
-  color: '#9c2542'
 - name: Bisque
   color: '#ffe4c4'
 - name: Bistre
   color: '#3d2b1f'
-- name: Bistre brown
-  color: '#967117'
-- name: Bitter lemon
-  color: '#cae00d'
-- name: Bitter lime
-  color: '#bfff00'
 - name: Bittersweet
   color: '#fe6f5e'
-- name: Bittersweet shimmer
-  color: '#bf4f51'
 - name: Black
   color: '#000000'
-- name: Black bean
-  color: '#3d0c02'
-- name: Black leather jacket
-  color: '#253529'
-- name: Black olive
-  color: '#3b3c36'
-- name: Blanched almond
-  color: '#ffebcd'
-- name: Bleu de France
-  color: '#318ce7'
 - name: Blizzard Blue
   color: '#ace5ee'
 - name: Blond
@@ -185,8 +131,6 @@
   color: '#0095b6'
 - name: Bone
   color: '#e3dac9'
-- name: Boston University Red
-  color: '#cc0000'
 - name: Bottle green
   color: '#006a4e'
 - name: Boysenberry
@@ -221,14 +165,10 @@
   color: '#ff55a3'
 - name: Brink pink
   color: '#fb607f'
-- name: British racing green
-  color: '#004225'
 - name: Bronze
   color: '#cd7f32'
 - name: Bronze Yellow
   color: '#737000'
-- name: Brunswick green
-  color: '#1b4d3e'
 - name: Bubble gum
   color: '#ffc1cc'
 - name: Bubbles
@@ -237,16 +177,10 @@
   color: '#f0dc82'
 - name: Bud green
   color: '#7bb661'
-- name: Bulgarian rose
-  color: '#480607'
 - name: Burgundy
   color: '#800020'
 - name: Burlywood
   color: '#deb887'
-- name: Burnt orange
-  color: '#cc5500'
-- name: Burnt sienna
-  color: '#e97451'
 - name: Burnt umber
   color: '#8a3324'
 - name: Byzantine
@@ -271,10 +205,6 @@
   color: '#a67b5b'
 - name: Café noir
   color: '#4b3621'
-- name: Cal Poly Pomona green
-  color: '#1e4d2b'
-- name: Cambridge Blue
-  color: '#a3c1ad'
 - name: Camel
   color: '#c19a6b'
 - name: Cameo pink
@@ -289,8 +219,6 @@
   color: '#e4717a'
 - name: Capri
   color: '#00bfff'
-- name: Caput mortuum
-  color: '#592720'
 - name: Cardinal
   color: '#c41e3a'
 - name: Caribbean green
@@ -307,8 +235,6 @@
   color: '#b31b1b'
 - name: Carolina blue
   color: '#56a0d3'
-- name: Carrot orange
-  color: '#ed9121'
 - name: Castleton green
   color: '#00563f'
 - name: Catalina blue
@@ -321,10 +247,6 @@
   color: '#92a1cf'
 - name: Celadon
   color: '#ace1af'
-- name: Celadon blue
-  color: '#007ba7'
-- name: Celadon green
-  color: '#2f847c'
 - name: Celeste
   color: '#b2ffff'
 - name: Celestial blue
@@ -351,22 +273,10 @@
   color: '#36454f'
 - name: Charleston green
   color: '#232b2b'
-- name: Charm pink
-  color: '#e68fac'
 - name: Cherry
   color: '#de3163'
-- name: Cherry blossom pink
-  color: '#ffb7c5'
 - name: Chestnut
   color: '#954535'
-- name: China pink
-  color: '#de6fa1'
-- name: China rose
-  color: '#a8516e'
-- name: Chinese red
-  color: '#aa381e'
-- name: Chinese violet
-  color: '#856088'
 - name: Chrome yellow
   color: '#ffa700'
 - name: Cinereous
@@ -393,26 +303,14 @@
   color: '#6f4e37'
 - name: Columbia blue
   color: '#c4d8e2'
-- name: Congo pink
-  color: '#f88379'
 - name: Cool grey
   color: '#8c92ac'
 - name: Copper
   color: '#b87333'
-- name: Copper penny
-  color: '#ad6f69'
-- name: Copper red
-  color: '#cb6d51'
-- name: Copper rose
-  color: '#996666'
 - name: Coquelicot
   color: '#ff3800'
 - name: Coral
   color: '#ff7f50'
-- name: Coral pink
-  color: '#f88379'
-- name: Coral red
-  color: '#ff4040'
 - name: Cordovan
   color: '#893f45'
 - name: Corn
@@ -487,7 +385,6 @@
   color: '#4a5d23'
 - name: Dark olive green
   color: '#556b2f'
-- name: Dark orange
   color: '#ff8c00'
 - name: Dark orchid
   color: '#9932cc'
@@ -693,28 +590,12 @@
   color: '#4d5d53'
 - name: Feldspar
   color: '#fdd5b1'
-- name: Fern green
-  color: '#4f7942'
-- name: Ferrari Red
-  color: '#ff2800'
-- name: Field drab
-  color: '#6c541e'
 - name: Firebrick
   color: '#b22222'
-- name: Fire engine red
-  color: '#ce2029'
-- name: Flame
-  color: '#e25822'
-- name: Flamingo pink
-  color: '#fc8eac'
-- name: Flattery
-  color: '#6b4423'
 - name: Flavescent
   color: '#f7e98e'
 - name: Flax
   color: '#eedc82'
-- name: Flirt
-  color: '#a2006d'
 - name: Floral white
   color: '#fffaf0'
 - name: Fluorescent orange
@@ -725,38 +606,6 @@
   color: '#ccff00'
 - name: Folly
   color: '#ff004f'
-- name: French beige
-  color: '#a67b5b'
-- name: French bistre
-  color: '#856d4d'
-- name: French blue
-  color: '#0072bb'
-- name: French fuchsia
-  color: '#fd3f92'
-- name: French lilac
-  color: '#86608e'
-- name: French lime
-  color: '#9efd38'
-- name: French mauve
-  color: '#d473d4'
-- name: French pink
-  color: '#fd6c9e'
-- name: French plum
-  color: '#811453'
-- name: French puce
-  color: '#4e1609'
-- name: French raspberry
-  color: '#c72c48'
-- name: French rose
-  color: '#f64a8a'
-- name: French sky blue
-  color: '#77b5fe'
-- name: French violet
-  color: '#8806ce'
-- name: French wine
-  color: '#ac1e44'
-- name: Fresh Air
-  color: '#a6e7ff'
 - name: Fuchsia
   color: '#ff00ff'
 - name: Fuchsia pink
@@ -765,514 +614,68 @@
   color: '#cc397b'
 - name: Fuchsia rose
   color: '#c74375'
-- name: Fulvous
+- name: Fulvous #
   color: '#e48400'
-- name: Fuzzy Wuzzy
-  color: '#cc6666'
-- name: Gainsboro
-  color: '#dcdcdc'
-- name: Gamboge
+- name: Gamboge #
   color: '#e49b0f'
-- name: Generic viridian
-  color: '#007f66'
-- name: Ghost white
-  color: '#f8f8ff'
-- name: Giants orange
-  color: '#fe5a1d'
-- name: Ginger
-  color: '#b06500'
-- name: Glaucous
+- name: Glaucous #
   color: '#6082b6'
-- name: Glitter
-  color: '#e6e8fa'
-- name: GO green
-  color: '#00ab66'
-- name: Gold Fusion
-  color: '#85754e'
-- name: Bubble but brown
-  color: '#996515'
 - name: Golden poppy
   color: '#fcc200'
 - name: Golden yellow
   color: '#ffdf00'
 - name: Goldenrod
   color: '#daa520'
-- name: Granny Smith Apple
-  color: '#a8e4a0'
-- name: Grape
-  color: '#6f2da8'
 - name: Gray
   color: '#808080'
-- name: Grullo
+- name: Grullo  #
   color: '#a99a86'
-- name: Guppie green
-  color: '#00ff7f'
-- name: Halayà úbe
-  color: '#663754'
-- name: Han blue
-  color: '#446ccf'
-- name: Han purple
-  color: '#5218fa'
-- name: Hansa yellow
-  color: '#e9d66b'
-- name: Harlequin
-  color: '#3fff00'
-- name: Harvard crimson
-  color: '#c90016'
-- name: Harvest gold
-  color: '#da9100'
-- name: Heart Gold
-  color: '#808000'
-- name: Heliotrope
+- name: Heliotrope #
   color: '#df73ff'
-- name: Heliotrope gray
-  color: '#aa98a8'
-- name: Hollywood cerise
-  color: '#f400a1'
-- name: Honeydew
-  color: '#f0fff0'
-- name: Honolulu blue
-  color: '#006db0'
-- name: Hooker's green
-  color: '#49796b'
-- name: Hot magenta
-  color: '#ff1dce'
-- name: Hot pink
-  color: '#ff69b4'
-- name: Hunter green
-  color: '#355e3b'
-- name: Iceberg
-  color: '#71a6d2'
-- name: Icterine
+- name: Icterine    #
   color: '#fcf75e'
-- name: Illuminating Emerald
-  color: '#319177'
-- name: Imperial
-  color: '#602f6b'
-- name: Imperial blue
-  color: '#002395'
-- name: Imperial purple
-  color: '#66023c'
-- name: Imperial red
-  color: '#ed2939'
-- name: Inchworm
-  color: '#b2ec5d'
-- name: Independence
-  color: '#4c516d'
-- name: India green
-  color: '#138808'
-- name: Indian red
-  color: '#cd5c5c'
-- name: Indian yellow
-  color: '#e3a857'
 - name: Indigo
   color: '#6f00ff'
-- name: Indigo dye
-  color: '#091f92'
-- name: International Klein Blue
-  color: '#002fa7'
-- name: Iris
-  color: '#5a4fcf'
-- name: Irresistible
-  color: '#b3446c'
 - name: Isabelline
   color: '#f4f0ec'
-- name: Islamic green
-  color: '#009000'
-- name: Italian sky blue
-  color: '#b2ffff'
 - name: Ivory
   color: '#fffff0'
 - name: Jade
   color: '#00a86b'
-- name: Japanese carmine
-  color: '#9d2933'
-- name: Japanese indigo
-  color: '#264348'
-- name: Japanese violet
-  color: '#5b3256'
-- name: Jasmine
-  color: '#f8de7e'
-- name: Jasper
-  color: '#d73b3e'
-- name: Jazzberry jam
-  color: '#a50b5e'
-- name: Jelly Bean
-  color: '#da614e'
 - name: Jet
   color: '#343434'
-- name: Jonquil
-  color: '#f4ca16'
-- name: Jordy blue
-  color: '#8ab9f1'
-- name: June bud
-  color: '#bdda57'
-- name: Jungle green
-  color: '#29ab87'
-- name: Kelly green
-  color: '#4cbb17'
-- name: Kenyan copper
-  color: '#7c1c05'
-- name: Keppel
-  color: '#3ab09e'
-- name: Kobe
-  color: '#882d17'
-- name: Kobi
-  color: '#e79fc4'
-- name: Kombu green
-  color: '#354230'
-- name: KU Crimson
-  color: '#e8000d'
-- name: La Salle Green
-  color: '#087830'
-- name: Languid lavender
-  color: '#d6cadd'
-- name: Lapis lazuli
-  color: '#26619c'
-- name: Laser Lemon
-  color: '#ffff66'
-- name: Laurel green
-  color: '#a9ba9d'
 - name: Lava
   color: '#cf1020'
-- name: Lavender blue
-  color: '#ccccff'
-- name: Lavender blush
-  color: '#fff0f5'
-- name: Lavender gray
-  color: '#c4c3d0'
-- name: Lavender indigo
-  color: '#9457eb'
-- name: Lavender magenta
-  color: '#ee82ee'
-- name: Lavender mist
-  color: '#e6e6fa'
-- name: Lavender pink
-  color: '#fbaed2'
-- name: Lavender purple
-  color: '#967bb6'
-- name: Lavender rose
-  color: '#fba0e3'
-- name: Lawn green
-  color: '#7cfc00'
 - name: Lemon
   color: '#fff700'
-- name: Lemon chiffon
-  color: '#fffacd'
-- name: Lemon curry
-  color: '#cca01d'
-- name: Lemon glacier
-  color: '#fdff00'
-- name: Lemon lime
-  color: '#e3ff00'
-- name: Lemon meringue
-  color: '#f6eabe'
-- name: Lemon yellow
-  color: '#fff44f'
-- name: Licorice
-  color: '#1a1110'
-- name: Liberty
-  color: '#545aa7'
-- name: Light apricot
-  color: '#fdd5b1'
-- name: Light blue
-  color: '#add8e6'
-- name: Light brown
-  color: '#b5651d'
-- name: Light carmine pink
-  color: '#e66771'
-- name: Light coral
-  color: '#f08080'
-- name: Light cornflower blue
-  color: '#93ccea'
-- name: Light crimson
-  color: '#f56991'
-- name: Light cyan
-  color: '#e0ffff'
-- name: Light deep pink
-  color: '#ff5ccd'
-- name: Light French beige
-  color: '#c8ad7f'
-- name: Light fuchsia pink
-  color: '#f984ef'
-- name: Light goldenrod yellow
-  color: '#fafad2'
-- name: Light gray
-  color: '#d3d3d3'
-- name: Light green
-  color: '#90ee90'
-- name: Light hot pink
-  color: '#ffb3de'
-- name: Light khaki
-  color: '#f0e68c'
-- name: Light medium orchid
-  color: '#d39bcb'
-- name: Light moss green
-  color: '#addfad'
-- name: Light orchid
-  color: '#e6a8d7'
-- name: Light pastel purple
-  color: '#b19cd9'
-- name: Light pink
-  color: '#ffb6c1'
-- name: Light red ochre
-  color: '#e97451'
-- name: Light salmon
-  color: '#ffa07a'
-- name: Light salmon pink
-  color: '#ff9999'
-- name: Light sea green
-  color: '#20b2aa'
-- name: Light sky blue
-  color: '#87cefa'
-- name: Light slate gray
-  color: '#778899'
-- name: Light steel blue
-  color: '#b0c4de'
-- name: Light taupe
-  color: '#b38b6d'
-- name: Light Thulian pink
-  color: '#e68fac'
-- name: Light yellow
-  color: '#ffffe0'
-- name: Lilac
-  color: '#c8a2c8'
-- name: Lime green
+- name: Lime
   color: '#32cd32'
 - name: Limerick
   color: '#9dc209'
-- name: Lincoln green
-  color: '#195905'
-- name: Linen
-  color: '#faf0e6'
-- name: Lion
-  color: '#c19a6b'
-- name: Liseran Purple
-  color: '#de6fa1'
-- name: Little boy blue
-  color: '#6ca0dc'
-- name: Liver
-  color: '#674c47'
-- name: Liver chestnut
-  color: '#987456'
-- name: Livid
-  color: '#6699cc'
-- name: Lumber
-  color: '#ffe4cd'
-- name: Lust
-  color: '#e62020'
 - name: Magenta
   color: '#ff00ff'
-- name: Magenta haze
-  color: '#9f4576'
-- name: Magic mint
-  color: '#aaf0d1'
 - name: Magnolia
   color: '#f8f4ff'
 - name: Mahogany
   color: '#c04000'
 - name: Maize
   color: '#fbec5d'
-- name: Majorelle Blue
-  color: '#6050dc'
 - name: Malachite
   color: '#0bda51'
-- name: Manatee
-  color: '#979aaa'
-- name: Mango Tango
-  color: '#ff8243'
-- name: Mantis
-  color: '#74c365'
-- name: Mardi Gras
-  color: '#880085'
 - name: Mauve
   color: '#e0b0ff'
-- name: Mauve taupe
-  color: '#915f6d'
-- name: Mauvelous
-  color: '#ef98aa'
-- name: May green
-  color: '#4c9141'
-- name: Maya blue
-  color: '#73c2fb'
-- name: Meat brown
-  color: '#e5b73b'
-- name: Medium aquamarine
-  color: '#66ddaa'
-- name: Medium blue
-  color: '#0000cd'
-- name: Medium candy apple red
-  color: '#e2062c'
-- name: Medium carmine
-  color: '#af4035'
-- name: Medium champagne
-  color: '#f3e5ab'
-- name: Medium electric blue
-  color: '#035096'
-- name: Medium jungle green
-  color: '#1c352d'
-- name: Medium lavender magenta
-  color: '#dda0dd'
-- name: Medium orchid
-  color: '#ba55d3'
-- name: Medium Persian blue
-  color: '#0067a5'
-- name: Medium purple
-  color: '#9370db'
-- name: Medium ruby
-  color: '#aa4069'
-- name: Medium sea green
-  color: '#3cb371'
-- name: Medium sky blue
-  color: '#80daeb'
-- name: Medium slate blue
-  color: '#7b68ee'
-- name: Medium spring bud
-  color: '#c9dc87'
-- name: Medium spring green
-  color: '#00fa9a'
-- name: Medium taupe
-  color: '#674c47'
-- name: Medium turquoise
-  color: '#48d1cc'
-- name: Medium Tuscan red
-  color: '#79443b'
-- name: Medium vermilion
-  color: '#d9603b'
-- name: Mellow apricot
-  color: '#f8b878'
-- name: Mellow yellow
-  color: '#f8de7e'
-- name: Melon
-  color: '#fdbcb4'
-- name: Metallic Seaweed
-  color: '#0a7e8c'
-- name: Metallic Sunburst
-  color: '#9c7c38'
-- name: Mexican pink
-  color: '#e4007c'
-- name: Midnight blue
-  color: '#191970'
-- name: Mikado yellow
-  color: '#ffc40c'
-- name: Mindaro
-  color: '#e3f988'
-- name: Mint
-  color: '#3eb489'
-- name: Mint cream
-  color: '#f5fffa'
-- name: Mint green
-  color: '#98ff98'
-- name: Misty rose
-  color: '#ffe4e1'
-- name: Moccasin
-  color: '#faebd7'
-- name: Mode beige
-  color: '#967117'
-- name: Moonstone blue
-  color: '#73a9c2'
-- name: Mordant red 19
-  color: '#ae0c00'
-- name: Moss green
-  color: '#8a9a5b'
-- name: Mountain Meadow
-  color: '#30ba8f'
-- name: Mountbatten pink
-  color: '#997a8d'
-- name: MSU Green
-  color: '#18453b'
-- name: Mughal green
-  color: '#306030'
-- name: Mulberry
-  color: '#c54b8c'
-- name: Mustard
-  color: '#ffdb58'
-- name: Myrtle green
-  color: '#317873'
-- name: Nadeshiko pink
-  color: '#f6adc6'
-- name: Napier green
-  color: '#2a8000'
-- name: Naples yellow
-  color: '#fada5e'
-- name: Navajo white
-  color: '#ffdead'
 - name: Navy
   color: '#000080'
-- name: Navy purple
-  color: '#9457eb'
-- name: Neon Carrot
-  color: '#ffa343'
-- name: Neon fuchsia
-  color: '#fe4164'
-- name: Neon green
-  color: '#39ff14'
-- name: New Car
-  color: '#214fc6'
-- name: New York pink
-  color: '#d7837f'
-- name: North Texas Green
-  color: '#059033'
-- name: Nyanza
-  color: '#e9ffdb'
-- name: Ocean Boat Blue
-  color: '#0077be'
 - name: Ochre
   color: '#cc7722'
-- name: Office green
-  color: '#008000'
-- name: Old burgundy
-  color: '#43302e'
-- name: Old gold
-  color: '#cfb53b'
-- name: Old heliotrope
-  color: '#563c5c'
-- name: Pineapple
-  color: '#563c0d'
-- name: Old lace
-  color: '#fdf5e6'
-- name: Old lavender
-  color: '#796878'
-- name: Old mauve
-  color: '#673147'
-- name: Old moss green
-  color: '#867e36'
-- name: Old rose
-  color: '#c08081'
-- name: Old silver
-  color: '#848482'
 - name: Olive
   color: '#808000'
-- name: Olive Drab #7
-  color: '#3c341f'
-- name: Olivine
-  color: '#9ab973'
 - name: Onyx
   color: '#353839'
-- name: Opera mauve
-  color: '#b784a7'
-- name: Orange peel
-  color: '#ff9f00'
-- name: Orange red
-  color: '#ff4500'
+- name: Orange
+  color: '#ff7f00'
 - name: Orchid
   color: '#da70d6'
-- name: Orchid pink
-  color: '#f2bdcd'
-- name: Orioles orange
-  color: '#fb4f14'
-- name: Otter brown
-  color: '#654321'
-- name: Outer Space
-  color: '#414a4c'
-- name: Outrageous Orange
-  color: '#ff6e4a'
-- name: Oxford Blue
-  color: '#002147'
-- name: OU Crimson Red
-  color: '#990000'
-- name: Pakistan green
-  color: '#006600'
 - name: Palatinate blue
   color: '#273be2'
 - name: Palatinate purple
@@ -1357,9 +760,9 @@
   color: '#800080'
 - name: Payne's grey
   color: '#536878'
-- name: Peach
+- name: Peach #duplicate
   color: '#ffe5b4'
-- name: Peach
+- name: Peach #duplicate
   color: '#ffcba4'
 - name: Peach puff
   color: '#ffdab9'
@@ -1367,46 +770,16 @@
   color: '#d1e231'
 - name: Pearl
   color: '#eae0c8'
-- name: Pearl Aqua
-  color: '#88d8c0'
 - name: Pearly purple
   color: '#b768a2'
 - name: Peridot
   color: '#e6e200'
 - name: Periwinkle
   color: '#ccccff'
-- name: Persian blue
-  color: '#1c39bb'
-- name: Persian green
-  color: '#00a693'
-- name: Persian indigo
-  color: '#32127a'
-- name: Persian orange
-  color: '#d99058'
-- name: Persian pink
-  color: '#f77fbe'
-- name: Persian plum
-  color: '#701c1c'
-- name: Persian red
-  color: '#cc3333'
-- name: Persian rose
-  color: '#fe28a2'
 - name: Persimmon
   color: '#ec5800'
-- name: Peru
-  color: '#cd853f'
 - name: Phlox
   color: '#df00ff'
-- name: Phthalo blue
-  color: '#000f89'
-- name: Phthalo green
-  color: '#123524'
-- name: Picton blue
-  color: '#45b1e8'
-- name: Pictorial carmine
-  color: '#c30b4e'
-- name: Piggy pink
-  color: '#fddde6'
 - name: Pine green
   color: '#01796f'
 - name: Pink
@@ -1421,56 +794,24 @@
   color: '#f78fa7'
 - name: Pistachio
   color: '#93c572'
-- name: Platinum
-  color: '#e5e4e2'
 - name: Plum
   color: '#8e4585'
-- name: Pomp and Power
-  color: '#86608e'
-- name: Popstar
-  color: '#be4f62'
-- name: Portland Orange
-  color: '#ff5a36'
 - name: Powder blue
   color: '#b0e0e6'
-- name: Princeton orange
-  color: '#f58025'
 - name: Prune
   color: '#701c1c'
-- name: Prussian blue
-  color: '#003153'
-- name: Psychedelic purple
-  color: '#df00ff'
 - name: Puce
   color: '#cc8899'
-- name: Puce red
-  color: '#722f37'
 - name: Pumpkin
   color: '#ff7518'
-- name: Purple Heart
-  color: '#69359c'
-- name: Purple mountain majesty
-  color: '#9678b6'
-- name: Purple navy
-  color: '#4e5180'
-- name: Purple pizzazz
-  color: '#fe4eda'
-- name: Purple taupe
-  color: '#50404d'
+- name: Purple
+  color: '#800080'
 - name: Purpureus
   color: '#9a4eae'
 - name: Quartz
   color: '#51484f'
-- name: Queen blue
-  color: '#436b95'
-- name: Queen pink
-  color: '#e8ccd7'
-- name: Quinacridone magenta
-  color: '#8e3a59'
 - name: Rackley
   color: '#5d8aa8'
-- name: Radical Red
-  color: '#ff355e'
 - name: Rajah
   color: '#fbab60'
 - name: Raspberry
@@ -1491,60 +832,12 @@
   color: '#8d4e85'
 - name: Red
   color: '#ff0000'
-- name: Red devil
-  color: '#860111'
 - name: Redwood
   color: '#a45a52'
 - name: Regalia
   color: '#522d80'
-- name: Resolution blue
-  color: '#002387'
-- name: Rhythm
-  color: '#777696'
-- name: Rich black
-  color: '#004040'
-- name: Rich brilliant lavender
-  color: '#f1a7fe'
-- name: Rich carmine
-  color: '#d70040'
-- name: Rich electric blue
-  color: '#0892d0'
-- name: Rich lavender
-  color: '#a76bcf'
-- name: Rich lilac
-  color: '#b666d2'
-- name: Rich maroon
-  color: '#b03060'
-- name: Rifle green
-  color: '#444c38'
-- name: Roast coffee
-  color: '#704241'
-- name: Robin egg blue
-  color: '#00cccc'
-- name: Rocket metallic
-  color: '#8a7f80'
-- name: Roman silver
-  color: '#838996'
 - name: Rose
   color: '#ff007f'
-- name: Rose bonbon
-  color: '#f9429e'
-- name: Rose ebony
-  color: '#674846'
-- name: Rose gold
-  color: '#b76e79'
-- name: Rose madder
-  color: '#e32636'
-- name: Rose pink
-  color: '#ff66cc'
-- name: Rose quartz
-  color: '#aa98a9'
-- name: Rose red
-  color: '#c21e56'
-- name: Rose taupe
-  color: '#905d5d'
-- name: Rose vale
-  color: '#ab4e52'
 - name: Rosewood
   color: '#65000b'
 - name: Rosso corsa
@@ -1565,188 +858,52 @@
   color: '#fada5e'
 - name: Ruber
   color: '#ce4676'
-- name: Rubine red
-  color: '#d10056'
 - name: Ruby
   color: '#e0115f'
-- name: Ruby red
-  color: '#9b111e'
 - name: Ruddy
   color: '#ff0028'
-- name: Ruddy brown
-  color: '#bb6528'
-- name: Ruddy pink
-  color: '#e18e96'
 - name: Rufous
   color: '#a81c07'
 - name: Russet
   color: '#80461b'
-- name: Russian green
-  color: '#679267'
-- name: Russian violet
-  color: '#32174d'
 - name: Rust
   color: '#b7410e'
-- name: Rusty red
-  color: '#da2c43'
-- name: Sacramento State green
-  color: '#00563f'
-- name: Saddle brown
-  color: '#8b4513'
-- name: Safety yellow
-  color: '#eed202'
 - name: Saffron
   color: '#f4c430'
 - name: Sage
   color: '#bcb88a'
-- name: St. Patrick's blue
-  color: '#23297a'
 - name: Salmon
   color: '#fa8072'
-- name: Salmon pink
-  color: '#ff91a4'
 - name: Sand
   color: '#c2b280'
-- name: Sand dune
-  color: '#967117'
-- name: Sandstorm
-  color: '#ecd540'
-- name: Sandy brown
-  color: '#f4a460'
-- name: Sandy taupe
-  color: '#967117'
 - name: Sangria
   color: '#92000a'
-- name: Sap green
-  color: '#507d2a'
 - name: Sapphire
   color: '#0f52ba'
-- name: Sapphire blue
-  color: '#0067a5'
-- name: Satin sheen gold
-  color: '#cba135'
-- name: Scarlet
+- name: Scarlet #duplicate
   color: '#ff2400'
-- name: Scarlet
+- name: Scarlet #duplicate
   color: '#fd0e35'
-- name: Schauss pink
-  color: '#ff91af'
-- name: School bus yellow
-  color: '#ffd800'
-- name: Screamin' Green
-  color: '#76ff7a'
-- name: Sea blue
-  color: '#006994'
-- name: Sea green
-  color: '#2e8b57'
-- name: Seal brown
-  color: '#321414'
-- name: Seashell
-  color: '#fff5ee'
-- name: Selective yellow
-  color: '#ffba00'
 - name: Sepia
   color: '#704214'
-- name: Shadow
-  color: '#8a795d'
-- name: Shadow blue
-  color: '#778ba5'
-- name: Shampoo
-  color: '#ffcff1'
-- name: Shamrock green
-  color: '#009e60'
-- name: Sheen Green
-  color: '#8fd400'
-- name: Shimmering Blush
-  color: '#d98695'
-- name: Shocking pink
-  color: '#fc0fc0'
 - name: Sienna
   color: '#882d17'
 - name: Silver
   color: '#c0c0c0'
-- name: Silver chalice
-  color: '#acacac'
-- name: Silver Lake blue
-  color: '#5d89ba'
-- name: Silver pink
-  color: '#c4aead'
-- name: Silver sand
-  color: '#bfc1c2'
 - name: Sinopia
   color: '#cb410b'
 - name: Skobeloff
   color: '#007474'
-- name: Sky blue
-  color: '#87ceeb'
-- name: Sky magenta
-  color: '#cf71af'
-- name: Slate blue
-  color: '#6a5acd'
-- name: Slate gray
-  color: '#708090'
 - name: Smitten
   color: '#c84186'
 - name: Smoke
   color: '#738276'
-- name: Smokey topaz
-  color: '#933d41'
-- name: Smoky black
-  color: '#100c08'
 - name: Snow
   color: '#fffafa'
 - name: Soap
   color: '#cec8ef'
-- name: Solid pink
-  color: '#893843'
-- name: Sonic silver
-  color: '#757575'
-- name: Spartan Crimson
-  color: '#9e1316'
-- name: Space cadet
-  color: '#1d2951'
-- name: Spanish bistre
-  color: '#807532'
-- name: Spanish blue
-  color: '#0070b8'
-- name: Spanish carmine
-  color: '#d10047'
-- name: Spanish crimson
-  color: '#e51a4c'
-- name: Spanish gray
-  color: '#989898'
-- name: Spanish green
-  color: '#009150'
-- name: Spanish orange
-  color: '#e86100'
-- name: Spanish pink
-  color: '#f7bfbe'
-- name: Spanish red
-  color: '#e60026'
-- name: Spanish sky blue
-  color: '#00ffff'
-- name: Spanish violet
-  color: '#4c2882'
-- name: Spanish viridian
-  color: '#007f5c'
-- name: Spiro Disco Ball
-  color: '#0fc0fc'
-- name: Spring bud
-  color: '#a7fc00'
 - name: Spring green
   color: '#00ff7f'
-- name: Star command blue
-  color: '#007bb8'
-- name: Steel blue
-  color: '#4682b4'
-- name: Steel pink
-  color: '#cc33cc'
-- name: Stil de grain yellow
-  color: '#fada5e'
-- name: Stizza
-  color: '#990000'
-- name: Stormcloud
-  color: '#4f666a'
 - name: Straw
   color: '#e4d96f'
 - name: Strawberry
@@ -1757,161 +914,49 @@
   color: '#e3ab57'
 - name: Sunset
   color: '#fad6a5'
-- name: Sunset orange
-  color: '#fd5e53'
-- name: Super pink
-  color: '#cf6ba9'
 - name: Tan
   color: '#d2b48c'
 - name: Tangelo
   color: '#f94d00'
 - name: Tangerine
   color: '#f28500'
-- name: Tangerine yellow
-  color: '#ffcc00'
-- name: Tango pink
-  color: '#e4717a'
 - name: Taupe
   color: '#483c32'
-- name: Taupe gray
-  color: '#8b8589'
-- name: Tea green
-  color: '#d0f0c0'
-- name: Tea rose
-  color: '#f88379'
-- name: Tea rose
-  color: '#f4c2c2'
 - name: Teal
   color: '#008080'
-- name: Teal blue
-  color: '#367588'
-- name: Teal deer
-  color: '#99e6b3'
-- name: Teal green
-  color: '#00827f'
-- name: Telemagenta
-  color: '#cf3476'
-- name: Tenné
-  color: '#cd5700'
 - name: Terra cotta
   color: '#e2725b'
 - name: Thistle
   color: '#d8bfd8'
-- name: Thulian pink
-  color: '#de6fa1'
-- name: Tickle Me Pink
-  color: '#fc89ac'
-- name: Tiffany Blue
-  color: '#0abab5'
-- name: Tiger's eye
-  color: '#e08d3c'
-- name: Timberwolf
-  color: '#dbd7d2'
-- name: Titanium yellow
-  color: '#eee600'
 - name: Tomato
   color: '#ff6347'
-- name: Toolbox
-  color: '#746cc0'
 - name: Topaz
   color: '#ffc87c'
-- name: Tractor red
-  color: '#fd0e35'
-- name: Trolley Grey
-  color: '#808080'
-- name: Tropical rain forest
-  color: '#00755e'
-- name: True Blue
-  color: '#0073cf'
-- name: Tufts Blue
-  color: '#417dc1'
 - name: Tulip
   color: '#ff878d'
 - name: Tumbleweed
   color: '#deaa88'
-- name: Turkish rose
-  color: '#b57281'
 - name: Turquoise
   color: '#40e0d0'
-- name: Turquoise blue
-  color: '#00ffef'
-- name: Turquoise green
-  color: '#a0d6b4'
 - name: Tuscan
   color: '#fad6a5'
-- name: Tuscan brown
-  color: '#6f4e37'
-- name: Tuscan red
-  color: '#7c4848'
-- name: Tuscan tan
-  color: '#a67b5b'
-- name: Tuscany
-  color: '#c09999'
-- name: Twilight lavender
-  color: '#8a496b'
 - name: Tyrian purple
   color: '#66023c'
-- name: UA blue
-  color: '#0033aa'
-- name: UA red
-  color: '#d9004c'
 - name: Ube
   color: '#8878c3'
-- name: UCLA Blue
-  color: '#536895'
-- name: UCLA Gold
-  color: '#ffb300'
-- name: UFO Green
-  color: '#3cd070'
 - name: Ultramarine
   color: '#120a8f'
-- name: Ultramarine blue
-  color: '#4166f5'
-- name: Ultra pink
-  color: '#ff6fff'
-- name: Ultra red
-  color: '#fc6c85'
 - name: Umber
   color: '#635147'
-- name: Unbleached silk
-  color: '#ffddca'
-- name: United Nations blue
-  color: '#5b92e5'
-- name: University of California Gold
-  color: '#b78727'
-- name: Unmellow yellow
-  color: '#ffff66'
-- name: UP Forest green
-  color: '#014421'
-- name: UP Maroon
-  color: '#7b1113'
-- name: Upsdell red
-  color: '#ae2029'
 - name: Urobilin
   color: '#e1ad21'
-- name: USAFA blue
-  color: '#004f98'
-- name: USC Cardinal
-  color: '#990000'
-- name: USC Gold
-  color: '#ffcc00'
-- name: University of Tennessee Orange
-  color: '#f77f00'
-- name: Utah Crimson
-  color: '#d3003f'
 - name: Vanilla
   color: '#f3e5ab'
-- name: Vanilla ice
-  color: '#f38fa9'
-- name: Vegas gold
-  color: '#c5b358'
-- name: Venetian red
-  color: '#c80815'
 - name: Verdigris
   color: '#43b3ae'
-- name: Vermilion
+- name: Vermilion #duplicate
   color: '#e34234'
-- name: Vermilion
+- name: Vermilion #duplicate
   color: '#d9381e'
 - name: Veronica
   color: '#a020f0'
@@ -1919,26 +964,6 @@
   color: '#8f00ff'
 - name: Viridian
   color: '#40826d'
-- name: Viridian green
-  color: '#009698'
-- name: Vista blue
-  color: '#7c9ed9'
-- name: Vivid auburn
-  color: '#922724'
-- name: Vivid burgundy
-  color: '#9f1d35'
-- name: Vivid cerise
-  color: '#da1d81'
-- name: Vivid orchid
-  color: '#cc00ff'
-- name: Vivid sky blue
-  color: '#00ccff'
-- name: Vivid tangerine
-  color: '#ffa089'
-- name: Vivid violet
-  color: '#9f00ff'
-- name: Warm black
-  color: '#004242'
 - name: Waterspout
   color: '#a4f4f9'
 - name: Wenge
@@ -1947,43 +972,13 @@
   color: '#f5deb3'
 - name: White
   color: '#ffffff'
-- name: White smoke
-  color: '#f5f5f5'
-- name: Wild blue yonder
-  color: '#a2add0'
-- name: Wild orchid
-  color: '#d470a2'
-- name: Wild Strawberry
-  color: '#ff43a4'
-- name: Wild watermelon
-  color: '#fc6c85'
-- name: Willpower orange
-  color: '#fd5800'
-- name: Windsor tan
-  color: '#a75502'
 - name: Wine
   color: '#722f37'
 - name: Wine dregs
   color: '#673147'
-- name: Wisteria
-  color: '#c9a0dc'
-- name: Wood brown
-  color: '#c19a6b'
 - name: Xanadu
   color: '#738678'
-- name: Yale Blue
-  color: '#0f4d92'
-- name: Yankees blue
-  color: '#1c2841'
 - name: Yellow
   color: '#ffff00'
-- name: Yellow Orange
-  color: '#ffae42'
-- name: Yellow rose
-  color: '#fff000'
 - name: Zaffre
   color: '#0014a8'
-- name: Zinnwaldite brown
-  color: '#2c1608'
-- name: Zomp
-  color: '#39a78e'
