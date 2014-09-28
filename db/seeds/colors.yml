@@ -19,7 +19,7 @@
 #  name = this.innerText;
 #  rgb = $(this).prev().css('background-color'); // in format rgb(0,0,0)
 #  return '- name: ' + name +
-#       '\n  color: ' + rgb2hex(rgb);
+#       '\n  hex: ' + rgb2hex(rgb);
 #}).get().join('\n');
 #
 #$('body').prepend('<p>' + yml_string + '</p>');
@@ -32,464 +32,464 @@
 # - same name as another object (feldspar, coconut), unless the color is in the word's definition
 
 - name: Aero
-  color: '#7cb9e8'
+  hex: '#7cb9e8'
 - name: Alizarin crimson
-  color: '#e32636'
+  hex: '#e32636'
 - name: Almond
-  color: '#efdecd'
+  hex: '#efdecd'
 - name: Amaranth
-  color: '#e52b50'
+  hex: '#e52b50'
 - name: Amazon
-  color: '#3b7a57'
+  hex: '#3b7a57'
 - name: Amber
-  color: '#ffbf00'
+  hex: '#ffbf00'
 - name: Amethyst
-  color: '#9966cc'
+  hex: '#9966cc'
 - name: Apricot
-  color: '#fbceb1'
+  hex: '#fbceb1'
 - name: Aqua
-  color: '#00ffff'
+  hex: '#00ffff'
 - name: Aquamarine
-  color: '#7fffd4'
+  hex: '#7fffd4'
 - name: Army green
-  color: '#4b5320'
+  hex: '#4b5320'
 - name: Artichoke
-  color: '#8f9779'
+  hex: '#8f9779'
 - name: Arylide yellow
-  color: '#e9d66b'
+  hex: '#e9d66b'
 - name: Ash grey
-  color: '#b2beb5'
+  hex: '#b2beb5'
 - name: Auburn
-  color: '#a52a2a'
+  hex: '#a52a2a'
 - name: Aureolin
-  color: '#fdee00'
+  hex: '#fdee00'
 - name: Azure
-  color: '#007fff'
+  hex: '#007fff'
 - name: Azure mist
-  color: '#f0ffff'
+  hex: '#f0ffff'
 - name: Baby blue
-  color: '#89cff0'
+  hex: '#89cff0'
 - name: Baby pink
-  color: '#f4c2c2'
+  hex: '#f4c2c2'
 - name: Barn red
-  color: '#7c0a02'
+  hex: '#7c0a02'
 - name: Bazaar
-  color: '#98777b'
+  hex: '#98777b'
 - name: Beige
-  color: '#f5f5dc'
+  hex: '#f5f5dc'
 - name: Bisque
-  color: '#ffe4c4'
+  hex: '#ffe4c4'
 - name: Bistre
-  color: '#3d2b1f'
+  hex: '#3d2b1f'
 - name: Black
-  color: '#000000'
+  hex: '#000000'
 - name: Blond
-  color: '#faf0be'
+  hex: '#faf0be'
 - name: Blue
-  color: '#0000ff'
+  hex: '#0000ff'
 - name: Blueberry
-  color: '#4f86f7'
+  hex: '#4f86f7'
 - name: Bluebonnet
-  color: '#1c1cf0'
+  hex: '#1c1cf0'
 - name: Blush
-  color: '#de5d83'
+  hex: '#de5d83'
 - name: Bole
-  color: '#79443b'
+  hex: '#79443b'
 - name: Bone
-  color: '#e3dac9'
+  hex: '#e3dac9'
 - name: Brass
-  color: '#b5a642'
+  hex: '#b5a642'
 - name: Bronze
-  color: '#cd7f32'
+  hex: '#cd7f32'
 - name: Bronze Yellow
-  color: '#737000'
+  hex: '#737000'
 - name: Bubble gum
-  color: '#ffc1cc'
+  hex: '#ffc1cc'
 - name: Bubbles
-  color: '#e7feff'
+  hex: '#e7feff'
 - name: Buff
-  color: '#f0dc82'
+  hex: '#f0dc82'
 - name: Burgundy
-  color: '#800020'
+  hex: '#800020'
 - name: Burlywood
-  color: '#deb887'
+  hex: '#deb887'
 - name: Byzantine
-  color: '#bd33a4'
+  hex: '#bd33a4'
 - name: Byzantium
-  color: '#702963'
+  hex: '#702963'
 - name: Cadet
-  color: '#536872'
+  hex: '#536872'
 - name: Camel
-  color: '#c19a6b'
+  hex: '#c19a6b'
 - name: Capri
-  color: '#00bfff'
+  hex: '#00bfff'
 - name: Cardinal
-  color: '#c41e3a'
+  hex: '#c41e3a'
 - name: Caribbean green
-  color: '#00cc99'
+  hex: '#00cc99'
 - name: Carmine
-  color: '#960018'
+  hex: '#960018'
 - name: Carnelian
-  color: '#b31b1b'
+  hex: '#b31b1b'
 - name: Carolina blue
-  color: '#56a0d3'
+  hex: '#56a0d3'
 - name: Castleton green
-  color: '#00563f'
+  hex: '#00563f'
 - name: Catalina blue
-  color: '#062a78'
+  hex: '#062a78'
 - name: Catawba
-  color: '#703642'
+  hex: '#703642'
 - name: Cedar Chest
-  color: '#c95a49'
+  hex: '#c95a49'
 - name: Ceil
-  color: '#92a1cf'
+  hex: '#92a1cf'
 - name: Celadon
-  color: '#ace1af'
+  hex: '#ace1af'
 - name: Celeste
-  color: '#b2ffff'
+  hex: '#b2ffff'
 - name: Celestial blue
-  color: '#4997d0'
+  hex: '#4997d0'
 - name: Cerise
-  color: '#de3163'
+  hex: '#de3163'
 - name: Cerulean
-  color: '#007ba7'
+  hex: '#007ba7'
 - name: Chamoisee
-  color: '#a0785a'
+  hex: '#a0785a'
 - name: Charcoal
-  color: '#36454f'
+  hex: '#36454f'
 - name: Cherry
-  color: '#de3163'
+  hex: '#de3163'
 - name: Chestnut
-  color: '#954535'
+  hex: '#954535'
 - name: Cinereous
-  color: '#98817b'
+  hex: '#98817b'
 - name: Cinnabar
-  color: '#e34234'
+  hex: '#e34234'
 - name: Cinnamon
-  color: '#d2691e'
+  hex: '#d2691e'
 - name: Citrine
-  color: '#e4d00a'
+  hex: '#e4d00a'
 - name: Claret
-  color: '#7f1734'
+  hex: '#7f1734'
 - name: Cobalt
-  color: '#0047ab'
+  hex: '#0047ab'
 - name: Coconut
-  color: '#965a3e'
+  hex: '#965a3e'
 - name: Coffee
-  color: '#6f4e37'
+  hex: '#6f4e37'
 - name: Copper
-  color: '#b87333'
+  hex: '#b87333'
 - name: Coral
-  color: '#ff7f50'
+  hex: '#ff7f50'
 - name: Cordovan
-  color: '#893f45'
+  hex: '#893f45'
 - name: Corn
-  color: '#fbec5d'
+  hex: '#fbec5d'
 - name: Cornsilk
-  color: '#fff8dc'
+  hex: '#fff8dc'
 - name: Cosmic latte
-  color: '#fff8e7'
+  hex: '#fff8e7'
 - name: Cream
-  color: '#fffdd0'
+  hex: '#fffdd0'
 - name: Crimson
-  color: '#dc143c'
+  hex: '#dc143c'
 - name: Cyan
-  color: '#00ffff'
+  hex: '#00ffff'
 - name: Daffodil
-  color: '#ffff31'
+  hex: '#ffff31'
 - name: Dandelion
-  color: '#f0e130'
+  hex: '#f0e130'
 - name: Debian red
-  color: '#d70a53'
+  hex: '#d70a53'
 - name: Denim
-  color: '#1560bd'
+  hex: '#1560bd'
 - name: Diamond
-  color: '#b9f2ff'
+  hex: '#b9f2ff'
 - name: Drab
-  color: '#967117'
+  hex: '#967117'
 - name: Ebony
-  color: '#555d50'
+  hex: '#555d50'
 - name: Ecru
-  color: '#c2b280'
+  hex: '#c2b280'
 - name: Emerald
-  color: '#50c878'
+  hex: '#50c878'
 - name: Fawn
-  color: '#e5aa70'
+  hex: '#e5aa70'
 - name: Feldgrau
-  color: '#4d5d53'
+  hex: '#4d5d53'
 - name: Feldspar
-  color: '#fdd5b1'
+  hex: '#fdd5b1'
 - name: Flavescent #
-  color: '#f7e98e'
+  hex: '#f7e98e'
 - name: Fuchsia
-  color: '#ff00ff'
+  hex: '#ff00ff'
 - name: Fulvous #
-  color: '#e48400'
+  hex: '#e48400'
 - name: Gamboge #
-  color: '#e49b0f'
+  hex: '#e49b0f'
 - name: Glaucous #
-  color: '#6082b6'
+  hex: '#6082b6'
 - name: Golden poppy
-  color: '#fcc200'
+  hex: '#fcc200'
 - name: Golden yellow
-  color: '#ffdf00'
+  hex: '#ffdf00'
 - name: Goldenrod
-  color: '#daa520'
+  hex: '#daa520'
 - name: Gray
-  color: '#808080'
+  hex: '#808080'
 - name: Grullo  #
-  color: '#a99a86'
+  hex: '#a99a86'
 - name: Heliotrope #
-  color: '#df73ff'
+  hex: '#df73ff'
 - name: Icterine    #
-  color: '#fcf75e'
+  hex: '#fcf75e'
 - name: Indigo
-  color: '#6f00ff'
+  hex: '#6f00ff'
 - name: Isabelline
-  color: '#f4f0ec'
+  hex: '#f4f0ec'
 - name: Ivory
-  color: '#fffff0'
+  hex: '#fffff0'
 - name: Jade
-  color: '#00a86b'
+  hex: '#00a86b'
 - name: Jet
-  color: '#343434'
+  hex: '#343434'
 - name: Lava
-  color: '#cf1020'
+  hex: '#cf1020'
 - name: Lemon
-  color: '#fff700'
+  hex: '#fff700'
 - name: Lime
-  color: '#32cd32'
+  hex: '#32cd32'
 - name: Limerick
-  color: '#9dc209'
+  hex: '#9dc209'
 - name: Magenta
-  color: '#ff00ff'
+  hex: '#ff00ff'
 - name: Magnolia
-  color: '#f8f4ff'
+  hex: '#f8f4ff'
 - name: Mahogany
-  color: '#c04000'
+  hex: '#c04000'
 - name: Maize
-  color: '#fbec5d'
+  hex: '#fbec5d'
 - name: Malachite
-  color: '#0bda51'
+  hex: '#0bda51'
 - name: Mauve
-  color: '#e0b0ff'
+  hex: '#e0b0ff'
 - name: Navy
-  color: '#000080'
+  hex: '#000080'
 - name: Ochre
-  color: '#cc7722'
+  hex: '#cc7722'
 - name: Olive
-  color: '#808000'
+  hex: '#808000'
 - name: Onyx
-  color: '#353839'
+  hex: '#353839'
 - name: Orange
-  color: '#ff7f00'
+  hex: '#ff7f00'
 - name: Orchid
-  color: '#da70d6'
+  hex: '#da70d6'
 - name: Pastel blue
-  color: '#aec6cf'
+  hex: '#aec6cf'
 - name: Pastel brown
-  color: '#826953'
+  hex: '#826953'
 - name: Pastel gray
-  color: '#cfcfc4'
+  hex: '#cfcfc4'
 - name: Pastel green
-  color: '#77dd77'
+  hex: '#77dd77'
 - name: Pastel magenta
-  color: '#f49ac2'
+  hex: '#f49ac2'
 - name: Pastel orange
-  color: '#ffb347'
+  hex: '#ffb347'
 - name: Pastel pink
-  color: '#dea5a4'
+  hex: '#dea5a4'
 - name: Pastel purple
-  color: '#b39eb5'
+  hex: '#b39eb5'
 - name: Pastel red
-  color: '#ff6961'
+  hex: '#ff6961'
 - name: Pastel violet
-  color: '#cb99c9'
+  hex: '#cb99c9'
 - name: Pastel yellow
-  color: '#fdfd96'
+  hex: '#fdfd96'
 - name: Patriarch
-  color: '#800080'
+  hex: '#800080'
 - name: Payne's grey
-  color: '#536878'
+  hex: '#536878'
 - name: Peach #duplicate
-  color: '#ffe5b4'
+  hex: '#ffe5b4'
 - name: Peach #duplicate
-  color: '#ffcba4'
+  hex: '#ffcba4'
 - name: Peach puff
-  color: '#ffdab9'
+  hex: '#ffdab9'
 - name: Pear
-  color: '#d1e231'
+  hex: '#d1e231'
 - name: Pearl
-  color: '#eae0c8'
+  hex: '#eae0c8'
 - name: Pearly purple
-  color: '#b768a2'
+  hex: '#b768a2'
 - name: Peridot
-  color: '#e6e200'
+  hex: '#e6e200'
 - name: Periwinkle
-  color: '#ccccff'
+  hex: '#ccccff'
 - name: Persimmon
-  color: '#ec5800'
+  hex: '#ec5800'
 - name: Phlox
-  color: '#df00ff'
+  hex: '#df00ff'
 - name: Pine green
-  color: '#01796f'
+  hex: '#01796f'
 - name: Pink
-  color: '#ffc0cb'
+  hex: '#ffc0cb'
 - name: Pink lace
-  color: '#ffddf4'
+  hex: '#ffddf4'
 - name: Pink lavender
-  color: '#d8b2d1'
+  hex: '#d8b2d1'
 - name: Pink pearl
-  color: '#e7accf'
+  hex: '#e7accf'
 - name: Pink Sherbet
-  color: '#f78fa7'
+  hex: '#f78fa7'
 - name: Pistachio
-  color: '#93c572'
+  hex: '#93c572'
 - name: Plum
-  color: '#8e4585'
+  hex: '#8e4585'
 - name: Prune
-  color: '#701c1c'
+  hex: '#701c1c'
 - name: Puce
-  color: '#cc8899'
+  hex: '#cc8899'
 - name: Purple
-  color: '#800080'
+  hex: '#800080'
 - name: Purpureus
-  color: '#9a4eae'
+  hex: '#9a4eae'
 - name: Quartz
-  color: '#51484f'
+  hex: '#51484f'
 - name: Raspberry
-  color: '#e30b5c'
+  hex: '#e30b5c'
 - name: Raw umber
-  color: '#826644'
+  hex: '#826644'
 - name: Razzmatazz
-  color: '#e3256b'
+  hex: '#e3256b'
 - name: Red
-  color: '#ff0000'
+  hex: '#ff0000'
 - name: Redwood
-  color: '#a45a52'
+  hex: '#a45a52'
 - name: Rose
-  color: '#ff007f'
+  hex: '#ff007f'
 - name: Rosewood
-  color: '#65000b'
+  hex: '#65000b'
 - name: Rosso corsa
-  color: '#d40000'
+  hex: '#d40000'
 - name: Rosy brown
-  color: '#bc8f8f'
+  hex: '#bc8f8f'
 - name: Royal azure
-  color: '#0038a8'
+  hex: '#0038a8'
 - name: Royal blue
-  color: '#002366'
+  hex: '#002366'
 - name: Royal blue
-  color: '#4169e1'
+  hex: '#4169e1'
 - name: Royal fuchsia
-  color: '#ca2c92'
+  hex: '#ca2c92'
 - name: Royal purple
-  color: '#7851a9'
+  hex: '#7851a9'
 - name: Royal yellow
-  color: '#fada5e'
+  hex: '#fada5e'
 - name: Ruber
-  color: '#ce4676'
+  hex: '#ce4676'
 - name: Ruby
-  color: '#e0115f'
+  hex: '#e0115f'
 - name: Ruddy
-  color: '#ff0028'
+  hex: '#ff0028'
 - name: Rufous
-  color: '#a81c07'
+  hex: '#a81c07'
 - name: Russet
-  color: '#80461b'
+  hex: '#80461b'
 - name: Rust
-  color: '#b7410e'
+  hex: '#b7410e'
 - name: Saffron
-  color: '#f4c430'
+  hex: '#f4c430'
 - name: Sage
-  color: '#bcb88a'
+  hex: '#bcb88a'
 - name: Salmon
-  color: '#fa8072'
+  hex: '#fa8072'
 - name: Sand
-  color: '#c2b280'
+  hex: '#c2b280'
 - name: Sangria
-  color: '#92000a'
+  hex: '#92000a'
 - name: Sapphire
-  color: '#0f52ba'
+  hex: '#0f52ba'
 - name: Scarlet #duplicate
-  color: '#ff2400'
+  hex: '#ff2400'
 - name: Scarlet #duplicate
-  color: '#fd0e35'
+  hex: '#fd0e35'
 - name: Sepia
-  color: '#704214'
+  hex: '#704214'
 - name: Sienna
-  color: '#882d17'
+  hex: '#882d17'
 - name: Silver
-  color: '#c0c0c0'
+  hex: '#c0c0c0'
 - name: Sinopia
-  color: '#cb410b'
+  hex: '#cb410b'
 - name: Smoke
-  color: '#738276'
+  hex: '#738276'
 - name: Snow
-  color: '#fffafa'
+  hex: '#fffafa'
 - name: Spring green
-  color: '#00ff7f'
+  hex: '#00ff7f'
 - name: Straw
-  color: '#e4d96f'
+  hex: '#e4d96f'
 - name: Strawberry
-  color: '#fc5a8d'
+  hex: '#fc5a8d'
 - name: Tan
-  color: '#d2b48c'
+  hex: '#d2b48c'
 - name: Tangerine
-  color: '#f28500'
+  hex: '#f28500'
 - name: Taupe
-  color: '#483c32'
+  hex: '#483c32'
 - name: Teal
-  color: '#008080'
+  hex: '#008080'
 - name: Terra cotta
-  color: '#e2725b'
+  hex: '#e2725b'
 - name: Thistle
-  color: '#d8bfd8'
+  hex: '#d8bfd8'
 - name: Tomato
-  color: '#ff6347'
+  hex: '#ff6347'
 - name: Topaz
-  color: '#ffc87c'
+  hex: '#ffc87c'
 - name: Tulip
-  color: '#ff878d'
+  hex: '#ff878d'
 - name: Tumbleweed
-  color: '#deaa88'
+  hex: '#deaa88'
 - name: Turquoise
-  color: '#40e0d0'
+  hex: '#40e0d0'
 - name: Tuscan
-  color: '#fad6a5'
+  hex: '#fad6a5'
 - name: Tyrian purple
-  color: '#66023c'
+  hex: '#66023c'
 - name: Ube
-  color: '#8878c3'
+  hex: '#8878c3'
 - name: Ultramarine
-  color: '#120a8f'
+  hex: '#120a8f'
 - name: Umber
-  color: '#635147'
+  hex: '#635147'
 - name: Vanilla
-  color: '#f3e5ab'
+  hex: '#f3e5ab'
 - name: Verdigris
-  color: '#43b3ae'
+  hex: '#43b3ae'
 - name: Vermilion #duplicate
-  color: '#e34234'
+  hex: '#e34234'
 - name: Vermilion #duplicate
-  color: '#d9381e'
+  hex: '#d9381e'
 - name: Veronica
-  color: '#a020f0'
+  hex: '#a020f0'
 - name: Violet
-  color: '#8f00ff'
+  hex: '#8f00ff'
 - name: Viridian
-  color: '#40826d'
+  hex: '#40826d'
 - name: Waterspout
-  color: '#a4f4f9'
+  hex: '#a4f4f9'
 - name: Wenge
-  color: '#645452'
+  hex: '#645452'
 - name: Wheat
-  color: '#f5deb3'
+  hex: '#f5deb3'
 - name: White
-  color: '#ffffff'
+  hex: '#ffffff'
 - name: Xanadu
-  color: '#738678'
+  hex: '#738678'
 - name: Yellow
-  color: '#ffff00'
+  hex: '#ffff00'
 - name: Zaffre
-  color: '#0014a8'
+  hex: '#0014a8'
