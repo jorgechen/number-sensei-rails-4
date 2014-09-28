@@ -9,10 +9,3 @@ Our content is based on the Number Sense, Mathematics, and similar competitions 
 
 See [Number Sensei](http://numbersensei.org)
 
-
-======
-### Updates
-
-* **2013-11-6**
-  * Project in early development for 3 months in my spare time. 
-  * Many aspects of the site are incomplete and/or gradually user-tested by my students.
