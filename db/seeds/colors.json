@@ -492,28 +492,12 @@
         "name": "Purpureus"
     },
     {
-        "hex": "#e3256b",
-        "name": "Razzmatazz"
-    },
-    {
         "hex": "#ff0000",
         "name": "Red"
     },
     {
-        "hex": "#a45a52",
-        "name": "Redwood"
-    },
-    {
         "hex": "#ff007f",
         "name": "Rose"
-    },
-    {
-        "hex": "#65000b",
-        "name": "Rosewood"
-    },
-    {
-        "hex": "#d40000",
-        "name": "Rosso corsa"
     },
     {
         "hex": "#ce4676",
@@ -548,20 +532,8 @@
         "name": "Sage"
     },
     {
-        "hex": "#fa8072",
-        "name": "Salmon"
-    },
-    {
         "hex": "#c2b280",
         "name": "Sand"
-    },
-    {
-        "hex": "#92000a",
-        "name": "Sangria"
-    },
-    {
-        "hex": "#0f52ba",
-        "name": "Sapphire"
     },
     {
         "hex": "#ff2400",
@@ -585,11 +557,7 @@
     },
     {
         "hex": "#738276",
-        "name": "Smoke"
-    },
-    {
-        "hex": "#fffafa",
-        "name": "Snow"
+        "name": "Smokey"
     },
     {
         "hex": "#e4d96f",
@@ -616,44 +584,16 @@
         "name": "Teal"
     },
     {
-        "hex": "#e2725b",
-        "name": "Terra cotta"
-    },
-    {
         "hex": "#d8bfd8",
         "name": "Thistle"
-    },
-    {
-        "hex": "#ff6347",
-        "name": "Tomato"
-    },
-    {
-        "hex": "#ffc87c",
-        "name": "Topaz"
-    },
-    {
-        "hex": "#ff878d",
-        "name": "Tulip"
     },
     {
         "hex": "#40e0d0",
         "name": "Turquoise"
     },
     {
-        "hex": "#fad6a5",
-        "name": "Tuscan"
-    },
-    {
-        "hex": "#8878c3",
-        "name": "Ube"
-    },
-    {
         "hex": "#120a8f",
         "name": "Ultramarine"
-    },
-    {
-        "hex": "#635147",
-        "name": "Umber"
     },
     {
         "hex": "#f3e5ab",
@@ -666,10 +606,6 @@
     {
         "hex": "#d9381e",
         "name": "Vermilion"
-    },
-    {
-        "hex": "#a020f0",
-        "name": "Veronica"
     },
     {
         "hex": "#8f00ff",
