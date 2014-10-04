@@ -12,20 +12,8 @@
         "name": "Amaranth"
     },
     {
-        "hex": "#3b7a57",
-        "name": "Amazon"
-    },
-    {
         "hex": "#ffbf00",
         "name": "Amber"
-    },
-    {
-        "hex": "#9966cc",
-        "name": "Amethyst"
-    },
-    {
-        "hex": "#fbceb1",
-        "name": "Apricot"
     },
     {
         "hex": "#00ffff",
@@ -36,84 +24,24 @@
         "name": "Aquamarine"
     },
     {
-        "hex": "#4b5320",
-        "name": "Army green"
-    },
-    {
-        "hex": "#8f9779",
-        "name": "Artichoke"
-    },
-    {
-        "hex": "#e9d66b",
-        "name": "Arylide yellow"
-    },
-    {
-        "hex": "#b2beb5",
-        "name": "Ash grey"
-    },
-    {
         "hex": "#a52a2a",
         "name": "Auburn"
-    },
-    {
-        "hex": "#fdee00",
-        "name": "Aureolin"
     },
     {
         "hex": "#007fff",
         "name": "Azure"
     },
     {
-        "hex": "#89cff0",
-        "name": "Baby blue"
-    },
-    {
         "hex": "#f5f5dc",
         "name": "Beige"
-    },
-    {
-        "hex": "#ffe4c4",
-        "name": "Bisque"
-    },
-    {
-        "hex": "#3d2b1f",
-        "name": "Bistre"
     },
     {
         "hex": "#000000",
         "name": "Black"
     },
     {
-        "hex": "#faf0be",
-        "name": "Blond"
-    },
-    {
         "hex": "#0000ff",
         "name": "Blue"
-    },
-    {
-        "hex": "#4f86f7",
-        "name": "Blueberry"
-    },
-    {
-        "hex": "#1c1cf0",
-        "name": "Bluebonnet"
-    },
-    {
-        "hex": "#de5d83",
-        "name": "Blush"
-    },
-    {
-        "hex": "#79443b",
-        "name": "Bole"
-    },
-    {
-        "hex": "#e3dac9",
-        "name": "Bone"
-    },
-    {
-        "hex": "#b5a642",
-        "name": "Brass"
     },
     {
         "hex": "#cd7f32",
@@ -136,16 +64,8 @@
         "name": "Cadet"
     },
     {
-        "hex": "#00bfff",
-        "name": "Capri"
-    },
-    {
         "hex": "#c41e3a",
         "name": "Cardinal"
-    },
-    {
-        "hex": "#00cc99",
-        "name": "Caribbean green"
     },
     {
         "hex": "#960018",
@@ -160,10 +80,6 @@
         "name": "Catawba"
     },
     {
-        "hex": "#c95a49",
-        "name": "Cedar Chest"
-    },
-    {
         "hex": "#92a1cf",
         "name": "Ceil"
     },
@@ -174,10 +90,6 @@
     {
         "hex": "#b2ffff",
         "name": "Celeste"
-    },
-    {
-        "hex": "#4997d0",
-        "name": "Celestial blue"
     },
     {
         "hex": "#de3163",
@@ -200,14 +112,6 @@
         "name": "Cherry"
     },
     {
-        "hex": "#954535",
-        "name": "Chestnut"
-    },
-    {
-        "hex": "#98817b",
-        "name": "Cinereous"
-    },
-    {
         "hex": "#e34234",
         "name": "Cinnabar"
     },
@@ -228,18 +132,6 @@
         "name": "Cobalt"
     },
     {
-        "hex": "#965a3e",
-        "name": "Coconut"
-    },
-    {
-        "hex": "#6f4e37",
-        "name": "Coffee"
-    },
-    {
-        "hex": "#b87333",
-        "name": "Copper"
-    },
-    {
         "hex": "#ff7f50",
         "name": "Coral"
     },
@@ -248,20 +140,12 @@
         "name": "Cordovan"
     },
     {
-        "hex": "#fbec5d",
-        "name": "Corn"
-    },
-    {
         "hex": "#fff8dc",
         "name": "Cornsilk"
     },
     {
         "hex": "#fff8e7",
         "name": "Cosmic latte"
-    },
-    {
-        "hex": "#fffdd0",
-        "name": "Cream"
     },
     {
         "hex": "#dc143c",
@@ -278,10 +162,6 @@
     {
         "hex": "#1560bd",
         "name": "Denim"
-    },
-    {
-        "hex": "#b9f2ff",
-        "name": "Diamond"
     },
     {
         "hex": "#967117",
@@ -308,10 +188,6 @@
         "name": "Feldgrau"
     },
     {
-        "hex": "#fdd5b1",
-        "name": "Feldspar"
-    },
-    {
         "hex": "#f7e98e",
         "name": "Flavescent"
     },
@@ -330,10 +206,6 @@
     {
         "hex": "#6082b6",
         "name": "Glaucous"
-    },
-    {
-        "hex": "#ffdf00",
-        "name": "Golden yellow"
     },
     {
         "hex": "#daa520",
@@ -368,24 +240,8 @@
         "name": "Ivory"
     },
     {
-        "hex": "#00a86b",
-        "name": "Jade"
-    },
-    {
-        "hex": "#343434",
-        "name": "Jet"
-    },
-    {
         "hex": "#cf1020",
         "name": "Lava"
-    },
-    {
-        "hex": "#fff700",
-        "name": "Lemon"
-    },
-    {
-        "hex": "#32cd32",
-        "name": "Lime"
     },
     {
         "hex": "#9dc209",
@@ -440,22 +296,6 @@
         "name": "Orchid"
     },
     {
-        "hex": "#ffe5b4",
-        "name": "Peach"
-    },
-    {
-        "hex": "#d1e231",
-        "name": "Pear"
-    },
-    {
-        "hex": "#eae0c8",
-        "name": "Pearl"
-    },
-    {
-        "hex": "#e6e200",
-        "name": "Peridot"
-    },
-    {
         "hex": "#ccccff",
         "name": "Periwinkle"
     },
@@ -472,10 +312,6 @@
         "name": "Pink"
     },
     {
-        "hex": "#8e4585",
-        "name": "Plum"
-    },
-    {
         "hex": "#701c1c",
         "name": "Prune"
     },
@@ -486,10 +322,6 @@
     {
         "hex": "#800080",
         "name": "Purple"
-    },
-    {
-        "hex": "#9a4eae",
-        "name": "Purpureus"
     },
     {
         "hex": "#ff0000",
@@ -560,14 +392,6 @@
         "name": "Smokey"
     },
     {
-        "hex": "#e4d96f",
-        "name": "Straw"
-    },
-    {
-        "hex": "#fc5a8d",
-        "name": "Strawberry"
-    },
-    {
         "hex": "#d2b48c",
         "name": "Tan"
     },
@@ -582,10 +406,6 @@
     {
         "hex": "#008080",
         "name": "Teal"
-    },
-    {
-        "hex": "#d8bfd8",
-        "name": "Thistle"
     },
     {
         "hex": "#40e0d0",
@@ -616,24 +436,12 @@
         "name": "Viridian"
     },
     {
-        "hex": "#a4f4f9",
-        "name": "Waterspout"
-    },
-    {
         "hex": "#645452",
         "name": "Wenge"
     },
     {
-        "hex": "#f5deb3",
-        "name": "Wheat"
-    },
-    {
         "hex": "#ffffff",
         "name": "White"
-    },
-    {
-        "hex": "#738678",
-        "name": "Xanadu"
     },
     {
         "hex": "#ffff00",
