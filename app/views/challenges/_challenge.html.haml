@@ -1,27 +1,49 @@
+:javascript
+  $(document).ready(function() {
+
+    var questions = $('.question-box');
+
+    // Put the input cursor on the first question
+    setTimeout(
+      function() {
+        questions.first().find('input').focus();
+      },
+      1
+    );
+
+    // Highlight the question that the cursor is on
+    questions.focusin(function() {
+      $(this).addClass('question-focused');
+    }).focusout(function() {
+      $(this).removeClass('question-focused');
+    });
+
+  })
+
+
 - if challenge
-  %form.form-horizontal{role: 'form', id: 'challenge'}
-    %label#challenge_id.hidden
-      = challenge.id
+  .challenge_submission
+    %label#challenge_id.hidden= challenge.id
+
     - challenge.all_questions.shuffle.each do |question|
       - question_id = "question_#{question.id}"
-      .form-group
-        %label.control-label.col-sm-2{for: question_id}
-          %script{type: 'math/tex'}
-            = "#{question.problem_latex} = "
-        .col-sm-2
-          %input.form-control{id: question_id, name: question_id, type: 'number'}/
-        .col-sm-3
-          %script{type: 'math/tex'}
-            = question.appendix_latex
-        .col-sm-1
-          %span.wrong{class: question_id}
-        .col-sm-4
-          &nbsp;
-    .form-group
-      %label.col-sm-2.control-label{for: 'username'} Your name
-      .col-sm-4
-        - username = current_user.name if current_user
-        %input#username.form-control{name: 'username', placeholder: username, type: 'text'}/
-    .form-group
-      .col-sm-offset-2.col-sm-10
-        %button.btn.btn-default{type: 'submit'} Submit
+
+      .question-box.center-block{id: question_id}
+        .row
+          -#.col-sm-1
+          -#  %span{id: question_id, style: 'float: left'}
+          .col-sm-12
+            .input-group{style: 'float: left;'}
+
+              %span.input-group-addon.input-group-addon-lg
+                %script{type: 'math/tex'}
+                  = "#{question.problem_latex} = "
+
+              %input.question_submission.form-control{id: question_id, name: question_id, type: 'number'}/
+
+              - unless question.appendix_latex.blank?
+                %span.input-group-addon
+                  %script{type: 'math/tex'}= question.appendix_latex
+
+    %button.center-block.btn.btn-default.btn-lg{type: 'submit'} Finish
+

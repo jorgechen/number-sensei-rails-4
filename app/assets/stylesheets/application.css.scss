@@ -42,7 +42,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .round-corners {
-  box-shadow: 4px 4px 4px #888888;
+//  box-shadow: 4px 4px 4px #888888;
 
   //background-color: #589e00;
 
@@ -52,7 +52,7 @@ input[type=number]::-webkit-outer-spin-button {
   border-radius: 8px;
   overflow: hidden;
 
-  border: grey solid 2px;
+//  border: grey solid 2px;
 
   margin-bottom: 8px;
   padding: 4px;
@@ -72,9 +72,34 @@ input[type=number]::-webkit-outer-spin-button {
   vertical-align: middle;
 }
 
-.question {
-  font-size: 1.4em;
+
+//////////////////////////////////////////////////
+// Layout elements
+
+.question-divider {
+  height: 1em;
 }
+
+.question-box {
+  padding: .5em;
+
+  width: 32em;
+
+  // round corners
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -khtml-border-radius: 8px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.question-focused {
+  background-color: #007BA7; // Cerulean
+}
+
+
+//////////////////////////////////////////////////
+// Foreground Colors
 
 .incorrect {
   color: red;
@@ -88,8 +113,8 @@ input[type=number]::-webkit-outer-spin-button {
   color: darkgrey;
 }
 
-
-/************* Background Colors *****************/
+//////////////////////////////////////////////////
+// Background Colors
 
 .gold-background {
   background-color: #daab16;
@@ -115,7 +140,8 @@ input[type=number]::-webkit-outer-spin-button {
   background-color: #2d130e;
 }
 
-/* Text manipulation */
+//////////////////////////////////////////////////
+// Text manipulation
 
 .light-text {
   color: #95b4bc;

@@ -1,10 +1,8 @@
-challenge = '#challenge'
-
 $(document).ready ->
 
   submitChallenge = ->
     challenge_id = parseInt($('#challenge_id').text())
-    data = $(challenge).serialize()
+    data = $('input.question_submission').serialize()
 
     #TODO recognize which questions are missing vs which are not reached
 
@@ -24,23 +22,26 @@ $(document).ready ->
 #          }
 #        }
 
-        # Time to grade what's on the page
+        # Update the page from return data
         for question_id, grade of data
-          feedback_element = $("span.question_#{question_id}")
+
+          feedback = '';
+
           if grade.result == 'correct'
-            feedback_element.html('<img alt="Tick" src="/images/tick.png">')
+            feedback = '<img alt="Tick" src="/images/tick.png">'
           else if grade.result != 'unfinished'
             #NOTE: answer is not shown if question has not been reached.
-            feedback_element.text(grade.correct_answer)
+            feedback = '<span class="incorrect">' + grade.correct_answer + '</span>'
+
+          if feedback
+            element = $("#question_#{question_id} .row")
+            question_body = element.find('.col-sm-12')
+            question_body.toggleClass('col-sm-12').toggleClass('col-sm-11')
+            element.prepend('<div class="col-sm-1">' + feedback + '</div>')
 
 
-  # Prevent submitting by pressing ENTER
-  $('form input').keydown (event) ->
-    if (event.keyCode == 13)
-      event.preventDefault()
-      submitChallenge()
 
   # User submits her answers which are graded immediately.
-  $(challenge).submit (event) ->
-    event.preventDefault()
+  $('button[type=submit]').click ->
+    console.log('submit')
     submitChallenge()
