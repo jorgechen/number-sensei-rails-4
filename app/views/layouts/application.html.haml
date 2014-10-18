@@ -5,12 +5,11 @@
       %title= content_for?(:title) ? yield(:title) : NumberSenseiRails4::Application.config.app_title
       %meta{:content => content_for?(:description) ? yield(:description) : NumberSenseiRails4::Application.config.app_description, :name => 'description'}
         = mathjax_tag
-        = stylesheet_link_tag '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css'
-        = stylesheet_link_tag '//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css'
-        = stylesheet_link_tag '//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css'
+        = stylesheet_link_tag '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'
+        = stylesheet_link_tag '//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/spacelab/bootstrap.min.css'
         = stylesheet_link_tag 'application', :media => 'all'
         = javascript_include_tag 'application'
-        = javascript_include_tag '//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js'
+        = javascript_include_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'
         = csrf_meta_tags
         = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Rum+Raisin|Roboto+Slab:400,700|Open+Sans:400,700', :media => 'all'
         = yield(:head)
@@ -21,4 +20,5 @@
         = render 'layouts/messages'
       = yield
     -#= render 'layouts/footer'
-
+  %script
+    MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
