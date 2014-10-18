@@ -1,0 +1,88 @@
+- data = JSON.parse File.read File.join(Rails.root, 'db', 'seeds', 'colors.json')
+
+:javascript
+  var colorData = #{data.to_json};
+
+  function sortByString(a, b) {
+    var aName = a.name.toLowerCase();
+    var bName = b.name.toLowerCase();
+    return ((aName < bName) ? -1 : ((aName > bName) ? 1 : 0));
+  }
+
+  function updateResult() {
+    $('#result').val(JSON.stringify(colorData.sort(sortByString)));
+  }
+
+  $(document).ready(function() {
+    // Output into a JSOn string in the DOM
+    updateResult();
+
+    // Select all text in input
+    $("#result").focus(function(){
+        // Select input field contents
+        this.select();
+    }).mouseup(function(){
+      return false; // Needed for Chrome/Safari select text
+    });
+
+    // Checkboxes
+    $(':checkbox').change(function(){
+      var input = $(this);
+
+      var parent = input.parent().parent().parent();
+
+      var hex = input.attr('hex');
+      var name = input.attr('name');
+
+      if(this.checked) {
+        parent.fadeTo(400, 0.6);
+
+        // Remove color from list
+        colorData = $.grep(colorData, function(pair) {
+          // Apparently the hex are not unique, for example Cinnabar and a shade of Vermilion are both E34234
+          // So we need to match both hex and name
+          return !(pair.hex === hex && pair.name === name);
+        })
+      }
+      else {
+        parent.fadeTo(400, 1.0);
+
+        // Add color back to list
+        colorData.push({
+          hex: input.attr('hex'),
+          name: input.attr('name')
+        })
+      }
+
+      updateResult();
+    })
+  })
+
+
+.container
+
+  %h1
+    = data.length
+    Colors
+
+  %p Use this to edit colors
+
+  .row
+    - data.each do |color|
+      - name = color['name']
+      - hex = color['hex']
+      .col-lg-3
+        %ul.list-group{id: hex}
+          %li.list-group-item{style: "height: 30px; background-color: #{color['hex']}"}
+          %li.list-group-item
+            %span.badge{style: 'background-color: white; color: black;'}
+              = color['hex'].upcase
+            = color['name']
+          %li.list-group-item
+            .input-group
+              %input{type: 'checkbox', hex: hex, name: name}
+              Remove
+  .row
+    .col-lg-12
+      .input-group
+        %input.form-control#result{type: 'text'}
