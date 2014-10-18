@@ -1,6 +1,4 @@
-$(document).ready ->
-
-  submitChallenge = ->
+  @submitChallenge = ->
     challenge_id = parseInt($('#challenge_id').text())
     data = $('input.question_submission').serialize()
 
@@ -38,10 +36,3 @@ $(document).ready ->
             question_body = element.find('.col-sm-12')
             question_body.toggleClass('col-sm-12').toggleClass('col-sm-11')
             element.prepend('<div class="col-sm-1">' + feedback + '</div>')
-
-
-
-  # User submits her answers which are graded immediately.
-  $('button[type=submit]').click ->
-    console.log('submit')
-    submitChallenge()

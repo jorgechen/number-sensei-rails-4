@@ -1,6 +1,13 @@
 :javascript
   $(document).ready(function() {
 
+    // User submits all answers to be graded immediately.
+    $('button[type=submit]').click( function() {
+      challenge_id = parseInt($('#challenge_id').text());
+      data = $('input.question_submission').serialize();
+      submitChallenge();
+    });
+
     var questions = $('.question-box');
 
     // Put the input cursor on the first question
