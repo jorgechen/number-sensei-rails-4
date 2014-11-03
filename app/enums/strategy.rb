@@ -48,6 +48,7 @@ Strategy::BumpUp
 Strategy::CompareFractions
 Strategy::Cube
 Strategy::Factorial
+Strategy::HigherPowers
 Strategy::Liof
 Strategy::MultiplicationTable
 Strategy::MultiplyBy5
