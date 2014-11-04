@@ -66,6 +66,7 @@ Strategy::Square
 Strategy::SquareNumberCloseTo50
 Strategy::SquareNumberCloseTo100
 Strategy::SquareNumberEndingIn5
+Strategy::UnitsOfMeasurement
 Strategy::WriteRomanNumeral
 
 
