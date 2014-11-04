@@ -1,0 +1,261 @@
+<p>
+    A number is divisible by another number if the remainder is 0.  There are quick ways to check if a number is divisible:
+</p>
+
+<table class="table" style="display: table; float: left">
+    <tr>
+        <th colspan="2">A number is divisible by: </th>
+        <th>Example:</th>
+    </tr>
+
+    <tr>
+        <td>2</td>
+        <td>if the number is even</td>
+        <td>
+            <!-- Self evident -->
+        </td>
+    </tr>
+
+    <tr>
+        <td>3</td>
+        <td>if the sum of the digits is divisible by 3</td>
+        <td>
+            <script type='math/tex'>
+                \begin{equation}
+                \begin{split}
+                    & 34164 \div 3
+                \\
+                    & 3 + 4 + 1 + 6 + 4 = 18
+                \\
+                    & \text{18 is divisible by 3, so 34164 is divisible}
+                \end{split}
+                \end{equation}
+            </script>
+        </td>
+    </tr>
+
+    <tr>
+        <td>4</td>
+        <td>if the last 2 digits is divisible by 4</td>
+        <td>
+            <script type='math/tex'>
+                \begin{equation}
+                \begin{split}
+                    & 34164 \div 4
+                \\
+                    & \text{34164 is divisible because 64 is divisible by 4}
+                \end{split}
+                \end{equation}
+            </script>
+        </td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>if the last digit is 0 or 5</td>
+        <td>
+            <!-- Self evident -->
+        </td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>if number is divisible by 2 <strong>and</strong> 3</td>
+        <td>
+            <script type='math/tex'>
+            \begin{equation}
+            \begin{split}
+                & 34164 \div 6
+            \\
+                &\text{34164 is divisible by 6 because it is divisible by 2 and 3}
+            \end{split}
+            \end{equation}
+            </script>
+        </td>
+    </tr>
+    <!-- Skipping 7 as it is unclear whether it's actually faster
+    <tr>
+        <td>7</td>
+        <td>
+            <ol>
+                <li>
+                    Multiply the ones digit by 2
+                </li>
+                <li>
+                    Subtract this value from the rest of the number.
+                </li>
+                <li>
+                    Repeat these two steps until the result is small enough to tell if it is divisible by 7
+                </li>
+            </ol>
+        </td>
+        <td>
+            <script type='math/tex'>
+            \begin{equation}
+            \begin{split}
+                7203 \div 7
+            \end{split}
+            \end{equation}
+            </script>
+
+            <ol>
+                <li>
+                    <script type='math/tex'>
+                    \begin{equation}
+                    \begin{split}
+                        \textbf{3} \times 2 = 6
+                    \end{split}
+                    \end{equation}
+                    </script>
+                </li>
+                <li>
+                    <script type='math/tex'>
+                    \begin{equation}
+                    \begin{split}
+                        \textbf{720} - 6 = 714
+                    \end{split}
+                    \end{equation}
+                    </script>
+                </li>
+                <li>
+                    We know that 714 is evenly divisible by 7, so 7203 is too.
+                </li>
+            </ol>
+
+            <script type='math/tex'>
+            \begin{equation}
+            \begin{split}
+                14443 \div 7
+            \end{split}
+            \end{equation}
+            </script>
+
+            <ol>
+                <li>
+                    <script type='math/tex'>
+                    \begin{equation}
+                    \begin{split}
+                        \textbf{3} \times 2 = 6
+                    \end{split}
+                    \end{equation}
+                    </script>
+                </li>
+                <li>
+                    <script type='math/tex'>
+                    \begin{equation}
+                    \begin{split}
+                        \textbf{1444} - 6 = 1438
+                    \end{split}
+                    \end{equation}
+                    </script>
+                </li>
+            </ol>
+            <ol>
+                <li>
+                    <script type='math/tex'>
+                    \begin{equation}
+                    \begin{split}
+                        \textbf{8} \times 2 = 16
+                    \end{split}
+                    \end{equation}
+                    </script>
+                </li>
+                <li>
+                    <script type='math/tex'>
+                    \begin{equation}
+                    \begin{split}
+                        \textbf{143} - 16 = 127
+                    \end{split}
+                    \end{equation}
+                    </script>
+                </li>
+                <li>
+                    127 is not divisible by 7
+                </li>
+            </ol>
+        </td>
+    </tr>
+    -->
+    <tr>
+        <td>8</td>
+        <td>if the last 3 digits is divisible by 8</td>
+
+        <td>
+            <script type='math/tex'>
+            \begin{equation}
+            \begin{split}
+                & 34164 \div 8
+            \\
+                & \text{34}\textbf{164}\text{ is }\textbf{not}\text{ divisible because }\textbf{164}\text{ is not divisible by 8}
+            \end{split}
+            \end{equation}
+            </script>
+        </td>
+    </tr>
+
+    <tr>
+        <td>9</td>
+        <td>if the sum of the digits is divisible by 9</td>
+        <td>
+            <script type='math/tex'>
+                \begin{equation}
+                \begin{split}
+                    & 34164 \div 9
+                \\
+                    & 3 + 4 + 1 + 6 + 4 = 18
+                \\
+                    & \text{18 is divisible by 9, so 34164 is divisible too}
+                \end{split}
+                \end{equation}
+            </script>
+        </td>
+    </tr>
+
+    <tr>
+        <td>10</td>
+        <td>if last digit is a 0</td>
+        <td>
+            <!-- Self evident -->
+        </td>
+    </tr>
+
+    <tr>
+        <td>11</td>
+        <td>if the difference between step 1 and 2 below is 0:
+            <ol>
+                <li>
+                    Starting from the ones digit, add every other digit.
+                </li>
+                <li>
+                    Add the remaining digits.
+                </li>
+            </ol>
+        </td>
+        <td>
+            <script type='math/tex'>
+            \begin{equation}
+            \begin{split}
+                & 6613585 \div 11
+            \\
+                & \text{6613585 is divisible by 11 because} (5 + 5 + 1 + 6) - (8 + 3 + 6) = 0
+            \end{split}
+            \end{equation}
+            </script>
+        </td>
+    </tr>
+
+    <tr>
+        <td>12</td>
+        <td>if the number is divisible by 3 <strong>and</strong> 4</td>
+        <td>
+            <script type='math/tex'>
+            \begin{equation}
+            \begin{split}
+                & 34164 \div 12
+            \\
+                & \text{34164 is divisible by 12 because it is divisible by 3 and 4}
+            \end{split}
+            \end{equation}
+            </script>
+        </td>
+    </tr>
+
+</table>

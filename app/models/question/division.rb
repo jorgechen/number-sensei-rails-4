@@ -32,4 +32,12 @@ class Question::Division < Question::Binary
     ::Fraction.build(left, right)
   end
 
+  # Questions where all values are within given range.
+  #@param lower [Integer]
+  #@param upper [Integer]
+  #@return [Relation]
+  def self.divisor_in_range(lower, upper)
+    joins('INNER JOIN binary_operations ON questions.problem_id = binary_operations.id').merge(BinaryMultiplication.right_in_range(lower, upper))
+  end
+
 end

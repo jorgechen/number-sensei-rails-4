@@ -47,6 +47,7 @@ end
 Strategy::BumpUp
 Strategy::CompareFractions
 Strategy::Cube
+Strategy::Divisibility
 Strategy::Factorial
 Strategy::HigherPowers
 Strategy::Liof
