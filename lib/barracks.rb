@@ -20,6 +20,7 @@ module Barracks
       # Usually we will have 1-3 questions from playing around in the Rails Console.
       threshold = 20
 
+      # Save if it's a new trick
       if t.new_record? or t.questions.count < threshold
         if t.save
           puts t.name
@@ -27,6 +28,7 @@ module Barracks
         end
       end
 
+      # Tutorials for each trick is saved in a file. We load that into the database.
       begin
         file_name = "#{t.name.gsub(' ', '-').underscore}.html"
         file_path = File.join(directory, file_name)

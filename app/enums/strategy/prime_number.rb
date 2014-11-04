@@ -8,9 +8,6 @@ class Strategy::PrimeNumber < Strategy
     ''
   end
 
-  LOWER_LIMIT = 2
-  UPPER_LIMIT = 100
-
   #@param question [Question::Multiplication]
   def question_qualifies?(question)
     false

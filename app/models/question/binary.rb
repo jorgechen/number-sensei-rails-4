@@ -4,6 +4,7 @@ class Question::Binary < Question
   self.abstract_class = true
 
   ################
+  # THESE ARE CHECKS, NOT QUERIES!
 
   #@return [TrueClass] true if any field matches given value
   def contains?(value)
