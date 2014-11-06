@@ -59,6 +59,7 @@ Strategy::MultiplyBy25
 Strategy::MultiplyBy125
 Strategy::MultiplyGreaterThanCloseTo100
 Strategy::MultiplyLessThanCloseTo100
+Strategy::OrderOfOperations
 Strategy::PrimeNumber
 Strategy::RadixConversion
 Strategy::ReadRomanNumeral
