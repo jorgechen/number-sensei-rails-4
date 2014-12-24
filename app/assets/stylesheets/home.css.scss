@@ -1,6 +1,7 @@
 
 .home a:hover,
-.home a:focus {
+.home a:focus,
+.home a:visited {
   color: white;
   text-decoration: none;
 }
@@ -13,6 +14,7 @@
 .home h1,
 .home h2 {
   font-family: 'Rum Raisin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: inherit;
 }
 
 
