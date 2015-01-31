@@ -1,0 +1,96 @@
+<p>
+    This trick works for two mixed numbers if:
+<ul>
+    <li>
+        They have the same whole number
+    </li>
+    <li>
+        Their fractions add up to 1
+    </li>
+</ul>
+</p>
+
+<p>
+    Solving this is straight-forward:
+</p>
+<ol>
+    <li>
+        Multiply the fractions. This gives the fraction part in the answer.
+    </li>
+    <li>
+        Multiply the whole number by 1 + itself. This gives the whole number part in the answer.
+    </li>
+</ol>
+
+
+<hr/>
+
+<div class='example'>
+    <h4>
+        Example:
+        <script type='math/tex'>
+            \begin{equation}
+            \begin{split}
+                4 \frac{1}{4} \times 4 \frac{3}{4} = \underline{\phantom{0000}}\text{(mixed number)}
+            \end{split}
+            \end{equation}
+        </script>
+    </h4>
+
+    <script type='math/tex'>
+        \begin{equation}
+        \begin{split}
+            &\frac{1}{4} \times \frac{3}{4} &= \frac{3}{16} &\text{ fraction part}
+        \phantom{0}\newline
+        \phantom{0}\newline
+            &4 \times (4 + 1) &= 20 &\text{ whole number part}
+        \phantom{0}\newline
+        \phantom{0}\newline
+            &\bbox[5px, border: 2px solid green]{20 \frac{3}{16}}
+        \end{split}
+        \end{equation}
+    </script>
+</div>
+
+<hr/>
+
+
+<div class='example'>
+    <h4>
+        Example:
+        <script type='math/tex'>
+            \begin{equation}
+            \begin{split}
+                9 \frac{5}{8} \times 9 \frac{3}{8} = \underline{\phantom{0000}}\text{(mixed number)}
+            \end{split}
+            \end{equation}
+        </script>
+    </h4>
+
+    <script type='math/tex'>
+        \begin{equation}
+        \begin{split}
+            &\frac{5}{8} \times \frac{3}{8} &= \frac{15}{64} &\text{ fraction part}
+        \phantom{0}\newline
+        \phantom{0}\newline
+            &9 \times (9 + 1) &= 90 &\text{ whole number part}
+        \phantom{0}\newline
+        \phantom{0}\newline
+            &\bbox[5px, border: 2px solid green]{90 \frac{15}{64}}
+        \end{split}
+        \end{equation}
+    </script>
+</div>
+
+<hr/>
+<p>
+    This trick works because:
+
+    <script type='math/tex'>
+        \begin{equation}
+        \begin{split}
+            a \frac{b}{c} \times a \frac{c - b}{c} = a \times (a + 1) + \frac{b}{c} \times \frac{c - b}{c}
+        \end{split}
+        \end{equation}
+    </script>
+</p>
