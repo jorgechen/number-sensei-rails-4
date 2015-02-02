@@ -1,0 +1,124 @@
+<h3>
+    Method
+</h3>
+<p>
+    With a question like
+    <script type='math/tex'>
+            \begin{equation}
+            \begin{split}
+                \frac{4}{5} + \frac{5}{6} + \frac{6}{7}
+            \end{split}
+            \end{equation}
+    </script>
+    , where each number is 1 bigger than the previous, we use this method:
+</p>
+<ol>
+    <li>
+        Whole number of the answer is always 2
+    </li>
+    <li>
+        Numerator of the answer is
+        <script type='math/tex'>
+        \begin{equation}
+        \begin{split}
+            a^2d - (d + 2)
+        \end{split}
+        \end{equation}
+    </script>
+    </li>
+    <li>
+        Denominator of the answer is the product of all denominators,
+        <script type='math/tex'>
+        \begin{equation}
+        \begin{split}
+            bcd
+        \end{split}
+        \end{equation}
+    </script>
+    </li>
+</ol>
+
+
+<hr/>
+
+
+<h3>
+    Explanation
+</h3>
+<p>
+    From algebra, we learn:
+
+    <script type='math/tex'>
+        \begin{equation}
+        \begin{split}
+            \frac{a}{b} + \frac{b}{c} + \frac{c}{d} = 2 + \frac{a^2d - (d + 2)}{bcd}
+        \end{split}
+        \end{equation}
+    </script>
+</p>
+
+
+<hr/>
+
+
+<div class='example'>
+    <h4>
+        Example:
+        <script type='math/tex'>
+            \begin{equation}
+            \begin{split}
+                \frac{4}{5} + \frac{5}{6} + \frac{6}{7} = \underline{\phantom{0000}}\text{(mixed number)}
+            \end{split}
+            \end{equation}
+        </script>
+    </h4>
+
+    <script type='math/tex'>
+        \begin{equation}
+        \begin{split}
+            &\text{The whole number is } 2
+        \phantom{0}\newline
+        \phantom{0}\newline
+            &\text{The numerator is } 4^2 \times 7 - (7 + 2) = 112 - 9 = 103
+        \phantom{0}\newline
+        \phantom{0}\newline
+            &\text{The denominator is } 5 \times 6 \times 7 = 210
+        \phantom{0}\newline
+        \phantom{0}\newline
+            &\text{Answer is } \bbox[5px, border: 2px solid green]{2 \frac{103}{210}}
+        \end{split}
+        \end{equation}
+    </script>
+</div>
+
+<hr/>
+
+<div class='example'>
+    <h4>
+        Example:
+        <script type='math/tex'>
+            \begin{equation}
+            \begin{split}
+                \frac{10}{11} + \frac{11}{12} + \frac{12}{13} = \underline{\phantom{0000}}\text{(mixed number)}
+            \end{split}
+            \end{equation}
+        </script>
+    </h4>
+
+    <script type='math/tex'>
+        \begin{equation}
+        \begin{split}
+            &\text{The whole number is } \textbf{2}
+        \phantom{0}\newline
+        \phantom{0}\newline
+            &\text{The numerator is } 10^2 \times 13 - (13 + 2) = 1300 - 15 = \bf{1285}
+        \phantom{0}\newline
+        \phantom{0}\newline
+            &\text{The denominator is } 11 \times 12 \times 13 = 11 \times 156 = 1716
+        \phantom{0}\newline
+        \phantom{0}\newline
+            &\text{Answer is } \bbox[5px, border: 2px solid green]{2 \frac{1285}{1716}}
+        \end{split}
+        \end{equation}
+    </script>
+</div>
