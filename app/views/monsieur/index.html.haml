@@ -2,3 +2,13 @@
 
 %p See _navigation.html.haml
 
+%p
+  Using this for scratch work to check MathJax output
+  = path = File.absolute_path('app/views/monsieur/mathjax_sample.html')
+
+.container
+  .panel.panel-default
+    .panel-body
+      = raw File.read path
+
+
