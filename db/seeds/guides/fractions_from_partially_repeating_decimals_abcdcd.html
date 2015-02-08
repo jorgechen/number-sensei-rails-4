@@ -1,0 +1,138 @@
+<h3>
+    Method
+</h3>
+<p>
+    This trick works for repeating decimals like
+    <script type='math/tex'>
+            \begin{equation}
+            \begin{split}
+                .ab\overline{cd}
+            \end{split}
+            \end{equation}
+    </script>
+    where each decimal has <strong>two or more</strong> repeating digit at the end:
+</p>
+
+
+<ol>
+    <li>
+        For the numerator, <b>subtract</b> the <b>non-repeating digits</b> from the <b>combined non-repeating and repeating digits</b>
+    </li>
+    <li>
+        For the denominator:
+        <ul>
+            <li>
+                write the same number of 9s as repeating digits
+            </li>
+            <li>
+                then write the same number of 0s as non-repeating digits
+            </li>
+        </ul>
+    </li>
+</ol>
+
+
+<hr/>
+
+
+<div class='example'>
+    <h4>
+        Example:
+        <script type='math/tex'>
+            \begin{equation}
+            \begin{split}
+                .124242\ldots = .12\overline{42} = \underline{\phantom{0000}}\text{(fraction)}
+            \end{split}
+            \end{equation}
+        </script>
+    </h4>
+    <script type='math/tex'>
+        \begin{equation}
+        \begin{split}
+            124 - 1 = &123 &\text{ numerator}
+        \phantom{0}\newline
+        \phantom{0}\newline
+            &990 &\text{ denominator (two repeating digits - two 9s, one non-repeating digit - one 0)}
+        \end{split}
+        \end{equation}
+    </script>
+    <hr>
+    <script type='math/tex'>
+        \begin{equation}
+        \begin{split}
+            &\text{Answer is } \frac{123}{990} = \bbox[5px, border: 2px solid green]{\frac{41}{330}}
+        \end{split}
+        \end{equation}
+    </script>
+</div>
+
+
+<hr/>
+
+
+<div class='example'>
+    <h4>
+        Example:
+        <script type='math/tex'>
+            \begin{equation}
+            \begin{split}
+                .11242424\ldots = .11\overline{24} = \underline{\phantom{0000}}\text{(fraction)}
+            \end{split}
+            \end{equation}
+        </script>
+    </h4>
+    <script type='math/tex'>
+        \begin{equation}
+        \begin{split}
+            1124 - 11 = &1113 &\text{ numerator}
+        \phantom{0}\newline
+        \phantom{0}\newline
+            &9900 &\text{ denominator (two repeating digits - two 9s, two non-repeating digit - one 0)}
+        \end{split}
+        \end{equation}
+    </script>
+    <hr>
+    <script type='math/tex'>
+        \begin{equation}
+        \begin{split}
+            \text{Answer is } \frac{1113}{9900} = \bbox[5px, border: 2px solid green]{\frac{371}{3300}}
+        \end{split}
+        \end{equation}
+    </script>
+</div>
+
+
+<hr/>
+
+
+<div class='example'>
+    <h4>
+        Example:
+        <script type='math/tex'>
+            \begin{equation}
+            \begin{split}
+                .02121212\ldots = .02\overline{12} = \underline{\phantom{0000}}\text{(fraction)}
+            \end{split}
+            \end{equation}
+        </script>
+    </h4>
+    <script type='math/tex'>
+        \begin{equation}
+        \begin{split}
+            212 - 2 = &210 &\text{ numerator}
+        \phantom{0}\newline
+        \phantom{0}\newline
+            &9900 &\text{ denominator}
+        \end{split}
+        \end{equation}
+    </script>
+    <hr>
+    <script type='math/tex'>
+        \begin{equation}
+        \begin{split}
+            \text{Answer is } \frac{210}{9900} = \bbox[5px, border: 2px solid green]{\frac{7}{330}}
+        \end{split}
+        \end{equation}
+    </script>
+</div>
+
