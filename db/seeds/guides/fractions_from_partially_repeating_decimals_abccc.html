@@ -1,0 +1,154 @@
+<h3>
+    Method
+</h3>
+<p>
+    This trick works for repeating decimals like
+    <script type='math/tex'>
+            \begin{equation}
+            \begin{split}
+                .ab\overline{c}
+            \end{split}
+            \end{equation}
+    </script>
+    where each decimal has <strong>one</strong> repeating digit at the end:
+</p>
+<ul>
+    <li>
+        If the repeating digit is 9:
+        <ol>
+            <li>
+                Ignoring the repeating 9s, add 1 to the non-repeating digits to get a new decimal
+            </li>
+            <li>
+                This new decimal is the answer. Convert it into a fraction if needed.
+            </li>
+        </ol>
+    </li>
+    <li>
+        Otherwise:
+        <ol>
+            <li>
+                For the numerator, join the non-repeating digits with a single repeating digit, and subtract by the non-repeating digits (for .12333, it's 123 - 12)
+            </li>
+            <li>
+                For the denominator, write 9 and the same amount of 0s as the non-repeating digits
+            </li>
+        </ol>
+    </li>
+
+
+</ul>
+
+
+<hr/>
+
+
+<div class='example'>
+    <h4>
+        Example:
+        <script type='math/tex'>
+            \begin{equation}
+            \begin{split}
+                .12\overline{3} = .12333\ldots = \underline{\phantom{0000}}\text{(fraction)}
+            \end{split}
+            \end{equation}
+        </script>
+    </h4>
+    <script type='math/tex'>
+        \begin{equation}
+        \begin{split}
+            \text{Numerator is } &123 - 12 = 111
+        \phantom{0}\newline
+        \phantom{0}\newline
+            \text{Denominator is } &900
+        \phantom{0}\newline
+        \phantom{0}\newline
+            \text{Answer is } \frac{111}{900} = \bbox[5px, border: 2px solid green]{\frac{37}{300}}
+        \end{split}
+        \end{equation}
+    </script>
+</div>
+
+
+<hr/>
+
+
+<div class='example'>
+    <h4>
+        Example:
+        <script type='math/tex'>
+            \begin{equation}
+            \begin{split}
+                .2\overline{4} = .2444\ldots = \underline{\phantom{0000}}\text{(fraction)}
+            \end{split}
+            \end{equation}
+        </script>
+    </h4>
+    <script type='math/tex'>
+        \begin{equation}
+        \begin{split}
+            \text{Numerator is } &24 - 2 = 22
+        \phantom{0}\newline
+        \phantom{0}\newline
+            \text{Denominator is } &90
+        \phantom{0}\newline
+        \phantom{0}\newline
+            \text{Answer is } \frac{22}{90} = \bbox[5px, border: 2px solid green]{\frac{11}{45}}
+        \end{split}
+        \end{equation}
+    </script>
+</div>
+
+
+<hr/>
+
+
+<div class='example'>
+    <h4>
+        Example:
+        <script type='math/tex'>
+            \begin{equation}
+            \begin{split}
+                .4\overline{9} = .4999\ldots = \underline{\phantom{0000}}\text{(fraction)}
+            \end{split}
+            \end{equation}
+        </script>
+    </h4>
+    <script type='math/tex'>
+        \begin{equation}
+        \begin{split}
+            4 + 1 = 5 \text{ the new decimal is .5}
+        \phantom{0}\newline
+        \phantom{0}\newline
+            .5 = \bbox[5px, border: 2px solid green]{\frac{1}{2}}
+        \end{split}
+        \end{equation}
+    </script>
+</div>
+
+
+<hr/>
+
+
+<div class='example'>
+    <h4>
+        Example:
+        <script type='math/tex'>
+            \begin{equation}
+            \begin{split}
+                .74\overline{9} = .74999\ldots = \underline{\phantom{0000}}\text{(fraction)}
+            \end{split}
+            \end{equation}
+        </script>
+    </h4>
+    <script type='math/tex'>
+        \begin{equation}
+        \begin{split}
+            74 + 1 = 75
+        \phantom{0}\newline
+        \phantom{0}\newline
+            .75 = \bbox[5px, border: 2px solid green]{\frac{3}{4}}
+        \end{split}
+        \end{equation}
+    </script>
+</div>
