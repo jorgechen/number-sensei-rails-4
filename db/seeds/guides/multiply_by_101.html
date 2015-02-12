@@ -1,0 +1,121 @@
+<h3>
+    Method
+</h3>
+<p>
+    To multiply a number by 101:
+</p>
+
+<ul>
+    <li>
+        If the number has 2 digits, just write it twice.
+    </li>
+    <li>
+        If the number has 3 digits
+        <ul>
+            <li>
+                Add first digit to the entire number, write it down
+            </li>
+            <li>
+                Append the last two digits
+            </li>
+        </ul>
+    </li>
+</ul>
+
+
+<h3>
+    Explanation
+</h3>
+
+<p>
+    We know
+    <script type='math/tex'>101 = 100 + 1</script>
+</p>
+<p>
+    This means, for example,
+</p>
+<script type='math/tex'>
+    \begin{equation}
+    \begin{split}
+        214 \times 101 &= 214 \times (100 + 1)
+    \\
+        &= 214 \times 100 + 214
+    \end{split}
+    \end{equation}
+</script>
+<p>
+    Here's something familiar!
+</p>
+
+<script type='math/tex'>
+    \begin{equation}
+    \begin{split}
+        214
+    \\
+        \underline{\times 101}
+    \\
+        214
+    \\
+        \underline{214\phantom{00}}
+    \\
+        21614
+    \end{split}
+    \end{equation}
+</script>
+
+
+
+<hr/>
+
+
+<div class='example'>
+    <h4>
+        Example:
+        <script type='math/tex'>
+            \begin{equation}
+            \begin{split}
+                53 \times 101 = \underline{\phantom{0000}}
+            \end{split}
+            \end{equation}
+        </script>
+    </h4>
+    <p>
+        <script type='math/tex'>
+            \begin{equation}
+            \begin{split}
+                 = \bbox[5px, border: 2px solid green]{5353}
+            \end{split}
+            \end{equation}
+        </script>
+    </p>
+</div>
+
+
+<hr/>
+
+
+<div class='example'>
+    <h4>
+        Example:
+        <script type='math/tex'>
+            \begin{equation}
+            \begin{split}
+                998 \times 101 = \underline{\phantom{0000}}
+            \end{split}
+            \end{equation}
+        </script>
+    </h4>
+    <p>
+        <script type='math/tex'>
+            \begin{equation}
+            \begin{split}
+                &9 + 998 = &1007 &\text{ first part of answer}
+            \\
+                &          &98 &\text{ second part of answer}
+            \\
+                &998 \times 101 &= \bbox[5px, border: 2px solid green]{100798}
+            \end{split}
+            \end{equation}
+        </script>
+    </p>
+</div>
