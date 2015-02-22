@@ -1,0 +1,95 @@
+<h3>
+    Method
+</h3>
+
+<p>
+    Multiply by 111 is like <a class="trick">multiplying by 11</a>, except that we add up to 3 digits at a time (instead of 2):
+</p>
+
+<hr/>
+
+<div class='example'>
+    <h4>
+        Example:
+        <script type='math/tex'>
+            \begin{equation}
+            \begin{split}
+                8273 \times 111 = \underline{\phantom{0000}}
+            \end{split}
+            \end{equation}
+        </script>
+    </h4>
+
+    <script type='math/tex'>
+        \begin{equation}
+        \begin{split}
+            \text{Write down the last digit:}
+            &827\underbrace{3} \times 111 &= \underline{\phantom{00000}\textbf{3}}
+        \\
+        \\
+            \text{Add the last 2 digits:}
+            &82\underbrace{73} \times 111 &= \underline{\phantom{0000}\textbf{0}3} \text{ (}\textit{carry 1}\text{)}
+        \\
+        \\
+            \text{Add the last 3 digits:}
+            &8\underbrace{273} \times 111 &= \underline{\phantom{000}\textbf{3}03} \text{ (} 2+7+3\textit{+1}=13 \text{, carry 1)}
+        \\
+        \\
+            \text{Moving left, add the next 3 digits:}
+            &\underbrace{827}3 \times 111 &= \underline{\phantom{00}\textbf{8}303} \text{ (} 8+2+7+1 = 18 \text{, carry 1)}
+        \\
+        \\
+            \text{Keep moving left. Add the remaining 2 digits:}
+            &\underbrace{82}73 \times 111 &= \underline{\phantom{0}\textbf{1}8303} \text{ (} 8+2+1=11 \text{, carry 1)}
+        \\
+        \\
+            &\underbrace{8}273 \times 111 &= \underline{\textbf{9}18303} \text{ (} 8+1=9 \text{)}
+        \\
+        \\
+            &&=\bbox[5px, border: 2px solid green]{918303}
+
+        \end{split}
+        \end{equation}
+    </script>
+</div>
+<hr/>
+
+<hr/>
+
+<div class='example'>
+    <h4>
+        Example:
+        <script type='math/tex'>
+            \begin{equation}
+            \begin{split}
+                32 \times 111 = \underline{\phantom{0000}}
+            \end{split}
+            \end{equation}
+        </script>
+    </h4>
+    <p>
+        Think of 32 as three digits: 032
+    </p>
+
+    <script type='math/tex'>
+        \begin{equation}
+        \begin{split}
+            &03\underbrace{2} \times 111 &= \underline{\phantom{00000}\textbf{2}}
+        \\
+        \\
+            &0\underbrace{32} \times 111 &= \underline{\phantom{000}\textbf{5}2}
+        \\
+        \\
+            &\underbrace{032} \times 111 &= \underline{\phantom{00}\textbf{5}52}
+        \\
+        \\
+            &\underbrace{03}2 \times 111 &= \underline{\phantom{0}\textbf{3}552}
+        \\
+        \\
+            &&=\bbox[5px, border: 2px solid green]{3552}
+
+        \end{split}
+        \end{equation}
+    </script>
+</div>
+
