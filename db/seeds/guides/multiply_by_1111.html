@@ -1,0 +1,97 @@
+<h3>
+    Method
+</h3>
+
+<p>
+    Multiplying by 1111 is like <a class="trick">multiplying by 111</a>, except that we add up to <strong>4</strong> digits at a time:
+</p>
+
+<hr/>
+
+<div class='example'>
+    <h4>
+        Example:
+        <script type='math/tex'>
+            \begin{equation}
+            \begin{split}
+                3414 \times 1111 = \underline{\phantom{0000}}
+            \end{split}
+            \end{equation}
+        </script>
+    </h4>
+
+    <script type='math/tex'>
+        \begin{equation}
+        \begin{split}
+            &341\underbrace{4} \times 1111 &= \underline{\phantom{000000}\textbf{4}}
+        \\
+        \\
+            &34\underbrace{14} \times 1111 &= \underline{\phantom{00000}\textbf{5}4} \text{ (} 1+4=5 \text{)}
+        \\
+        \\
+            &3\underbrace{414} \times 1111 &= \underline{\phantom{0000}\textbf{9}54} \text{ (} 4+1+4=9 \text{)}
+        \\
+        \\
+            &\underbrace{3414} \times 1111 &= \underline{\phantom{000}\textbf{2}954} \text{ (} 3+4+1+4= 12 \text{, carry 1)}
+        \\
+        \\
+            &\underbrace{341}4 \times 1111 &= \underline{\phantom{00}\textbf{9}2954} \text{ (} 3+4+1\textit{+1}=9 \text{)}
+        \\
+        \\
+            &\underbrace{34}14 \times 1111 &= \underline{\phantom{0}\textbf{7}92954} \text{ (} 3+4 \text{)}
+        \\
+        \\
+            &\underbrace{3}414 \times 1111 &= \bbox[5px, border: 2px solid green]{\textbf{3}792954}
+
+        \end{split}
+        \end{equation}
+    </script>
+</div>
+
+<hr/>
+
+<p>
+    What if the other number is small? When multiply by 1111, think of the other number as having 4 digits. For example, 35 becomes 0035.
+</p>
+
+<div class='example'>
+    <h4>
+        Example:
+        <script type='math/tex'>
+            \begin{equation}
+            \begin{split}
+                124 \times 1111 = \underline{\phantom{0000}}
+            \end{split}
+            \end{equation}
+        </script>
+    </h4>
+
+    <script type='math/tex'>
+        \begin{equation}
+        \begin{split}
+            &012\underbrace{4} \times 1111 &= \underline{\phantom{000000}\textbf{4}}
+        \\
+        \\
+            &01\underbrace{24} \times 1111 &= \underline{\phantom{00000}\textbf{6}4} \text{ (} 2+4=6 \text{)}
+        \\
+        \\
+            &0\underbrace{124} \times 1111 &= \underline{\phantom{0000}\textbf{7}64} \text{ (} 1+2+4=7 \text{)}
+        \\
+        \\
+            &\underbrace{0124} \times 1111 &= \underline{\phantom{000}\textbf{7}764} \text{ (} 0+1+2+4=7\text{)}
+        \\
+        \\
+            &\underbrace{012}4 \times 1111 &= \underline{\phantom{00}\textbf{3}7764} \text{ (} 1+2=3 \text{)}
+        \\
+        \\
+            &\underbrace{01}24 \times 1111 &= \underline{\phantom{0}\textbf{1}37764}
+        \\
+        \\
+            &\underbrace{0}124 \times 1111 &= \bbox[5px, border: 2px solid green]{137764}
+
+        \end{split}
+        \end{equation}
+    </script>
+</div>
+
+<hr/>
