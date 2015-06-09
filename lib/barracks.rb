@@ -35,7 +35,7 @@ module Barracks
         data = File.read(file_path)
         t.update_attribute :guide, data
       rescue
-        puts "Unable to update: #{file_name}"
+        puts "Unable to update #{t.name}.guide with file: #{file_name}"
       end
 
     end
